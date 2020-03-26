@@ -1,0 +1,608 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="27C367DD-986E-40F6-912F-E5D38659B136" platform="MtDesktop" defaultW="800" defaultH="600" measureW="800" measureH="600" mobileScreenScale="0">
+  <controls controlCount="59">
+    <control controlID="BD511EF3-53B4-4CC4-97F0-4A97C4737506" controlTypeID="HRule" x="2" y="96" w="800" h="12" zOrder="0"/>
+    <control controlID="9B77860C-A39C-41B1-B0B0-CCEE5CDC7C5F" controlTypeID="Label" x="338" y="78" w="41" h="16" zOrder="1">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
+          <area shape="0" alt="" ID="{76E00B35-04AC-41B4-8AC8-9B2AFB2D93E0}" coords="(0,0,41,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Po%C4%8Detna</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="51C5ACC2-C680-4C98-92E5-E7041660824D" controlTypeID="Button" x="716" y="76" w="67" h="21" zOrder="2">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
+          <area shape="0" alt="" ID="{1B87CE1F-8FEA-4C21-8948-22E10CE38041}" coords="(0,0,67,21)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Odjavi+me</text>
+      <textColor>4294967295</textColor>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="7B4695DB-1B14-4747-900F-83C267396320" controlTypeID="Button" x="640" y="75" w="66" h="22" zOrder="3">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="0BAC4AE9-4550-4A53-A9EE-6550FA8DF90F" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+poslodavca">
+          <area shape="0" alt="" ID="{A0AD9D7D-BA24-4B35-AF8E-497B708F508A}" coords="(0,0,66,22)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Moj+profil</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="EF8FECCE-4097-436E-88E1-53B5388C2C9B" controlTypeID="Label" x="398" y="79" w="44" h="16" zOrder="4">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="0D99B255-7F5D-4828-B4FB-7331152EDE0F" linkType="ltPageLink" isApplyIncludePage="False" title="Muzicari">
+          <area shape="0" alt="" ID="{725FDC77-FBC4-4963-B3D0-860507DF392F}" coords="(0,0,44,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Muzicari</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="6A399486-5ADD-4672-AA89-04FA807447A8" controlTypeID="Label" x="461" y="79" w="32" h="16" zOrder="5">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="68104871-8773-4FF1-9F94-93869B06B720" linkType="ltPageLink" isApplyIncludePage="False" title="Olgasi">
+          <area shape="0" alt="" ID="{58484B9D-25D1-4E5C-8869-A2F54B0B88AB}" coords="(0,0,32,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Oglasi</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="009E876C-B63F-460A-864B-FB2DF79F84A6" controlTypeID="Shape" x="0" y="573" w="802" h="27" zOrder="6">
+      <color>4284900966</color>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <selectedIndex>-1</selectedIndex>
+      <dashMode>SdDash</dashMode>
+      <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
+    </control>
+    <control controlID="D9268005-26F5-4A1C-BD8A-AD28F8D99621" controlTypeID="Label" x="296" y="578" w="240" h="15" zOrder="7">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
+      <textColor>4294967295</textColor>
+      <textSize>11</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="586EE95B-A978-4035-B1DC-E27F2D0BD7C8" controlTypeID="Image" x="2" y="101" w="800" h="110" zOrder="8"/>
+    <control controlID="B32D2E7D-64D8-4D6B-B9E9-79E04CED8BF4" controlTypeID="Label" x="20" y="424" w="105" h="24" zOrder="9">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Aktivni+oglasi</text>
+      <textSize>18</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="F2779BAF-89BD-4148-B0E0-8178BB63F2F5" controlTypeID="HRule" x="34" y="449" w="75" h="12" zOrder="10"/>
+    <control controlID="27F39AB6-7E60-4021-909C-78E38543925E" controlTypeID="Table" x="20" y="471" w="720" h="90" zOrder="11">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Naziv+oglasa%09Datum+svirke%09Aktivan+oglas%09LIsta+prijavljenih%09Petak+svirka%0907.05.2020%09%09%09Subota+svirka%0921.05.2020%09%09</text>
+      <textAlign>HaCenter</textAlign>
+      <lineSpacing>0</lineSpacing>
+      <thickness>1</thickness>
+      <dashMode>SdSolid</dashMode>
+      <tableStyle>tsNone</tableStyle>
+      <fontFamily/>
+      <fontWeight>Regular</fontWeight>
+      <textStyles>[]</textStyles>
+      <cells>
+        <cell rows="0,0" cols="0,0">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>Naziv+oglasa</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="0,0" cols="1,1">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>Datum+svirke</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="0,0" cols="2,2">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>Aktivan+oglas</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="0,0" cols="3,3">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>LIsta+prijavljenih</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="1,1" cols="0,0">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>Petak+svirka</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="1,1" cols="1,1">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>07.05.2020</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="1,1" cols="2,2">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <textHeight>12</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="1,1" cols="3,3">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <textHeight>12</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="2,2" cols="0,0">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>Subota+svirka</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="2,2" cols="1,1">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <text>21.05.2020</text>
+          <textHeight>28</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="2,2" cols="2,2">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <textHeight>12</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+        <cell rows="2,2" cols="3,3">
+          <fontFamily>Segoe+UI</fontFamily>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <textHeight>12</textHeight>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+        </cell>
+      </cells>
+      <rows>
+        <row height="30">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <isAutoRowHeight>True</isAutoRowHeight>
+        </row>
+        <row height="30">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <isAutoRowHeight>True</isAutoRowHeight>
+        </row>
+        <row height="30">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+          <isAutoRowHeight>True</isAutoRowHeight>
+        </row>
+      </rows>
+      <cols>
+        <col width="180">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+        </col>
+        <col width="180">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+        </col>
+        <col width="180">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+        </col>
+        <col width="180">
+          <fontFamily/>
+          <fontWeight>Regular</fontWeight>
+          <textStyles>[]</textStyles>
+        </col>
+      </cols>
+    </control>
+    <control controlID="8C46783D-9023-45F9-AED2-B8740968BA13" controlTypeID="Icon" x="461" y="502" w="18" h="18" zOrder="12">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62339</iconCode>
+      </icon>
+      <URL>8C68413269FD91978C300BB43A9F7584.svg</URL>
+    </control>
+    <control controlID="4745F975-8D29-4118-8C6C-D0494EA28FB0" controlTypeID="Icon" x="460" y="535" w="19" h="19" zOrder="13">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62167</iconCode>
+      </icon>
+      <URL>8BE3C7AC8FBB1747163ECAB9AB46AD44.svg</URL>
+    </control>
+    <control controlID="9382535D-A1E0-4B65-91C9-B9999E16C4C1" controlTypeID="Icon" x="601" y="506" w="21" h="21" zOrder="14">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="3F16B16D-F9F0-43B9-9CF4-5898E97CF7C5" linkType="ltPageLink" isApplyIncludePage="False" title="potvrdaOglasa">
+          <area shape="0" alt="" ID="{7BA4CD4E-2AB8-4481-BD2B-0A8005DEA55E}" coords="(0,0,21,21)"/>
+        </link>
+      </links>
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="4EBA779E-9F5E-4708-AF91-FC80F62AE113" controlTypeID="Icon" x="602" y="537" w="21" h="21" zOrder="15">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="3F16B16D-F9F0-43B9-9CF4-5898E97CF7C5" linkType="ltPageLink" isApplyIncludePage="False" title="potvrdaOglasa">
+          <area shape="0" alt="" ID="{D334F138-FEB5-4884-A5A2-F2FBE8C71F82}" coords="(0,0,21,21)"/>
+        </link>
+      </links>
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="7D9528E0-BDDB-4726-92DE-BABF62E022C1" controlTypeID="Label" x="359" y="225" w="102" h="24" zOrder="16">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Postavi+oglas</text>
+      <textSize>18</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="316189D5-8410-4E84-9DD3-56C3B58192A6" controlTypeID="HRule" x="368" y="249" w="75" h="12" zOrder="17"/>
+    <control controlID="BD6C33DA-00CD-4F0F-83E1-B2B9F2975BA1" controlTypeID="Shape" x="199" y="279" w="141" h="18" zOrder="18">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Naziv+oglasa</text>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="AF259157-97D0-4221-A335-EE804F0637CA" controlTypeID="DateTimePicker" x="493" y="277" w="121" h="24" zOrder="19">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>03+%2F+10+%2F+2014</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="B805D33B-98CE-4A58-97DC-B8DFE4F8D629" controlTypeID="Label" x="444" y="281" w="35" h="16" zOrder="20">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Datum</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="E58D32FB-078C-4DCE-88B1-C72CFBF3E893" controlTypeID="Shape" x="199" y="303" w="201" h="59" zOrder="21">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>opis%0D%0A</text>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="8AABD20D-E69E-4569-84CF-56D0357A2757" controlTypeID="TextArea" x="445" y="315" w="240" h="66" zOrder="22">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Cena</text>
+      <textSize>12</textSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="05822D5C-EE26-4BD1-BF90-D47BDE9B4209" controlTypeID="Shape" x="494" y="314" w="120" h="23" zOrder="23">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="37C511DA-9684-45ED-8881-643F59FC139C" controlTypeID="Shape" x="494" y="353" w="120" h="15" zOrder="24">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="940A7E40-AD90-4F1D-AA94-787E1A83598D" controlTypeID="Label" x="201" y="365" w="67" h="16" zOrder="25">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Vrsta+muzike</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="648DFB1E-9767-4D6F-8AC7-F8E0423B0E10" controlTypeID="RadioButtonGroup" x="286" y="365" w="49" h="16" zOrder="26">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>rock</text>
+      <lineSpacing>0</lineSpacing>
+      <itemRect>[{"left":0,"top":0,"right":49,"bottom":16}]</itemRect>
+    </control>
+    <control controlID="13802317-3ED7-4207-B7E0-024FD8CAEE84" controlTypeID="RadioButtonGroup" x="345" y="365" w="49" h="16" zOrder="27">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>narodna</text>
+      <lineSpacing>0</lineSpacing>
+      <itemRect>[{"left":0,"top":0,"right":49,"bottom":16}]</itemRect>
+    </control>
+    <control controlID="C99AFA5B-D705-43AC-8B45-F780D4FF3023" controlTypeID="Label" x="440" y="352" w="44" h="16" zOrder="28">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Lokacija%3A</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="C4AB4B42-7EFA-4E9D-80B9-C986AC3DCFAB" controlTypeID="Button" x="321" y="396" w="184" h="28" zOrder="29">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="28C16DAC-3D21-4469-8F86-67F7BC0646F6" linkType="ltPageLink" isApplyIncludePage="False" title="Postavljanje+oglasa">
+          <area shape="0" alt="" ID="{3D49E47E-011B-408D-A8F3-847FB4C79292}" coords="(0,0,184,28)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Postavi+oglas</text>
+      <textColor>4294967295</textColor>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="9A49AEC2-4ACE-4B43-B520-E7667B6FB367" controlTypeID="Label" x="684" y="551" w="113" h="16" zOrder="30">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Edit+by+Aleksa+Opacic</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="ECC927EE-8A93-492C-9AF1-F0DEDD794C2F" controlTypeID="Icon" x="661" y="506" w="21" h="21" zOrder="31">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62153</iconCode>
+      </icon>
+      <URL>E71285E60CC121AE330BA2F0427C7663.svg</URL>
+    </control>
+    <control controlID="E1C2727D-0837-4CF5-9A79-C4E524C04B6B" controlTypeID="Icon" x="662" y="537" w="19" h="19" zOrder="32">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62153</iconCode>
+      </icon>
+      <URL>E71285E60CC121AE330BA2F0427C7663.svg</URL>
+    </control>
+    <control controlID="828DE577-7F79-4E42-8728-44B022F77670" controlTypeID="Panel" x="2" y="75" w="798" h="493" zOrder="33">
+      <opacity>0.699999988079071</opacity>
+      <groupChildrenDescriptors>
+        <control controlID="D1D0A235-A85E-4473-A4C2-114E3E55F2CC" controlTypeID="Panel" x="131" y="70" w="536" h="301" zOrder="0">
+          <groupChildrenDescriptors>
+            <control controlID="5A558685-0D6F-4D92-80B9-0BA8F9C7864A" controlTypeID="Label" x="25" y="17" w="138" h="22" zOrder="0">
+              <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+              <text>Prijavljeni+Muzicarai</text>
+              <textSize>16</textSize>
+              <lineSpacing>0</lineSpacing>
+              <useDefaultTextSize>False</useDefaultTextSize>
+              <selectedIndex>-1</selectedIndex>
+            </control>
+            <control controlID="840FB314-5FB1-423A-AD35-05BD0A9215DF" controlTypeID="AvatarEx2" x="25" y="67" w="120" h="120" zOrder="1">
+              <icon>
+                <ID/>
+                <iconFontName>jdiconfontB</iconFontName>
+                <iconCode>59652</iconCode>
+              </icon>
+              <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+            </control>
+            <control controlID="48B687CD-8CD4-484C-ACF2-F2A9DD9AF8E4" controlTypeID="AvatarEx2" x="203" y="66" w="120" h="120" zOrder="2">
+              <icon>
+                <ID/>
+                <iconFontName>jdiconfontB</iconFontName>
+                <iconCode>59652</iconCode>
+              </icon>
+              <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+            </control>
+            <control controlID="D82CFF23-3817-4630-9931-44A5ABF9E6C0" controlTypeID="AvatarEx2" x="384" y="67" w="120" h="120" zOrder="3">
+              <icon>
+                <ID/>
+                <iconFontName>jdiconfontB</iconFontName>
+                <iconCode>59652</iconCode>
+              </icon>
+              <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+            </control>
+            <control controlID="2A1C18D2-1902-47B6-85B9-39AC009B8185" controlTypeID="Button" x="42" y="220" w="70" h="28" zOrder="4">
+              <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+                <link targetPageID="0BAC4AE9-4550-4A53-A9EE-6550FA8DF90F" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+poslodavca">
+                  <area shape="0" alt="" ID="{46709370-4353-4BA5-AC7A-E66D4FD85E02}" coords="(0,0,70,28)"/>
+                </link>
+              </links>
+              <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+              <text>PRIHVATI</text>
+              <textSize>12</textSize>
+              <lineSpacing>0</lineSpacing>
+              <selectedIndex>-1</selectedIndex>
+              <radius>4</radius>
+            </control>
+            <control controlID="857E709E-50B1-4D76-858E-9963987BED8F" controlTypeID="Button" x="233" y="220" w="70" h="28" zOrder="5">
+              <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+                <link targetPageID="0BAC4AE9-4550-4A53-A9EE-6550FA8DF90F" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+poslodavca">
+                  <area shape="0" alt="" ID="{27C55659-12E2-4870-8BFB-A645E63C304A}" coords="(0,0,70,28)"/>
+                </link>
+              </links>
+              <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+              <text>PRIHVATI</text>
+              <textSize>12</textSize>
+              <lineSpacing>0</lineSpacing>
+              <selectedIndex>-1</selectedIndex>
+              <radius>4</radius>
+            </control>
+            <control controlID="C255BC0C-0B04-41FD-BF20-52F144651DE1" controlTypeID="Button" x="414" y="215" w="70" h="28" zOrder="6">
+              <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+                <link targetPageID="0BAC4AE9-4550-4A53-A9EE-6550FA8DF90F" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+poslodavca">
+                  <area shape="0" alt="" ID="{93F6FE57-F169-4B6C-96ED-9F05BE24F1DC}" coords="(0,0,70,28)"/>
+                </link>
+              </links>
+              <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+              <text>PRIHVATI</text>
+              <textSize>12</textSize>
+              <lineSpacing>0</lineSpacing>
+              <selectedIndex>-1</selectedIndex>
+              <radius>4</radius>
+            </control>
+            <control controlID="E3762ED9-72EB-404B-8E59-C3A757F4160A" controlTypeID="Border" x="0" y="0" w="536" h="301" zOrder="7">
+              <alias>borderLayer</alias>
+            </control>
+          </groupChildrenDescriptors>
+          <thinkness>1</thinkness>
+        </control>
+        <control controlID="06DCA028-EBE9-497F-8A75-4C85315EC31D" controlTypeID="Border" x="0" y="0" w="798" h="493" zOrder="1">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="56A7EE85-896E-4757-BB77-6E65F2C67E72" controlTypeID="Icon" x="175" y="334" w="17" h="17" zOrder="34">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="B8A09329-8F39-4927-845F-8BAE483B5F2F" controlTypeID="Icon" x="192" y="334" w="17" h="17" zOrder="35">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="D9216B2B-1873-404C-A040-E68A82A6CE2F" controlTypeID="Icon" x="209" y="334" w="17" h="17" zOrder="36">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="68A0447C-9B33-494B-8476-41FEED9C52BA" controlTypeID="Icon" x="226" y="334" w="17" h="17" zOrder="37">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="A69EFDC2-CE98-4AF2-AE5F-4C05A7D785E8" controlTypeID="Icon" x="243" y="334" w="17" h="17" zOrder="38">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="175266F9-924A-451C-A755-79B6D6F442D2" controlTypeID="Icon" x="350" y="335" w="17" h="17" zOrder="39">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="3839AC18-C8A8-44C6-A2AD-95F2BF133A90" controlTypeID="Icon" x="367" y="335" w="17" h="17" zOrder="40">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="CD0A9BE7-AA8F-4E49-9780-772A47BFA60F" controlTypeID="Icon" x="384" y="335" w="17" h="17" zOrder="41">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="19EEE1CC-4257-4956-B8FF-90E83030951E" controlTypeID="Icon" x="401" y="335" w="17" h="17" zOrder="42">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="E5A2531D-8D39-40D1-BF76-207F722184ED" controlTypeID="Icon" x="418" y="335" w="17" h="17" zOrder="43">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="58DAAD52-9C8A-4F20-A61C-DD3106D5967A" controlTypeID="Icon" x="538" y="336" w="17" h="17" zOrder="44">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="2822B045-3FA7-45E7-8351-A7E724F0BC50" controlTypeID="Icon" x="555" y="336" w="17" h="17" zOrder="45">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="FF3DA913-342C-481B-8BFE-12147467B5FC" controlTypeID="Icon" x="572" y="336" w="17" h="17" zOrder="46">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="4B3159AC-6804-4219-806C-44369281552E" controlTypeID="Icon" x="589" y="336" w="17" h="17" zOrder="47">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="52D64F14-8CE1-418D-BF74-27F470138EBE" controlTypeID="Icon" x="606" y="336" w="17" h="17" zOrder="48">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>

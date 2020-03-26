@@ -1,0 +1,226 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="C900C168-24D7-4B74-A76E-01993C22B12A" platform="MtDesktop" defaultW="800" defaultH="600" measureW="800" measureH="600" mobileScreenScale="0">
+  <controls controlCount="31">
+    <control controlID="470309E2-7AFB-4261-AB7B-6DA837149AC1" controlTypeID="BrowserWindow" x="0" y="0" w="801" h="600" zOrder="0">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>LakoDoMuzike%0D%0Ahttps%3A%2F%2Fwww.lakodomuzike.com%0D%0A</text>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="6588AD01-DC1C-40DA-AC03-42A1ABC01015" controlTypeID="HRule" x="0" y="96" w="800" h="12" zOrder="1"/>
+    <control controlID="E8F53FB6-D277-48B4-A71B-1B6119A04F9C" controlTypeID="Label" x="336" y="78" w="41" h="16" zOrder="2">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
+          <area shape="0" alt="" ID="{131DA56E-6F39-4ED7-8A5D-4B5E9170B9D1}" coords="(0,0,41,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Po%C4%8Detna</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="601D00FE-3041-4B77-BF81-7C1868EE112A" controlTypeID="Button" x="714" y="76" w="67" h="21" zOrder="3">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
+          <area shape="0" alt="" ID="{3B329E2D-206F-4569-93ED-8E2A33705516}" coords="(0,0,67,21)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Odjavi+me</text>
+      <textColor>4294967295</textColor>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="FF22C07E-3FA5-45C3-8C12-C4C5B7F00B64" controlTypeID="Button" x="638" y="75" w="66" h="22" zOrder="4">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{81917F7A-F0CE-4FA6-9A2E-BAD69EA8F6B7}" coords="(0,0,66,22)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Moj+profil</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="45EC9658-54AE-4A49-BD31-3F7F9039C4D2" controlTypeID="Label" x="396" y="79" w="44" h="16" zOrder="5">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="0D99B255-7F5D-4828-B4FB-7331152EDE0F" linkType="ltPageLink" isApplyIncludePage="False" title="Muzicari">
+          <area shape="0" alt="" ID="{E1258FF3-D3E6-44D5-ABCA-5EB527E7FDAD}" coords="(0,0,44,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Muzicari</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="CD827A70-DA03-4B07-A1C0-145D68EED128" controlTypeID="Label" x="459" y="79" w="32" h="16" zOrder="6">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="68104871-8773-4FF1-9F94-93869B06B720" linkType="ltPageLink" isApplyIncludePage="False" title="Olgasi">
+          <area shape="0" alt="" ID="{97B40456-F870-4DC9-B38B-AAA22B37E5AB}" coords="(0,0,32,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Oglasi</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="413BEEB6-0B17-46D2-98D6-9776469AC64D" controlTypeID="Shape" x="-2" y="573" w="802" h="27" zOrder="7">
+      <color>4284900966</color>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <selectedIndex>-1</selectedIndex>
+      <dashMode>SdDash</dashMode>
+      <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
+    </control>
+    <control controlID="819984DD-1D6B-4CF7-BDC9-5861B5B92CFA" controlTypeID="Label" x="294" y="578" w="240" h="15" zOrder="8">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
+      <textColor>4294967295</textColor>
+      <textSize>11</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="69892D84-D17A-4E89-B42F-826E0DB93CB8" controlTypeID="Image" x="0" y="101" w="800" h="110" zOrder="9"/>
+    <control controlID="32705539-2790-471E-935C-B8378821D943" controlTypeID="Image" x="20" y="237" w="137" h="132" zOrder="10"/>
+    <control controlID="7CF76275-9BFC-4F7E-A913-97E000FB14EA" controlTypeID="Label" x="199" y="237" w="83" h="19" zOrder="11">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Ime+i+prezime</text>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="1B723C02-278E-4065-B29E-5663A438E500" controlTypeID="VideoPlayer" x="189" y="461" w="135" h="90" zOrder="12"/>
+    <control controlID="D1072ED0-1580-47AD-9967-84451246DB0A" controlTypeID="Label" x="350" y="414" w="141" h="24" zOrder="13">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Snimci+sa+nastupa</text>
+      <textSize>18</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="A8D44C37-BCA5-48C4-8BAE-C0DE52DE6644" controlTypeID="VideoPlayer" x="352" y="461" w="135" h="90" zOrder="14"/>
+    <control controlID="83BF660A-CAE2-4782-B3DB-7F74616C8285" controlTypeID="VideoPlayer" x="517" y="461" w="135" h="90" zOrder="15"/>
+    <control controlID="03275649-8489-4282-BB61-78C176194628" controlTypeID="HRule" x="376" y="439" w="75" h="12" zOrder="16"/>
+    <control controlID="3B2BF18B-0993-4F7B-B995-40D13F7CDD9F" controlTypeID="TextArea" x="199" y="273" w="240" h="66" zOrder="17">
+      <borderVisible>True</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Vivamus+efficitur+vestibulum+elit+id+semper.+Donec+eleifend+metus+justo%2C+ac+luctus+arcu+finibus+non.+Phasellus+dignissim+diam+ac+ipsum+egestas+malesuada+non+mollis+metus.+Aenean+luctus+ex+sit+amet+elementum+tincidunt.+Duis+venenatis+euismod+tempor.+Mauris+pretium%2C+diam+at+consectetur+porta%2C+mi+nulla+condimentum+tortor%2C+vel+eleifend+diam+justo+nec+tortor.+Suspendisse+sed+imperdiet+eros.+Suspendisse+potenti.+Nullam+eu+magna+id+magna+posuere+sollicitudin.+Pellentesque+convallis+commodo+nunc+sed+elementum.+Praesent+in+mattis+dui.+Proin+bibendum+justo+non+ex+tincidunt+molestie.+Nunc+ligula+elit%2C+rutrum+sed+pretium+ac%2C+vestibulum+ut+tellus.+Proin+at+nisi+non+tortor+sagittis+iaculis.+Vivamus+vel+leo+at+felis+maximus+ullamcorper.%0D%0A</text>
+      <textSize>12</textSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="49B6E36D-8300-45A0-87ED-DB54F9572643" controlTypeID="Calendar" x="582" y="280" w="176" h="134" zOrder="18"/>
+    <control controlID="A7C558A8-069D-4139-A3B5-5BAEE2177CF2" controlTypeID="Button" x="713" y="228" w="70" h="28" zOrder="19">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{AE65E985-3A3A-4937-BF39-F9F1D06798EE}" coords="(0,0,70,28)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Sacuvaj</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="FA71F341-BA3D-4AB2-8EAD-D81AE5CDB093" controlTypeID="Icon" x="310" y="240" w="17" h="17" zOrder="20">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="FD6B17A7-FD4A-4753-9D57-5F724939DF7C" controlTypeID="Icon" x="327" y="240" w="17" h="17" zOrder="21">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="C1CA462E-15C3-4538-BA1E-76483D43470E" controlTypeID="Icon" x="344" y="240" w="17" h="17" zOrder="22">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62204</iconCode>
+      </icon>
+      <URL>7368E932054EB35095B123FCB5C28A31.svg</URL>
+    </control>
+    <control controlID="9C0EAB4A-1CA3-4B72-B865-19B435D93523" controlTypeID="Icon" x="361" y="240" w="17" h="17" zOrder="23">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="2D88B187-AAFE-4843-B4C6-64E5D9EA73D8" controlTypeID="Icon" x="378" y="240" w="17" h="17" zOrder="24">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62382</iconCode>
+      </icon>
+      <URL>E6846E633DC1587E343959CBA8946201.svg</URL>
+    </control>
+    <control controlID="35010FCA-2335-4988-85EB-1DCF540A487D" controlTypeID="Icon" x="199" y="349" w="24" h="24" zOrder="25">
+      <icon>
+        <ID/>
+        <iconFontName>jdIcoFont</iconFontName>
+        <iconCode>59128</iconCode>
+      </icon>
+      <URL>BAC363726CD6D85E622901ECB9B29694.svg</URL>
+    </control>
+    <control controlID="06A3BACC-3BEF-4148-B333-5A59441B7FF9" controlTypeID="Icon" x="433" y="259" w="21" h="21" zOrder="26">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="ADF202F3-7A45-4623-B731-11A1FDAA21FD" controlTypeID="Icon" x="280" y="224" w="21" h="21" zOrder="27">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="761CB1AD-9D6A-4768-B88C-8473D2630672" controlTypeID="Icon" x="392" y="224" w="21" h="21" zOrder="28">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="7579A410-BA51-47D3-9489-B3278D83A427" controlTypeID="Icon" x="749" y="266" w="21" h="21" zOrder="29">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62334</iconCode>
+      </icon>
+      <URL>69A4D1E5CE13432C6A4F579026917C6A.svg</URL>
+    </control>
+    <control controlID="E64F580B-85D3-40F9-90CC-CF092BED6F9A" controlTypeID="Label" x="677" y="546" w="110" h="16" zOrder="30">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Edit+by+Svetislav+Gaic</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>
