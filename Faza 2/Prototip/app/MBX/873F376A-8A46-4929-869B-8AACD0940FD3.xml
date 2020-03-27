@@ -1,0 +1,17 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="873F376A-8A46-4929-869B-8AACD0940FD3" platform="MtDesktop" defaultW="800" defaultH="600" measureW="800" measureH="600" mobileScreenScale="0">
+  <controls controlCount="1">
+    <control controlID="2B223FAE-25D4-4452-B062-7FE246B5AB21" controlTypeID="Label" x="311" y="168" w="146" h="35" zOrder="0">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>ERROR+PAGE</text>
+      <textSize>26</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>
