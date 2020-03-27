@@ -1,5 +1,5 @@
 ﻿<mockup version="5.3" minAllowVersion="5.3" ID="5E51DB12-632C-436C-840E-A2D13BB7AB98" platform="MtDesktop" defaultW="800" defaultH="600" measureW="800" measureH="789" mobileScreenScale="0">
-  <controls controlCount="33">
+  <controls controlCount="35">
     <control controlID="CB30B7BC-3DD3-45E8-A81C-6435B762F256" controlTypeID="BrowserWindow" x="0" y="0" w="801" h="789" zOrder="0">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>LakoDoMuzike%0D%0Ahttps%3A%2F%2Fwww.lakodomuzike.com%0D%0A</text>
@@ -8,10 +8,10 @@
       <selectedIndex>-1</selectedIndex>
     </control>
     <control controlID="7F8FB4E4-835D-46DD-A068-A1B111B320F2" controlTypeID="HRule" x="0" y="96" w="800" h="12" zOrder="1"/>
-    <control controlID="786B58BF-27FB-4934-A77A-B9F932868CE3" controlTypeID="Label" x="336" y="78" w="41" h="16" zOrder="2">
+    <control controlID="786B58BF-27FB-4934-A77A-B9F932868CE3" controlTypeID="Label" x="336" y="78" w="42" h="16" zOrder="2">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
-          <area shape="0" alt="" ID="{131DA56E-6F39-4ED7-8A5D-4B5E9170B9D1}" coords="(0,0,41,16)"/>
+          <area shape="0" alt="" ID="{131DA56E-6F39-4ED7-8A5D-4B5E9170B9D1}" coords="(0,0,42,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -47,10 +47,10 @@
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="93941779-339A-41FF-AB71-8D6BAE2AC6A9" controlTypeID="Label" x="396" y="79" w="44" h="16" zOrder="5">
+    <control controlID="93941779-339A-41FF-AB71-8D6BAE2AC6A9" controlTypeID="Label" x="396" y="79" w="45" h="16" zOrder="5">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="0D99B255-7F5D-4828-B4FB-7331152EDE0F" linkType="ltPageLink" isApplyIncludePage="False" title="Muzicari">
-          <area shape="0" alt="" ID="{E1258FF3-D3E6-44D5-ABCA-5EB527E7FDAD}" coords="(0,0,44,16)"/>
+          <area shape="0" alt="" ID="{E1258FF3-D3E6-44D5-ABCA-5EB527E7FDAD}" coords="(0,0,45,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -59,10 +59,10 @@
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="3A58AF2B-0956-4AEA-B0CF-A9C8FC0C997F" controlTypeID="Label" x="459" y="79" w="32" h="16" zOrder="6">
+    <control controlID="3A58AF2B-0956-4AEA-B0CF-A9C8FC0C997F" controlTypeID="Label" x="459" y="79" w="33" h="16" zOrder="6">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="68104871-8773-4FF1-9F94-93869B06B720" linkType="ltPageLink" isApplyIncludePage="False" title="Olgasi">
-          <area shape="0" alt="" ID="{97B40456-F870-4DC9-B38B-AAA22B37E5AB}" coords="(0,0,32,16)"/>
+          <area shape="0" alt="" ID="{97B40456-F870-4DC9-B38B-AAA22B37E5AB}" coords="(0,0,33,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -78,7 +78,7 @@
       <dashMode>SdDash</dashMode>
       <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
     </control>
-    <control controlID="70300E07-3C87-4A26-AFF7-E2FB7E1785C4" controlTypeID="Label" x="303" y="768" w="240" h="15" zOrder="8">
+    <control controlID="70300E07-3C87-4A26-AFF7-E2FB7E1785C4" controlTypeID="Label" x="303" y="768" w="241" h="15" zOrder="8">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
       <textColor>4294967295</textColor>
@@ -89,7 +89,7 @@
     </control>
     <control controlID="0C987D7D-BD34-4350-B4C1-388A8C3517FE" controlTypeID="Image" x="0" y="101" w="800" h="110" zOrder="9"/>
     <control controlID="D73637FC-5849-4A28-A79B-539009456601" controlTypeID="Image" x="20" y="237" w="137" h="132" zOrder="10"/>
-    <control controlID="FAB6E74A-E73A-457D-89D0-D4E31EAD4809" controlTypeID="Label" x="199" y="237" w="83" h="19" zOrder="11">
+    <control controlID="FAB6E74A-E73A-457D-89D0-D4E31EAD4809" controlTypeID="Label" x="199" y="237" w="84" h="19" zOrder="11">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Ime+i+prezime</text>
       <lineSpacing>0</lineSpacing>
@@ -97,7 +97,7 @@
       <selectedIndex>-1</selectedIndex>
     </control>
     <control controlID="F1D8A81F-30C8-452E-9D44-C0B2374C1E80" controlTypeID="VideoPlayer" x="189" y="461" w="135" h="90" zOrder="12"/>
-    <control controlID="AD134D00-5150-4309-AC0C-D87E6459D304" controlTypeID="Label" x="350" y="414" w="141" h="24" zOrder="13">
+    <control controlID="AD134D00-5150-4309-AC0C-D87E6459D304" controlTypeID="Label" x="350" y="414" w="142" h="24" zOrder="13">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Snimci+sa+nastupa</text>
       <textSize>18</textSize>
@@ -176,14 +176,14 @@
       </icon>
       <URL>BAC363726CD6D85E622901ECB9B29694.svg</URL>
     </control>
-    <control controlID="DA169CA3-2C02-455A-A391-B511C91DE609" controlTypeID="Label" x="667" y="730" w="116" h="16" zOrder="26">
+    <control controlID="DA169CA3-2C02-455A-A391-B511C91DE609" controlTypeID="Label" x="667" y="730" w="117" h="16" zOrder="26">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Edit+by+Vladimir+Siskin</text>
       <textSize>12</textSize>
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="B81E67D5-3ED5-480D-96BD-51F58397823D" controlTypeID="Label" x="20" y="604" w="82" h="24" zOrder="27">
+    <control controlID="B81E67D5-3ED5-480D-96BD-51F58397823D" controlTypeID="Label" x="20" y="604" w="83" h="24" zOrder="27">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Moji+oglas</text>
       <textSize>18</textSize>
@@ -343,6 +343,26 @@
       <textSize>12</textSize>
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="8FD6A7A0-2153-4B8F-8936-E74B62101941" controlTypeID="Button" x="538" y="229" w="70" h="28" zOrder="33">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="25973470-D9A0-48B9-9046-6C5990521D9A" linkType="ltPageLink" isApplyIncludePage="False" title="oceni+muzicara">
+          <area shape="0" alt="" ID="{0F012191-107B-461E-8B69-2242D98FF849}" coords="(0,0,70,28)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Oceni</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="D35CF6F3-7391-49D2-926A-5D25D99F44DD" controlTypeID="Label" x="240" y="350" w="62" h="22" zOrder="34">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>pop%2Crock</text>
+      <textSize>16</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
     </control>
   </controls>
   <param>

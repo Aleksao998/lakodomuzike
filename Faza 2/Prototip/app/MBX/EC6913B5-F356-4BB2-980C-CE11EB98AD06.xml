@@ -7,10 +7,10 @@
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="3938074D-A106-4478-9821-AF5FD057A6FD" controlTypeID="Label" x="338" y="78" w="41" h="16" zOrder="1">
+    <control controlID="3938074D-A106-4478-9821-AF5FD057A6FD" controlTypeID="Label" x="338" y="78" w="42" h="16" zOrder="1">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
-          <area shape="0" alt="" ID="{76E00B35-04AC-41B4-8AC8-9B2AFB2D93E0}" coords="(0,0,41,16)"/>
+          <area shape="0" alt="" ID="{76E00B35-04AC-41B4-8AC8-9B2AFB2D93E0}" coords="(0,0,42,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -46,10 +46,10 @@
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="F0E337AF-2B0C-40C1-B352-08B641738470" controlTypeID="Label" x="398" y="79" w="44" h="16" zOrder="4">
+    <control controlID="F0E337AF-2B0C-40C1-B352-08B641738470" controlTypeID="Label" x="398" y="79" w="45" h="16" zOrder="4">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="0D99B255-7F5D-4828-B4FB-7331152EDE0F" linkType="ltPageLink" isApplyIncludePage="False" title="Muzicari">
-          <area shape="0" alt="" ID="{725FDC77-FBC4-4963-B3D0-860507DF392F}" coords="(0,0,44,16)"/>
+          <area shape="0" alt="" ID="{725FDC77-FBC4-4963-B3D0-860507DF392F}" coords="(0,0,45,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -58,10 +58,10 @@
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="45348316-90A8-4FC2-AE57-749653C4CF21" controlTypeID="Label" x="461" y="79" w="32" h="16" zOrder="5">
+    <control controlID="45348316-90A8-4FC2-AE57-749653C4CF21" controlTypeID="Label" x="461" y="79" w="33" h="16" zOrder="5">
       <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
         <link targetPageID="68104871-8773-4FF1-9F94-93869B06B720" linkType="ltPageLink" isApplyIncludePage="False" title="Olgasi">
-          <area shape="0" alt="" ID="{58484B9D-25D1-4E5C-8869-A2F54B0B88AB}" coords="(0,0,32,16)"/>
+          <area shape="0" alt="" ID="{58484B9D-25D1-4E5C-8869-A2F54B0B88AB}" coords="(0,0,33,16)"/>
         </link>
       </links>
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
@@ -77,7 +77,7 @@
       <dashMode>SdDash</dashMode>
       <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
     </control>
-    <control controlID="E539A5DB-BCA7-4173-93C5-81706DC89E28" controlTypeID="Label" x="296" y="578" w="240" h="15" zOrder="7">
+    <control controlID="E539A5DB-BCA7-4173-93C5-81706DC89E28" controlTypeID="Label" x="296" y="578" w="241" h="15" zOrder="7">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
       <textColor>4294967295</textColor>
@@ -87,14 +87,14 @@
       <selectedIndex>-1</selectedIndex>
     </control>
     <control controlID="941ACE55-4D57-43E9-AC4C-FA768A7A98B1" controlTypeID="Image" x="2" y="101" w="800" h="110" zOrder="8"/>
-    <control controlID="6C36D05F-64B4-43FA-A49E-CF5D0858F3C7" controlTypeID="Label" x="296" y="341" w="256" h="16" zOrder="9">
+    <control controlID="6C36D05F-64B4-43FA-A49E-CF5D0858F3C7" controlTypeID="Label" x="296" y="341" w="257" h="16" zOrder="9">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Poruku+za+autorizaciju+je+poslata+na+email+adresu</text>
       <textSize>12</textSize>
       <lineSpacing>0</lineSpacing>
       <selectedIndex>-1</selectedIndex>
     </control>
-    <control controlID="BDB13597-C3B1-4831-9A82-8A660C9EBDEB" controlTypeID="Label" x="682" y="540" w="110" h="16" zOrder="10">
+    <control controlID="BDB13597-C3B1-4831-9A82-8A660C9EBDEB" controlTypeID="Label" x="682" y="540" w="111" h="16" zOrder="10">
       <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
       <text>Edit+by+Svetislav+Gaic</text>
       <textSize>12</textSize>
