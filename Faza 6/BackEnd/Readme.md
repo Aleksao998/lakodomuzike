@@ -4,7 +4,14 @@ Modules need to install:
     npm install dotenv
     npm install -D nodemon
 
-    //for logger
+    npm install colors
+
+    // for logger
     npm install morgan
+
+    // for db
+    npm install mongoose
+
+    
 
 Server running on port: 5000;
