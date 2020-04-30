@@ -1,3 +1,5 @@
+const Employer = require('../models/Employer');
+
 // @desc    Get all employers
 // @route   GET /api/v1/employer
 // @access  Public
@@ -15,8 +17,12 @@ exports.getEmployer = (req, res, next) => {
 // @desc    Create specific employer
 // @route   POST /api/v1/employer
 // @access  Public
-exports.createEmployer = (req, res, next) => {
-    res.status(200).json({ success: true, msg: 'Create new employer' });
+exports.createEmployer = async (req, res, next) => {
+
+    const employer = await Employer.create(req.body);
+
+
+    res.status(201).json({ success: true, data: employer });
 };
 
 // @desc    Update specific employer
