@@ -2,7 +2,7 @@ const Musician = require("../models/Musician");
 
 // @desc    Get all musicians
 // @route   GET /api/v1/musician
-// @access  Public
+// @access  PublicP
 exports.getMusicians = async (req, res, next) => {
 	try {
 		const musicians = await Musician.find();
