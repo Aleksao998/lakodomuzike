@@ -17,7 +17,8 @@ const musicians = require("./routes/musician-routes");
 
 const app = express();
 
-//For JSON parsing
+// Body parser
+
 app.use(express.json());
 
 // Dev logging middleware
