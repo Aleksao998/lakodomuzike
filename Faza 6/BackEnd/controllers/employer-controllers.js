@@ -3,6 +3,7 @@ const Employer = require('../models/Employer');
 // @desc    Get all employers
 // @route   GET /api/v1/employer
 // @access  Public
+
 exports.getEmployers = async (req, res, next) => {
     try {
         const employers = await Employer.find();
@@ -11,11 +12,13 @@ exports.getEmployers = async (req, res, next) => {
     } catch (err) {
         res.status(400).json({ success: false });
     }
+
 };
 
 // @desc    Get specific employer
 // @route   GET /api/v1/employer/:id
 // @access  Public
+
 exports.getEmployer = async (req, res, next) => {
     try {
         const employer = await Employer.findById(req.params.id);
@@ -28,11 +31,13 @@ exports.getEmployer = async (req, res, next) => {
     } catch (err) {
         res.status(400).json({ success: false });
     }
+
 };
 
 // @desc    Create specific employer
 // @route   POST /api/v1/employer
 // @access  Public
+
 exports.createEmployer = async (req, res, next) => {
     try {
         const employer = await Employer.create(req.body);
@@ -41,11 +46,13 @@ exports.createEmployer = async (req, res, next) => {
     } catch (err) {
         res.status(400).json({ success: false });
     }
+
 };
 
 // @desc    Update specific employer
 // @route   PUT /api/v1/employer/:id
 // @access  Private
+
 exports.updateEmployer = async (req, res, next) => {
     try {
 
@@ -63,11 +70,13 @@ exports.updateEmployer = async (req, res, next) => {
         res.status(400).json({ success: false });
     }
 
+
 };
 
 // @desc    Delete specific employer
 // @route   DEL /api/v1/employer/:id
 // @access  Private
+
 exports.deleteEmployer = async (req, res, next) => {
     try {
 
@@ -84,6 +93,3 @@ exports.deleteEmployer = async (req, res, next) => {
     }
 
 };
-
-
-
