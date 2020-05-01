@@ -3,7 +3,6 @@
 		"ime": "Petar",
 		"prezime": "Petrovic",
 		"username": "peraPetrovic",
-		"vrstaMuzicara": {},
 		"ocena": "4.5",
 		"brojOcena": "10"
 	},
@@ -11,7 +10,6 @@
 		"ime": "Marko",
 		"prezime": "Markovic",
 		"username": "rema123",
-		"vrstaMuzicara": {},
 		"ocena": "3.0",
 		"brojOcena": "5"
 	},
@@ -19,7 +17,6 @@
 		"ime": "Jovan",
 		"prezime": "Jovanovic",
 		"username": "jocaZmaj",
-		"vrstaMuzicara": {},
 		"ocena": "3.4",
 		"brojOcena": "20"
 	},
@@ -27,7 +24,6 @@
 		"ime": "Nikola ",
 		"prezime": "Nikolic",
 		"username": "dzoni123",
-		"vrstaMuzicara": {},
 		"ocena": "4",
 		"brojOcena": "4"
 	}

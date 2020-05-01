@@ -16,9 +16,9 @@ Muzicar:
     
     CREATE: URL/api/v1/employer-type POST
     GETALL: URL/api/v1/employer-type GET
-    GET: URL/api/v1/employer/:id-type GET 
-    UPDATE: URL/api/v1/employer/:id-type PUT
-    DELETE: URL/api/v1/employer/:id-type DELETE
+    GET: URL/api/v1/employer/:username-type GET 
+    UPDATE: URL/api/v1/employer/:username-type PUT
+    DELETE: URL/api/v1/employer/:username-type DELETE
 
 
 
