@@ -1,0 +1,507 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="0D99B255-7F5D-4828-B4FB-7331152EDE0F" platform="MtDesktop" defaultW="800" defaultH="600" measureW="797" measureH="687" mobileScreenScale="0">
+  <controls controlCount="64">
+    <control controlID="0CCC3F54-2502-49FE-942C-EB56F9707E32" controlTypeID="BrowserWindow" x="0" y="0" w="801" h="687" zOrder="0">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>LakoDoMuzike%0D%0Ahttps%3A%2F%2Fwww.lakodomuzike.com%0D%0A</text>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="5D546114-280D-4518-A5D7-2393AB05DFB9" controlTypeID="HRule" x="0" y="96" w="800" h="12" zOrder="1"/>
+    <control controlID="6F124C72-F15E-4B83-B728-122A41FBF639" controlTypeID="Label" x="303" y="76" w="42" h="16" zOrder="2">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2EAD78AC-69B0-406C-92DA-3A171E936D92" linkType="ltPageLink" isApplyIncludePage="False" title="Index">
+          <area shape="0" alt="" ID="{73521C8C-BBA8-4F36-B416-80C30D553B99}" coords="(0,0,42,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Po%C4%8Detna</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="3DFCF261-D7D4-404D-B7CE-B9BDDB08A54D" controlTypeID="Button" x="714" y="76" w="67" h="21" zOrder="3">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="A2E53F4D-669C-43E2-8C25-A185EF1A479E" linkType="ltPageLink" isApplyIncludePage="False" title="Uloguj+se">
+          <area shape="0" alt="" ID="{8AE69BCC-0B87-42CC-819C-BDAF160F8BC4}" coords="(0,0,67,21)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Uloguj+se</text>
+      <textColor>4294967295</textColor>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="7B4DB913-FE07-4711-BC0A-67DB2F77637F" controlTypeID="Button" x="636" y="76" w="66" h="22" zOrder="4">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="2D0D5A55-9CCD-4C0B-BF60-803CF29F98C0" linkType="ltPageLink" isApplyIncludePage="False" title="Registruj+se">
+          <area shape="0" alt="" ID="{211A16F0-EC36-4BD2-AC91-84303E237BAD}" coords="(0,0,66,22)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Registruj+se</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="BBE19CBF-D545-4F28-9473-E9BDAFC51B6B" controlTypeID="Label" x="366" y="76" w="48" h="16" zOrder="5">
+      <font family="Segoe+UI" displayName="Segoe+UI+Bold" postScript="" weightStyle="Bold" weight="700" isBold="True" isItalic="False"/>
+      <text>Muzicari</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <textStyles>[fsBold]</textStyles>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="9B46C7C4-D4BB-4329-8D74-60E6437BA725" controlTypeID="Label" x="430" y="76" w="33" h="16" zOrder="6">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="68104871-8773-4FF1-9F94-93869B06B720" linkType="ltPageLink" isApplyIncludePage="False" title="Olgasi">
+          <area shape="0" alt="" ID="{22C5015D-AB8F-432D-A247-C36558C5E88B}" coords="(0,0,33,16)"/>
+        </link>
+      </links>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Oglasi</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="76A65E9B-D658-42A6-86E8-53C633F2A68D" controlTypeID="Label" x="481" y="76" w="42" h="16" zOrder="7">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>O+nama</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="CC51362D-76DC-4B27-9778-B323E8D001AC" controlTypeID="Image" x="0" y="102" w="800" h="94" zOrder="8"/>
+    <control controlID="3741E375-8447-48E4-83AF-7402631B02AB" controlTypeID="Label" x="322" y="217" w="157" h="27" zOrder="9">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Pronadji+muzicara</text>
+      <textSize>20</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="FBEB05AA-48F2-453F-8654-15AA9358382E" controlTypeID="HRule" x="342" y="244" w="120" h="12" zOrder="10"/>
+    <control controlID="44B4D746-06C3-4509-9F8C-4C59CB88C1C3" controlTypeID="Search" x="288" y="262" w="251" h="24" zOrder="11">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="CE55557D-B304-43FB-BEF9-8D30D673712B" controlTypeID="Shape" x="66" y="300" w="673" h="29" zOrder="12">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="423B2E7F-BAB6-442C-AA16-620B7A4712B2" controlTypeID="CompositeComboBox" x="592" y="306" w="137" h="16" zOrder="13">
+      <groupChildrenDescriptors>
+        <control controlID="DCE9040B-5726-4D8D-A41C-8387F17127C5" controlTypeID="TextInput" x="0" y="0" w="114" h="16" zOrder="0">
+          <locked>True</locked>
+          <canMove>False</canMove>
+          <alias>input</alias>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>sortiraj</text>
+          <textSize>12</textSize>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="27A9CF3F-616D-4412-BE65-5027447C5C68" controlTypeID="Button" x="113" y="0" w="24" h="16" zOrder="1">
+          <locked>True</locked>
+          <canMove>False</canMove>
+          <alias>button</alias>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <textSize>12</textSize>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+          <radius>0</radius>
+        </control>
+        <control controlID="EA9516CF-2535-414D-81F7-D62B58F04EFD" controlTypeID="List" x="0" y="16" w="137" h="18" zOrder="2">
+          <isShow>False</isShow>
+          <canMove>False</canMove>
+          <alias>dropDown</alias>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>sortiraj</text>
+          <lineSpacing>0</lineSpacing>
+          <itemHeight>16</itemHeight>
+          <interlaceColor>4294967295</interlaceColor>
+        </control>
+      </groupChildrenDescriptors>
+      <baseHeight>16</baseHeight>
+      <font family="Segoe+UI"/>
+    </control>
+    <control controlID="24548BAE-6278-4C88-9E38-47140AE46A5F" controlTypeID="Label" x="76" y="306" w="39" h="16" zOrder="14">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Filtriraj+</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="2A14FD22-C82F-427D-90D3-5A06B6195B40" controlTypeID="Icon" x="120" y="306" w="19" h="19" zOrder="15">
+      <icon>
+        <ID/>
+        <iconFontName>jdIonicons</iconFontName>
+        <iconCode>62302</iconCode>
+      </icon>
+      <URL>D9A6B48B1FEBA31C14CD8CB7C4744E0C.svg</URL>
+    </control>
+    <control controlID="0183C424-531B-4FCE-BB7A-24C0A0E8A695" controlTypeID="Panel" x="200" y="348" w="78" h="115" zOrder="16">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{444811DA-EF94-4E57-A103-73DAEDCF2257}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="5F6407EF-F8B7-4AEE-8BA8-5474E4D1A709" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="64451FA5-4EFE-46E0-93AD-8A2A845197A3" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="1ADA2C44-4159-42A7-80FC-84855B063A96" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="30FD381B-5858-49DD-9FFD-5AD5D220B7B7" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="8F61410F-FA82-4DC1-8EF3-4E18C6E64079" controlTypeID="Panel" x="311" y="349" w="78" h="115" zOrder="17">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{C9C246DD-C7BF-4254-B61D-B4E5F8AB8A4B}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="B8D46B35-D1A3-4D18-9989-E507F42FC9F7" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="22CAEFA6-CFF7-4F54-8DFA-89D2A57F2A4A" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="E0F50C62-9668-4089-A321-B2ED41F9D4B2" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="9A2146A0-E4D4-4590-A734-7DE0FEF115A0" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="6AF661A6-060E-4C77-921C-E0F02F683827" controlTypeID="Panel" x="422" y="348" w="78" h="115" zOrder="18">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{4D3C2E9C-F6F9-4EB2-8828-3CC4510BE01B}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="B04693B4-87BB-4126-80D8-6BBD7B9D979D" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="D246B1DC-D420-4D85-93FB-A00D5FC6E0AA" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="37E82ED4-2932-4EE1-A648-6D730B44D06E" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="74C87404-9B01-4669-807E-D370EFB87025" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="340FF967-A7B9-408C-BEB0-1CB4D66C080E" controlTypeID="Panel" x="533" y="348" w="78" h="115" zOrder="19">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{099D1962-2EE7-4D50-8AB4-7E97EFBF671E}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="B4658DE2-F822-494E-ACCB-35E22FAF1E21" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="09310932-DE68-4C8F-B587-8AB27ADB65B1" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="47269034-EB27-482C-9A4F-84095421F138" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="8EF99C3F-BEEF-498F-A30C-449BC7F97360" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="D62DE893-9954-468C-A9E5-665316EED7B5" controlTypeID="Panel" x="200" y="481" w="78" h="115" zOrder="20">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{05106CAB-D545-40BA-ABBF-F7222606D24F}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="C4FB2F99-37A7-4400-8207-EF2839EBC9E0" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="4AAF5621-AAAC-49A3-9B32-D8D9C2FDFBDB" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="16D36CB1-65C8-4C45-93BE-289B8262555D" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="3462AF7A-CB3C-450C-ABEB-FE09FF7A12E5" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="1F27C290-F35F-4C9C-926C-B39BF8932A51" controlTypeID="Panel" x="311" y="481" w="78" h="115" zOrder="21">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{EA6A2128-1880-46A8-AEE4-AEB9DE4D3D95}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="824C0E5C-CDCC-45AE-8333-64C8E249DB52" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="77BA4AA8-0309-4F98-8DB2-A937891EBA4D" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="73B43E2B-7842-4FC7-B868-E1ADA94ABD73" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="D1FFD17D-2E72-4806-9A31-5319F27847A7" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="13D124BC-5D6F-4078-AD92-DCD67ED29A65" controlTypeID="Panel" x="422" y="481" w="78" h="115" zOrder="22">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{AD8871EF-60DF-43C3-8F04-A10F5C5C5266}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="4CBAE15B-C940-4A87-8CE6-99BED73954E0" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="02F44A97-2A93-4924-8169-8E6410F986D7" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="ED2908F8-100A-4FCF-A53B-FA66336F675F" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="F3693091-78F9-413B-9388-3B2C14C5D455" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="2E699FA7-F0C0-462D-84E9-83B97174BA5C" controlTypeID="Panel" x="533" y="481" w="78" h="115" zOrder="23">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="5E51DB12-632C-436C-840E-A2D13BB7AB98" linkType="ltPageLink" isApplyIncludePage="False" title="stranica+muzicara">
+          <area shape="0" alt="" ID="{2FD19AE3-FB0A-4AEB-9680-33611B2124DA}" coords="(0,0,78,115)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="7A0F25D7-9383-4FE0-B3A7-657B275B9207" controlTypeID="AvatarEx2" x="0" y="0" w="78" h="78" zOrder="0">
+          <icon>
+            <ID/>
+            <iconFontName>jdiconfontB</iconFontName>
+            <iconCode>59652</iconCode>
+          </icon>
+          <URL>467605F5F90D9FF65132C1A6EF883F26.svg</URL>
+        </control>
+        <control controlID="71EC747E-3C84-4C4E-9B26-BA26B1D030B6" controlTypeID="Label" x="10" y="82" w="60" h="14" zOrder="1">
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Ime+i+prezime</text>
+          <textSize>10</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="FC264085-D5E3-4A76-A7A4-C6FF7DD6CD6C" controlTypeID="Button" x="20" y="97" w="35" h="14" zOrder="2">
+          <color>4284900966</color>
+          <borderVisible>False</borderVisible>
+          <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+          <text>detaljno</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <lineSpacing>0</lineSpacing>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="851DA430-1333-44A5-A5BE-409C8865C44B" controlTypeID="Border" x="0" y="0" w="78" h="115" zOrder="3">
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <thinkness>1</thinkness>
+    </control>
+    <control controlID="1108F4B3-3E7F-46E6-8032-EC3901F62EAC" controlTypeID="Button" x="336" y="611" w="156" h="28" zOrder="24">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Prikazi+vise</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="51E798B2-E418-414E-AD7B-7E360DC6D1B7" controlTypeID="Shape" x="-1" y="659" w="802" h="27" zOrder="25">
+      <color>4284900966</color>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <selectedIndex>-1</selectedIndex>
+      <dashMode>SdDash</dashMode>
+      <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
+    </control>
+    <control controlID="0DCFEEA3-2571-478D-A86F-4E3A46FB505B" controlTypeID="Label" x="291" y="667" w="241" h="15" zOrder="26">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
+      <textColor>4294967295</textColor>
+      <textSize>11</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="E0630B5B-8754-4BA6-9D02-F0249CC978D0" controlTypeID="VerticalScrollbar" x="785" y="73" w="14" h="614" zOrder="27"/>
+    <control controlID="E3D10DBF-EA52-4D5B-81D3-F07607FEAC8F" controlTypeID="Label" x="662" y="632" w="111" h="16" zOrder="28">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Edit+by+Svetislav+Gaic</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>
