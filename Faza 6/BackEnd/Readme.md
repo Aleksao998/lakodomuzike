@@ -5,7 +5,8 @@ Modules need to install:
     npm install -D nodemon
 
     npm install colors
-
+    npm install slugify
+    
     // for logger
     npm install morgan
 
