@@ -1,0 +1,72 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="CA8CF241-632C-4A75-83B2-D53A292C42B5" platform="MtDesktop" defaultW="800" defaultH="600" measureW="800" measureH="600" mobileScreenScale="0">
+  <controls controlCount="9">
+    <control controlID="021FCF1F-3319-4A3B-9C01-B8F0779CB76A" controlTypeID="BrowserWindow" x="0" y="0" w="801" h="600" zOrder="0">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>LakoDoMuzike%0D%0Ahttps%3A%2F%2Fwww.lakodomuzike.com%0D%0A</text>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="63EF0368-02AF-4D97-AE46-BFB254D1CC72" controlTypeID="Label" x="336" y="78" w="41" h="16" zOrder="1">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Po%C4%8Detna</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="0A91239D-4A89-450D-ABCE-C510ABC75668" controlTypeID="Button" x="714" y="76" w="67" h="21" zOrder="2">
+      <color>4284900966</color>
+      <borderVisible>False</borderVisible>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Odjavi+me</text>
+      <textColor>4294967295</textColor>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="7A4132D1-D07D-4D39-9FC0-4E37B4BFF005" controlTypeID="Button" x="638" y="75" w="66" h="22" zOrder="3">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Moj+profil</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="3E3E51F5-5BA8-44EB-A1ED-5DA73F462394" controlTypeID="Label" x="396" y="79" w="44" h="16" zOrder="4">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Muzicari</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="BC419F7C-70BD-48FD-8A0B-0AFD74220265" controlTypeID="Label" x="459" y="79" w="32" h="16" zOrder="5">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Oglasi</text>
+      <textSize>12</textSize>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="F523D01F-A15A-4123-9BFA-9C5E46A203E2" controlTypeID="Shape" x="-2" y="573" w="802" h="27" zOrder="6">
+      <color>4284900966</color>
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <selectedIndex>-1</selectedIndex>
+      <dashMode>SdDash</dashMode>
+      <borderMode>[bmTop,bmRight,bmBottom]</borderMode>
+    </control>
+    <control controlID="53F02F8D-B04C-44D6-873C-EEE407E5724C" controlTypeID="Label" x="294" y="578" w="240" h="15" zOrder="7">
+      <font family="Segoe+UI" displayName="Segoe+UI" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Copyright+%C2%A9+2019+all+rights+by+lakodomuzike.com</text>
+      <textColor>4294967295</textColor>
+      <textSize>11</textSize>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="79006227-3E63-46F4-8249-934552F47F86" controlTypeID="HRule" x="2" y="96" w="800" h="12" zOrder="8"/>
+  </controls>
+  <param>
+    <backgroundColor>4294967295</backgroundColor>
+    <fontSize>0</fontSize>
+    <fontFamily/>
+    <guideLines/>
+  </param>
+</mockup>
