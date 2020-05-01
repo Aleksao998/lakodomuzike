@@ -6,7 +6,7 @@ const Musician = require("../models/Musician");
 exports.getMusicians = async (req, res, next) => {
 	try {
 		const musicians = await Musician.find();
-		res.status(200).json({ success: true, data: musicians });
+		res.status(201).json({ success: true, data: musicians });
 	} catch (err) {
 		res.status(400).json({ success: false });
 	}
