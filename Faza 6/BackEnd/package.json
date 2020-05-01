@@ -14,7 +14,8 @@
 		"express": "^4.17.1",
 		"image-type": "^4.1.0",
 		"mongoose": "^5.9.10",
-		"morgan": "^1.10.0"
+		"morgan": "^1.10.0",
+		"slugify": "^1.4.0"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.3"
