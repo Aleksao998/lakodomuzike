@@ -2,7 +2,7 @@ const express = require("express");
 const {
     getAds,
     getAd,
-    addAd,
+    createAd,
     updateAd,
     deleteAd
 } = require("../controllers/ad-controller");
@@ -11,6 +11,6 @@ const {
 const router = express.Router({ mergeParams: true });
 
 
-router.route('/').get(getAds).post(addAd);
+router.route('/').get(getAds).post(createAd);
 router.route('/:id').get(getAd).put(updateAd).delete(deleteAd);
 module.exports = router;
