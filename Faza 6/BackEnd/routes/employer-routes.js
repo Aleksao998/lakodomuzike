@@ -12,7 +12,7 @@ const router = express.Router();
 router.route("/").get(getEmployers).post(createEmployer);
 
 router
-	.route("/:id")
+	.route("/:userName")
 	.get(getEmployer)
 	.put(updateEmployer)
 	.delete(deleteEmployer);
