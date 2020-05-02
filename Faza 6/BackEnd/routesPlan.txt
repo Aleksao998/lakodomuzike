@@ -16,9 +16,15 @@ Poslodavac:
     
     CREATE: URL/api/v1/employer-type POST
     GETALL: URL/api/v1/employer-type GET
+<<<<<<< HEAD
     GET: URL/api/v1/employer/:userName-type GET 
     UPDATE: URL/api/v1/employer/:userName-type PUT
     DELETE: URL/api/v1/employer/:userName-type DELETE
+=======
+    GET: URL/api/v1/employer/:username-type GET 
+    UPDATE: URL/api/v1/employer/:username-type PUT
+    DELETE: URL/api/v1/employer/:username-type DELETE
+>>>>>>> origin/master
 
 
 

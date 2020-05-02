@@ -12,7 +12,7 @@ const router = express.Router();
 router.route("/").get(getMusicians).post(createMusician);
 
 router
-	.route("/:id")
+	.route("/:username")
 	.get(getMusician)
 	.put(updateMusician)
 	.delete(deleteMusician);

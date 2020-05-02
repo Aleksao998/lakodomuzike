@@ -1,28 +1,9 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
 import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 
 function RegisterPage() {
   document.documentElement.classList.remove("nav-open");
@@ -34,11 +15,10 @@ function RegisterPage() {
   });
   return (
     <>
-      <ExamplesNavbar />
       <div
         className="page-header"
         style={{
-          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
+          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")",
         }}
       >
         <div className="filter" />
@@ -52,7 +32,7 @@ function RegisterPage() {
                     className="btn-neutral btn-just-icon mr-1"
                     color="facebook"
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     <i className="fa fa-facebook-square" />
                   </Button>
@@ -60,7 +40,7 @@ function RegisterPage() {
                     className="btn-neutral btn-just-icon mr-1"
                     color="google"
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     <i className="fa fa-google-plus" />
                   </Button>
@@ -68,7 +48,7 @@ function RegisterPage() {
                     className="btn-neutral btn-just-icon"
                     color="twitter"
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     <i className="fa fa-twitter" />
                   </Button>
@@ -87,7 +67,7 @@ function RegisterPage() {
                     className="btn-link"
                     color="danger"
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={(e) => e.preventDefault()}
                   >
                     Forgot password?
                   </Button>
