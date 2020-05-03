@@ -4,29 +4,49 @@ Osovni:
 Muzicar:
     URL+/api/v1/musician
     
-    CREATE: URL/api/v1/musician-type POST
-    GETALL: URL/api/v1/musician-type GET
-    GET: URL/api/v1/musician/:id-type GET 
-    UPDATE: URL/api/v1/musician/:id-type PUT
-    DELETE: URL/api/v1/musician/:id-type DELETE
+    CREATE: URL/api/v1/musician-type        POST
+    GETALL: URL/api/v1/musician-type        GET
+    GET: URL/api/v1/musician/:id-type       GET 
+    UPDATE: URL/api/v1/musician/:id-type    PUT
+    DELETE: URL/api/v1/musician/:id-type    DELETE
 
 
 Poslodavac:
     URL+/api/v1/employer
     
-    CREATE: URL/api/v1/employer-type POST
-    GETALL: URL/api/v1/employer-type GET
-    GET: URL/api/v1/employer/:userName-type GET 
-    UPDATE: URL/api/v1/employer/:userName-type PUT
-    DELETE: URL/api/v1/employer/:userName-type DELETE
+    CREATE: URL/api/v1/employer-type            POST
+    GETALL: URL/api/v1/employer-type            GET
+    GET: URL/api/v1/employer/:userName-type     GET 
+    UPDATE: URL/api/v1/employer/:userName-type  PUT
+    DELETE: URL/api/v1/employer/:userName-type  DELETE
 
 
 Ad:
     URL+/api/v1/
 
-    CREATE: URL/api/v1/employer/:employerId/ad POST
-    GETALL: URL/api/v1/ad GET
-    GET:    URL/api/v1/employer/:employerId/ad GET
-    GET:    URL/api/v1/ad/:id GET
-    UPDATE: URL/api/v1/ad/:id PUT
-    DELETE: URL/api/v1/ad/:id DELETE 
+    CREATE: URL/api/v1/employer/:employerId/ad  POST
+    GETALL: URL/api/v1/ad                       GET
+    GET:    URL/api/v1/employer/:employerId/ad  GET
+    GET:    URL/api/v1/ad/:id                   GET
+    UPDATE: URL/api/v1/ad/:id                   PUT
+    DELETE: URL/api/v1/ad/:id                   DELETE 
+
+
+Auth:
+    URL+/api/v1/auth
+
+    REGISTER: URL/api/v1/auth/register       POST
+    LOGIN:    URL/api/v1/auth/login          POST
+    GETME:    URL/api/v1/auth/me             GET
+    UPDATE:   URL/api/v1/auth/updatedetails  PUT
+    UPDATE:   URL/api/v1/auth/updatepassword PUT
+
+
+Users:
+    URL+/api/v1/user
+
+    GET:    URL/api/v1/user        GET
+    GET:    URL/api/v1/user/:id    GET
+    CREATE: URL/api/v1/user        POST
+    UPDATE: URL/api/v1/user/:id    PUT
+    DELETE: URL/api/v1/user/:id    DELETE

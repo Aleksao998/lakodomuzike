@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const colors = require("colors");
 const errorHandler = require('./middlewares/error');
 const connectDB = require("./config/db");
+const cookieParser = require('cookie-parser');
+
 
 //Load env vars
 dotenv.config({ path: "./config/config.env" });
@@ -16,12 +18,17 @@ connectDB();
 const employers = require("./routes/employer-routes");
 const musicians = require("./routes/musician-routes");
 const ads = require('./routes/ad-routes');
+const auth = require('./routes/auth-routes');
+const user = require('./routes/users-routes');
 
 const app = express();
 
 // Body parser
 
 app.use(express.json());
+
+// Cookie parser
+app.use(cookieParser());
 
 // Dev logging middleware
 if (process.env.NODE_ENV === "development") {
@@ -31,6 +38,8 @@ if (process.env.NODE_ENV === "development") {
 app.use("/api/v1/employer", employers);
 app.use("/api/v1/musician", musicians);
 app.use('/api/v1/ad', ads);
+app.use('/api/v1/auth', auth);
+app.use('/api/v1/user', user);
 
 app.use(errorHandler);
 
