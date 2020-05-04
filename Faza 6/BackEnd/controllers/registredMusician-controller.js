@@ -3,90 +3,54 @@ const asyncHandler = require('../middlewares/async');
 const RegistredMusician = require('../models/RegistredMusician');
 const Musician = require('../models/Musician');
 
-// @desc    Get all registred musicians
-// @route   GET /api/v1/registredmusician
+// @desc    Get all registred musicians three ways
+// @desc1 	Find all registred musician
+// @route1   GET /api/v1/registredmusician  
+// @desc2   Find all registred musician for given musician
+// @route2 	GET /api/v1/musician/:musicianId/registredmusician 
+// @desc3 	Find all registred musician for given ad   
+// @route3 	GET /api/v1/ad/adId/registredmusician
 // @access  Public
 exports.getRegistredMusicians = asyncHandler(async (req, res, next) => {
-	console.log(req.body);
+	//route2
+	if (req.params.musicianId && !req.params.adId) {
+		const registredmusicians = await RegistredMusician.find({ musician: req.params.musicianId });
 
-	let query;
-
-	// Copy req.query
-	const reqQuery = { ...req.query };
-
-	// Fields to exclude(We dont want them to be matched)
-	const removeFields = ['select', 'sort', 'page', 'limit'];
-
-	//Loop over removeFields and delete them from reqQuery
-	removeFields.forEach((param) => delete reqQuery[param]);
-
-	let queryStr = JSON.stringify(reqQuery);
-
-	query = RegistredMusician.find(JSON.parse(queryStr)).populate('ads');
-
-	// Exclude not selected fields
-	if (req.query.select) {
-		const fields = req.query.select.split(',').join(' ');
-		query = query.select(fields);
+		return res.status(200).json({
+			success: true,
+			count: registredmusicians.length,
+			data: registredmusicians
+		});
 	}
+	//route3
+	else if (!req.params.musicianId && req.params.adId) {
+		const registredmusicians = await RegistredMusician.find({ ad: req.params.adId });
 
-	// Sort
-	if (req.query.sort) {
-		const sortBy = req.query.sort.split(',').join(' ');
-		query = query.sort(sortBy);
-	} else {
-		query = query.sort('username');
+		return res.status(200).json({
+			success: true,
+			count: registredmusicians.length,
+			data: registredmusicians
+		});
 	}
-
-	// Pagination
-	const page = parseInt(req.query.page, 10) || 1;
-	const limit = parseInt(req.query.limit, 10) || 10;
-	const startIndex = (page - 1) * limit;
-	const endIndex = page * limit;
-	const total = await RegistredMusician.countDocuments();
-
-	query = query.skip(startIndex).limit(limit);
-
-	// Excecuting query
-	const registredmusicians = await query;
-
-	// Pagination result
-	const pagination = {};
-
-	if (endIndex < total) {
-		pagination.next = {
-			page: page + 1,
-			limit: limit,
-		};
+	//route1
+	else {
+		res.status(200).json(res.advancedResults);
 	}
-	if (startIndex > 0) {
-		pagination.prev = {
-			page: page - 1,
-			limit: limit,
-		};
-	}
-	res.status(200).json({
-		success: true,
-		count: registredmusicians.length,
-		pagination,
-		data: registredmusicians,
-	});
 });
 
 // @desc    Get specific registred musician
-// @route   GET /api/v1/registredmusician/:username
+// @route   GET /api/v1/registredmusician/:id
 // @access  Public
 exports.getRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findOne({
-		username: `${req.params.id}`,
-	});
+	console.log(req.params.id);
+	const registredmusician = await RegistredMusician.findById(req.params.id);
 
 	// if there isn't one
 	if (!registredmusician) {
 		//formatted but doesnt exist
 		return next(
 			new ErrorResponse(
-				`Registred musician not found with id of ${req.params.id}`,
+				`Registrd musician not found with id of ${req.params.id}`,
 				404
 			)
 		);
@@ -95,25 +59,11 @@ exports.getRegistredMusician = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Create specific registred musician
-// @route   POST /api/v1/registredmusician
+// @route   POST /api/v1/musician/:musicianId/:adId/registredmusician
 // @access  Public
 exports.createRegistredMusician = asyncHandler(async (req, res, next) => {
-	req.body.musician = req.params.username;
-
-	console.log(req.params.username);
-
-	const musician = await Musician.findOneAndUpdate({
-		username: `${req.params.username}`,
-	});
-
-	if (!musician) {
-		return next(
-			new ErrorResponse(
-				`No musician with the username of ${req.params.username}`
-			),
-			404
-		);
-	}
+	req.body.musician = req.params.musicianId;
+	req.body.ad = req.params.adId;
 
 	const registredmusician = await RegistredMusician.create(req.body);
 
@@ -124,16 +74,11 @@ exports.createRegistredMusician = asyncHandler(async (req, res, next) => {
 // @route   PUT /api/v1/registredmusician/:id
 // @access  Private
 exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findOneAndUpdate(
-		{
-			id: `${req.params.id}`,
-		},
-		req.body,
-		{
-			new: true,
-			runValidators: true,
-		}
-	);
+	const registredmusician = await RegistredMusician.findByIdAndUpdate(req.params.id, req.body, {
+		new: true,
+		runValidators: true
+	})
+
 
 	if (!registredmusician) {
 		return next(
@@ -144,16 +89,14 @@ exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
 		);
 	}
 
-	res.status(200).json({ success: true, data: musician });
+	res.status(200).json({ success: true, data: registredmusician });
 });
 
 // @desc    Delete specific registred musician
 // @route   DEL /api/v1/registredmusician/:id
 // @access  Private
 exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findOne({
-		id: `${req.params.id}`,
-	});
+	const registredmusician = await RegistredMusician.findById(req.params.id);
 
 	if (!registredmusician) {
 		return next(
@@ -163,10 +106,9 @@ exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
 			)
 		);
 	}
+	//Need to check if this is alowed 
 
-	await RegistredMusician.findOneAndDelete({
-		id: `${req.params.id}`,
-	});
+	registredmusician.remove();
 
-	res.status(200).json({ success: true, data: registredmusician });
+	res.status(200).json({ success: true, data: employer });
 });

@@ -10,10 +10,17 @@ const {
 const Ad = require('../models/Ad');
 const advancedResults = require('../middlewares/advancedResults');
 
+// Include other resource routers
+const registredMusicianRouter = require('./registredMusician-routes');
+
 // mergeParams if I use two tables cause we are merging urls
 const router = express.Router({ mergeParams: true });
 
 const { protect, authorize } = require('../middlewares/auth');
+
+// Re-route into other resource routers
+// Every route that has employerId/ad is used with ad-controller and it passes it
+router.use('/:adId/registredMusician', registredMusicianRouter);
 
 
 router.route('/').get(advancedResults(Ad, {

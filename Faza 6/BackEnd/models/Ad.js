@@ -63,5 +63,11 @@ const AdSchema = new mongoose.Schema({
     }
 });
 
+// Cascade delete registredMusicians when a ad is deleted
+AdSchema.pre('remove', async function (next) {
+    await this.model('RegistredMusician').deleteMany({ ad: this._id });
+    next();
+});
+
 
 module.exports = mongoose.model('Ad', AdSchema);
