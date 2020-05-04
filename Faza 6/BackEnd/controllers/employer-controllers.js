@@ -8,66 +8,8 @@ const Employer = require('../models/Employer');
 // @access  Public
 
 exports.getEmployers = asyncHandler(async (req, res, next) => {
-    let query;
 
-    // Copy req.query
-    const reqQuery = { ...req.query };
-
-    // Fields to exclude(We dont want them to be matched)
-    const removeFields = ['select', 'sort', 'page', 'limit'];
-
-    //Loop over removeFields and delete them from reqQuery
-    removeFields.forEach(param => delete reqQuery[param]);
-
-
-    let queryStr = JSON.stringify(reqQuery);
-
-    query = Employer.find(JSON.parse(queryStr)).populate('ads');
-
-    // Exclude not selected fields
-    if (req.query.select) {
-        const fields = req.query.select.split(',').join(' ');
-        query = query.select(fields);
-    }
-
-    // Sort
-    if (req.query.sort) {
-        const sortBy = req.query.sort.split(',').join(' ');
-        query = query.sort(sortBy);
-    } else {
-        query = query.sort('surname');
-    }
-
-    // Pagination
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 10;
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-    const total = await Employer.countDocuments();
-
-    query = query.skip(startIndex).limit(limit);
-
-
-    // Excecuting query
-    const employers = await query;
-
-    // Pagination result
-    const pagination = {};
-
-    if (endIndex < total) {
-        pagination.next = {
-            page: page + 1,
-            limit: limit
-        }
-    }
-    if (startIndex > 0) {
-        pagination.prev = {
-            page: page - 1,
-            limit: limit
-        }
-    }
-
-    res.status(200).json({ success: true, count: employers.length, pagination, data: employers });
+    res.status(200).json(res.advancedResults);
 });
 
 
@@ -94,8 +36,21 @@ exports.getEmployer = asyncHandler(async (req, res, next) => {
 // @access  Public
 
 exports.createEmployer = asyncHandler(async (req, res, next) => {
+    // Add user to req.body
+    req.body.user = req.user.id;
+
+    // User can be only one employer
+    const empl = await Employer.findOne({ user: req.user.id });
+
+    // If the user is not an admin, user can have only one employer
+    if (empl && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`This user is already an employer ${req.user.id}`, 400));
+    }
+
 
     const employer = await Employer.create(req.body);
+
+
 
     res.status(201).json({ success: true, data: employer });
 });
@@ -108,15 +63,24 @@ exports.createEmployer = asyncHandler(async (req, res, next) => {
 
 exports.updateEmployer = asyncHandler(async (req, res, next) => {
 
-
-    const employer = await Employer.findOneAndUpdate({ userName: `${req.params.userName}` }, req.body, {
-        new: true,
-        runValidators: true
-    });
+    //let employer = await Employer.find({ userName: `${req.params.userName}` })
+    //console.log(employer);
+    let employer = await Employer.findOne({ userName: `${req.params.userName}` });
 
     if (!employer) {
         return next(new ErrorResponse(`Employer not found with userName of ${req.params.userName}`, 404));
     }
+
+
+    // Make sure user is employers owner
+    if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`User ${req.params.userName} is not authorized to update this employer`, 401));
+    }
+
+    employer = await Employer.findOneAndUpdate({ userName: `${req.params.userName}` }, req.body, {
+        new: true,
+        runValidators: true
+    });
 
     res.status(200).json({ success: true, data: employer });
 });
@@ -133,6 +97,11 @@ exports.deleteEmployer = asyncHandler(async (req, res, next) => {
 
     if (!employer) {
         return next(new ErrorResponse(`Employer not found with userName of ${req.params.userName}`, 404));
+    }
+
+    // Make sure user is employers owner
+    if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`User ${req.params.userName} is not authorized to delete this employer`, 401));
     }
 
     employer.remove();

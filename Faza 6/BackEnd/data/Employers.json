@@ -3,23 +3,27 @@
     "name": "Vladimir",
     "surname": "Siskin",
     "userName": "Siki",
-    "contact": "+381637407264"
+    "contact": "+381637407264",
+    "user": "5eaee1dc2ddd0302c0813077"
 }, {
     "_id": "5ead898a70dc4406e0847570",
     "name": "Svetislav",
     "surname": "Gajic",
     "userName": "Gajba",
-    "contact": "+38162222456"
+    "contact": "+38162222456",
+    "user": "5eaee1f72ddd0302c0813078"
 }, {
     "_id": "5ead898a70dc4406e0847571",
     "name": "Aleksa",
     "surname": "Opacic",
     "userName": "Opaca",
-    "contact": "+381637742009"
+    "contact": "+381637742009",
+    "user": "5eaee1f72ddd0302c0813079"
 }, {
     "_id": "5ead898a70dc4406e0847572",
     "name": "Sara",
     "surname": "Labalo",
     "userName": "Labalo",
-    "contact": "+38163123456"
+    "contact": "+38163123456",
+    "user": "5eaee1f72ddd0302c081307a"
 }]

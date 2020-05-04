@@ -19,6 +19,11 @@ const EmployerSchema = new mongoose.Schema({
     contact: {
         type: Number
     },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+    }
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }

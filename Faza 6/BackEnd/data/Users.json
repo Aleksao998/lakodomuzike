@@ -1,0 +1,70 @@
+[{
+        "email": "aaa@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee1dc2ddd0302c0813077"
+    },
+    {
+        "email": "bbb@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee1f72ddd0302c0813078"
+    },
+    {
+        "email": "ccc@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee25e2ddd0302c0813079"
+    },
+    {
+        "email": "ddd@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee2832ddd0302c081307a"
+    },
+    {
+        "email": "eee@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee1dc2ddd0302c081307b"
+    },
+    {
+        "email": "fff@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee1dc2ddd0302c081307c"
+    },
+    {
+        "email": "ggg@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee2f66e5f2e5df4325da6"
+    },
+    {
+        "email": "hhh@gmail.com",
+        "password": "123456",
+        "role": "Employer",
+        "_id": "5eaee3106e5f2e5df4325da7"
+    },
+    {
+        "email": "iii@gmail.com",
+        "password": "123456",
+        "role": "Musician",
+        "_id": "5eaee33c6e5f2e5df4325da8"
+    }, {
+        "email": "jjj@gmail.com",
+        "password": "123456",
+        "role": "Musician",
+        "_id": "5eaefe3118a68e473cbf94e6"
+    }, {
+        "email": "kkk@gmail.com",
+        "password": "123456",
+        "role": "Musician",
+        "_id": "5eaefe0918a68e473cbf94e4"
+    }, {
+        "email": "lll@gmail.com",
+        "password": "123456",
+        "role": "Musician",
+        "_id": "5eaefe1818a68e473cbf94e5"
+    }
+]

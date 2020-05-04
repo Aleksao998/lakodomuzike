@@ -65,6 +65,11 @@ const MusicianSchema = new mongoose.Schema({
 	verification: {
 		type: String,
 	},
+	user: {
+		type: mongoose.Schema.ObjectId,
+		ref: 'User',
+		required: true
+	}
 });
 
 module.exports = mongoose.model("Musician", MusicianSchema);
