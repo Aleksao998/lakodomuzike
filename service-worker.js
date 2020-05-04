@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lakodomuzike/precache-manifest.94a2229ae636beb2a3096ba7d54cc3da.js"
+  "/lakodomuzike/precache-manifest.bc1a323557694897565b4bb79d862599.js"
 );
 
 self.addEventListener('message', (event) => {
