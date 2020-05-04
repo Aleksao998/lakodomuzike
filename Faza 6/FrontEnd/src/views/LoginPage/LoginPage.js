@@ -13,36 +13,56 @@ function LoginPage() {
   });
   return (
     <>
-      <div class="container">
-        <div class="row">
-          <div class=" cont">
-            <div class="form sign-in">
-              <h2>Dobrodošli</h2>
-              <label>
-                <span>Email</span>
-                <input type="email" />
-              </label>
-              <label>
-                <span>Password</span>
-                <input type="password" />
-              </label>
-              <button type="button" class="submit">
-                Sign In
-              </button>
+      <div class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100">
+            <div
+              class="login100-form-title"
+              style={{
+                backgroundImage: "url(" + require("assets/img/bg-01.jpg") + ")",
+              }}
+            >
+              <span class="login100-form-title-1">Sign In</span>
             </div>
-            <div class="sub-cont">
-              <div class="img">
-                <div class="img__text m--up"></div>
-                <div class="img__text m--up">
-                  <h2>New here?</h2>
-                  <p>Sign up and discover great amount of new opportunities!</p>
-                </div>
 
-                <div class="img__btn">
-                  <span class="m--up">Sign Up</span>
-                </div>
+            <form class="login100-form validate-form">
+              <div
+                class="wrap-input100 validate-input m-b-26"
+                data-validate="Username is required"
+              >
+                <span class="label-input100">Username</span>
+                <input
+                  class="input100"
+                  type="text"
+                  name="username"
+                  placeholder="Enter username"
+                ></input>
+                <span class="focus-input100"></span>
               </div>
-            </div>
+
+              <div
+                class="wrap-input100 validate-input m-b-18"
+                data-validate="Password is required"
+              >
+                <span class="label-input100">Password</span>
+                <input
+                  class="input100"
+                  type="password"
+                  name="pass"
+                  placeholder="Enter password"
+                ></input>
+                <span class="focus-input100"></span>
+              </div>
+
+              <div
+                class="container-login100-form-btn"
+                style={{
+                  marginTop: "10px",
+                }}
+              >
+                <button class="login100-form-btn">Login</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
