@@ -7,6 +7,10 @@ Modules need to install:
     npm install colors
     npm install slugify
     
+    npm install jsonwebtoken
+    npm install bcryptjs
+    npm install cookie-parser
+    
     // for logger
     npm install morgan
 

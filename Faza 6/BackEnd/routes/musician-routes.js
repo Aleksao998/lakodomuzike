@@ -9,12 +9,14 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getMusicians).post(createMusician);
+const { protect, authorize } = require('../middlewares/auth');
+
+router.route("/").get(getMusicians).post(protect, authorize('Musician', 'admin'), createMusician);
 
 router
 	.route("/:username")
 	.get(getMusician)
-	.put(updateMusician)
-	.delete(deleteMusician);
+	.put(protect, authorize('Musician', 'admin'), updateMusician)
+	.delete(protect, authorize('Musician', 'admin'), deleteMusician);
 
 module.exports = router;
