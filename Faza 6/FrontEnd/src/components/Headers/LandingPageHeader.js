@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
@@ -41,38 +23,56 @@ function LandingPageHeader() {
   });
 
   return (
-    <>
-      <div
-        style={{
-          backgroundImage: "url(" + require("assets/img/daniel-olahh.jpg") + ")"
-        }}
-        className="page-header"
-        data-parallax={true}
-        ref={pageHeader}
-      >
-        <div className="filter" />
-        <Container>
-          <div className="motto text-center">
-            <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
-            <br />
-            <Button
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              className="btn-round mr-1"
-              color="neutral"
-              target="_blank"
-              outline
-            >
-              <i className="fa fa-play" />
-              Watch video
-            </Button>
-            <Button className="btn-round" color="neutral" type="button" outline>
-              Download
-            </Button>
+    <div
+      style={{
+        backgroundImage: "url(" + require("assets/img/guitar.jpg") + ")",
+      }}
+      className="page-header page-header-xs"
+      data-parallax={true}
+      ref={pageHeader}
+    >
+      <div className="slider-area">
+        <div className="slider-active">
+          <div className="single-slider slider-height d-flex align-items-center">
+            <div className="container">
+              <div className="row">
+                <div className="col-xl-6 col-lg-9 col-md-10">
+                  <div className="hero__caption">
+                    <h1>Oglasi za muzicare na jednom mestu</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-xl-8">
+                  <form action="#" className="search-box">
+                    <div className="input-form">
+                      <input type="text" placeholder="Datum" />
+                    </div>
+                    <div className="select-form">
+                      <div className="select-itms">
+                        <select
+                          name="select"
+                          id="select1"
+                          className="form-select"
+                        >
+                          <option value="">Rock</option>
+                          <option value="">Narodna</option>
+                          <option value="">Dj</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="search-form">
+                      <a href="#">Find job</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-        </Container>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

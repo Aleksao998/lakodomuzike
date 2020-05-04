@@ -54,122 +54,80 @@ function ProfilePageEmployer() {
               <h4 className="title">
                 Jane Faker <br />
               </h4>
-              <h6 className="description">Music Producer</h6>
             </div>
           </div>
-          <Row>
-            <Col className="ml-auto mr-auto text-center" md="6">
-              <p>
-                An artist of considerable range, Jane Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.
-              </p>
-              <br />
-              <Button className="btn-round" color="default" outline>
-                <i className="fa fa-cog" /> Settings
-              </Button>
-            </Col>
-          </Row>
-          <br />
-          <div className="nav-tabs-navigation">
-            <div className="nav-tabs-wrapper">
-              <Nav role="tablist" tabs>
-                <NavItem>
-                  <NavLink
-                    className={activeTab === "1" ? "active" : ""}
-                    onClick={() => {
-                      toggle("1");
-                    }}
-                  >
-                    Follows
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    className={activeTab === "2" ? "active" : ""}
-                    onClick={() => {
-                      toggle("2");
-                    }}
-                  >
-                    Following
-                  </NavLink>
-                </NavItem>
-              </Nav>
+          <row>
+            <div class="CreateAdd">
+              <h4 style={{ marginBottom: "10px" }}>Postavi oglas</h4>
+              <div className="addForm">
+                <Input type="text" placeholder="Naziv oglasa"></Input>
+              </div>
+              <div className="addForm">
+                <Input type="text" placeholder="Opis"></Input>
+              </div>
+              <div className="addForm">
+                <Label
+                  className="form-check-label"
+                  style={{ marginLeft: "40px" }}
+                >
+                  <Input
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                    defaultChecked
+                  />
+                  Rock
+                  <span className="form-check-sign"></span>
+                </Label>
+
+                <Label
+                  className="form-check-label"
+                  style={{ marginLeft: "40px" }}
+                >
+                  <Input
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                    defaultChecked
+                  />
+                  Narodna
+                  <span className="form-check-sign"></span>
+                </Label>
+
+                <Label
+                  className="form-check-label"
+                  style={{ marginLeft: "40px" }}
+                >
+                  <Input
+                    type="radio"
+                    name="exampleRadios"
+                    id="exampleRadios2"
+                    value="option2"
+                    defaultChecked
+                  />
+                  Dj
+                  <span className="form-check-sign"></span>
+                </Label>
+              </div>
+              <div className="addForm">
+                <Input type="date"></Input>
+              </div>
+              <div className="addForm">
+                <Input type="text" placeholder="cena"></Input>
+              </div>
+              <div className="addForm">
+                <Input type="text" placeholder="Lokacija"></Input>
+              </div>
+
+              <div className="addForm">
+                <Button color="success">Postavi oglas</Button>
+              </div>
             </div>
-          </div>
-          {/* Tab panes */}
-          <TabContent className="following" activeTab={activeTab}>
-            <TabPane tabId="1" id="follows">
-              <Row>
-                <Col className="ml-auto mr-auto" md="6">
-                  <ul className="list-unstyled follows">
-                    <li>
-                      <Row>
-                        <Col className="ml-auto mr-auto" lg="2" md="4" xs="4">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
-                          />
-                        </Col>
-                        <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
-                          <h6>
-                            Flume <br />
-                            <small>Musical Producer</small>
-                          </h6>
-                        </Col>
-                        <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
-                          <FormGroup check>
-                            <Label check>
-                              <Input
-                                defaultChecked
-                                defaultValue=""
-                                type="checkbox"
-                              />
-                              <span className="form-check-sign" />
-                            </Label>
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    </li>
-                    <hr />
-                    <li>
-                      <Row>
-                        <Col className="mx-auto" lg="2" md="4" xs="4">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/ayo-ogunseinde-2.jpg")}
-                          />
-                        </Col>
-                        <Col lg="7" md="4" xs="4">
-                          <h6>
-                            Banks <br />
-                            <small>Singer</small>
-                          </h6>
-                        </Col>
-                        <Col lg="3" md="4" xs="4">
-                          <FormGroup check>
-                            <Label check>
-                              <Input defaultValue="" type="checkbox" />
-                              <span className="form-check-sign" />
-                            </Label>
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    </li>
-                  </ul>
-                </Col>
-              </Row>
-            </TabPane>
-            <TabPane className="text-center" tabId="2" id="following">
-              <h3 className="text-muted">Not following anyone yet :(</h3>
-              <Button className="btn-round" color="warning">
-                Find artists
-              </Button>
-            </TabPane>
-          </TabContent>
+          </row>
+
+          <row></row>
         </Container>
       </div>
       <DemoFooter />
