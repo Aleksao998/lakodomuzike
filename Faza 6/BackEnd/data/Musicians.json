@@ -1,30 +1,30 @@
 [
 	{
-		"ime": "Petar",
-		"prezime": "Petrovic",
-		"username": "peraPetrovic",
-		"ocena": "4.5",
-		"brojOcena": "10"
+		"name": "Opaca",
+		"surname": "Violinista",
+		"username": "aleksa123",
+		"rating": "4.5",
+		"numOfRating": "10"
 	},
 	{
-		"ime": "Marko",
-		"prezime": "Markovic",
-		"username": "rema123",
-		"ocena": "3.0",
-		"brojOcena": "5"
+		"name": "Siki",
+		"surname": "Flauta",
+		"username": "vlada123",
+		"rating": "3.0",
+		"numOfRating": "5"
 	},
 	{
-		"ime": "Jovan",
-		"prezime": "Jovanovic",
-		"username": "jocaZmaj",
-		"ocena": "3.4",
-		"brojOcena": "20"
+		"name": "Sara",
+		"surname": "Violoncelo",
+		"username": "sara123",
+		"rating": "3.4",
+		"numOfRating": "20"
 	},
 	{
-		"ime": "Nikola ",
-		"prezime": "Nikolic",
-		"username": "dzoni123",
-		"ocena": "4",
-		"brojOcena": "4"
+		"name": "Sveta ",
+		"surname": "Harmonika",
+		"username": "sveta123",
+		"rating": "2",
+		"numOfRating": "4"
 	}
 ]

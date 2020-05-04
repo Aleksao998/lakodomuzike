@@ -1,0 +1,38 @@
+[
+	{
+		"musician": "aleksa123",
+		"ad": "5eaeff27ded9e45d6c1843f4",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "vlada123",
+		"ad": "5eaeff27ded9e45d6c1843f4",
+		"accepted": "false",
+		"price": "220"
+	},
+	{
+		"musician": "sara123",
+		"ad": "5eaeff27ded9e45d6c1843f6",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "sveta123",
+		"ad": "5eaeff27ded9e45d6c1843f6",
+		"accepted": "false",
+		"price": "220"
+	},
+	{
+		"musician": "aleksa123",
+		"ad": "5eaeff27ded9e45d6c1843f7",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "sveta123",
+		"ad": "5eaeff27ded9e45d6c1843f8",
+		"accepted": "false",
+		"price": "220"
+	}
+]

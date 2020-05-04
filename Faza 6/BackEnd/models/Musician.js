@@ -3,13 +3,13 @@ const mongoose = require("mongoose");
 const MusicianSchema = new mongoose.Schema({
 	//Ime muzicara
 	//
-	ime: {
+	name: {
 		type: String,
 		required: true,
 	},
 	//Prezime muzicara
 	//
-	prezime: {
+	surname: {
 		type: String,
 		required: true,
 	},
@@ -22,35 +22,35 @@ const MusicianSchema = new mongoose.Schema({
 	},
 	//Vrsta muzicara
 	//
-	vrstaMuzicara: [
+	musicianType: [
 		{
 			type: Number,
 		},
 	],
 	//Prosecna ocena muzicara
 	//
-	ocena: {
+	rating: {
 		type: Number,
 	},
 	//Ukupan broj ocena
 	//
-	brojOcena: {
+	numOfRating: {
 		type: Number,
 	},
 	//Putanja do slike
 	//
-	slika: {
+	photo: {
 		type: String,
 	},
 	//Drustvene mreze
 	//
-	drustevenMreze: {
+	socialMedia: {
 		Instagram: { type: String },
 		Facebook: { type: String },
 	},
 	//Opis muzicara
 	//
-	opis: {
+	description: {
 		type: String,
 	},
 	ip: {

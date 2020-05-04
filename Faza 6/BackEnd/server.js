@@ -1,21 +1,22 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const colors = require("colors");
+const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const colors = require('colors');
 const errorHandler = require('./middlewares/error');
-const connectDB = require("./config/db");
+const connectDB = require('./config/db');
 
 //Load env vars
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: './config/config.env' });
 
 // Connect to database
 
 connectDB();
 
 //Route files
-const employers = require("./routes/employer-routes");
-const musicians = require("./routes/musician-routes");
+const employers = require('./routes/employer-routes');
+const musicians = require('./routes/musician-routes');
 const ads = require('./routes/ad-routes');
+const registredmusicians = require('./routes/registredMusician-routes');
 
 const app = express();
 
@@ -24,13 +25,14 @@ const app = express();
 app.use(express.json());
 
 // Dev logging middleware
-if (process.env.NODE_ENV === "development") {
-	app.use(morgan("dev"));
+if (process.env.NODE_ENV === 'development') {
+	app.use(morgan('dev'));
 }
 // Mount routers
-app.use("/api/v1/employer", employers);
-app.use("/api/v1/musician", musicians);
+app.use('/api/v1/employer', employers);
+app.use('/api/v1/musician', musicians);
 app.use('/api/v1/ad', ads);
+app.use('/api/v1/registredmusician', registredmusicians);
 
 app.use(errorHandler);
 
@@ -44,7 +46,7 @@ const server = app.listen(
 );
 
 //Handle unhandled rejections
-process.on("unhandledRejection", function (err, promise) {
+process.on('unhandledRejection', function (err, promise) {
 	console.log(`Error: ${err.message}`.red);
 	server.close(function () {
 		process.exit(1);

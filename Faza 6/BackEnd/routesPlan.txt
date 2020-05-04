@@ -7,8 +7,8 @@ Muzicar:
     CREATE: URL/api/v1/musician-type POST
     GETALL: URL/api/v1/musician-type GET
     GET: URL/api/v1/musician/:id-type GET 
-    UPDATE: URL/api/v1/musician/:id-type PUT
-    DELETE: URL/api/v1/musician/:id-type DELETE
+    UPDATE: URL/api/v1/musician/:username-type PUT
+    DELETE: URL/api/v1/musician/:username-type DELETE
 
 
 Poslodavac:
@@ -30,3 +30,14 @@ Ad:
     GET:    URL/api/v1/ad/:id GET
     UPDATE: URL/api/v1/ad/:id PUT
     DELETE: URL/api/v1/ad/:id DELETE 
+
+RegistredMusician:
+    URL+/api/v1
+    
+    CREATE: URL/api/v1/registredmusician/:userName/:AdId/registredmusician    type POST
+    GETALL: URL/api/v1/registredmusician    type GET
+    GET:    URL/api/v1/registredmusician/:userName/registredmusician    type GET
+    GET:    URL/api/v1/registredmusician/:AdId/registredmusician    type GET
+    GET:    URL/api/v1/registredmusician/:id    type GET
+    UPDATE: URL/api/v1/registredmusician/:id    type PUT
+    DELETE: URL/api/v1/registredmusician/:id    type DELETE 
