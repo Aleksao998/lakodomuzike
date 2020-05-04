@@ -24,25 +24,7 @@ function NavbarMenu() {
   };
 
   React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 299 ||
-        document.body.scrollTop > 299
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
-    };
-
-    window.addEventListener("scroll", updateNavbarColor);
-
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
+    setNavbarColor("");
   });
   return (
     <Navbar
@@ -59,7 +41,7 @@ function NavbarMenu() {
             title="Coded by Creative Tim"
             tag={Link}
           >
-            Paper Kit 2
+            Lako do Muike
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -80,60 +62,36 @@ function NavbarMenu() {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/index" tag={Link}>
-                <i className="nc-icon nc-layout-11" /> Components
+              <NavLink to="/Index" tag={Link}>
+                Pocetna
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink to="/ads" tag={Link}>
+                Oglasi
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink to="/single-add-detail" tag={Link}>
+                Oglasi detaljnije
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
+              <NavLink to="/profile-page-employer" tag={Link}>
+                Profil Poslodavca
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
-                target="_blank"
-                title="Follow us on Twitter"
-              >
-                <i className="fa fa-twitter" />
-                <p className="d-lg-none">Twitter</p>
+              <NavLink to="/register-page" tag={Link}>
+                Registruj se
               </NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                target="_blank"
-                title="Like us on Facebook"
-              >
-                <i className="fa fa-facebook-square" />
-                <p className="d-lg-none">Facebook</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                target="_blank"
-                title="Follow us on Instagram"
-              >
-                <i className="fa fa-instagram" />
-                <p className="d-lg-none">Instagram</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
-                target="_blank"
-                title="Star on GitHub"
-              >
-                <i className="fa fa-github" />
-                <p className="d-lg-none">GitHub</p>
+              <NavLink to="/login-page" tag={Link}>
+                Uloguj se
               </NavLink>
             </NavItem>
           </Nav>
