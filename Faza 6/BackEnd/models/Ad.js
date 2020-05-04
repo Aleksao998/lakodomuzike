@@ -34,11 +34,15 @@ const AdSchema = new mongoose.Schema({
     location: {
         address: {
             type: String,
-            required: [true, 'Please add location']
+            required: [true, 'Please add street name']
         },
         number: {
             type: Number,
-            required: [true, 'Please add location']
+            required: [true, 'Please add location number']
+        },
+        city: {
+            type: String,
+            required: [true, 'Please add a location city']
         }
     },
     isActive: {
