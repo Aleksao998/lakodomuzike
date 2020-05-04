@@ -2,6 +2,8 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middlewares/async');
 const RegistredMusician = require('../models/RegistredMusician');
 const Musician = require('../models/Musician');
+const Ad = require('../models/Ad')
+const Employer = require('../models/Employer');
 
 // @desc    Get all registred musicians three ways
 // @desc1 	Find all registred musician
@@ -65,6 +67,23 @@ exports.createRegistredMusician = asyncHandler(async (req, res, next) => {
 	req.body.musician = req.params.musicianId;
 	req.body.ad = req.params.adId;
 
+
+	const musican = await Musician.findOne({ user: req.user.id });
+	const ad = await Ad.findOne({ user: req.user.id });
+
+	if (!musician) {
+		new ErrorResponse(
+			`Musician not found with id of ${req.params.id}`,
+			404
+		)
+	}
+	if (!ad) {
+		new ErrorResponse(
+			`Ad not found with id of ${req.params.id}`,
+			404
+		)
+	}
+
 	const registredmusician = await RegistredMusician.create(req.body);
 
 	res.status(201).json({ success: true, data: registredmusician });
@@ -74,10 +93,13 @@ exports.createRegistredMusician = asyncHandler(async (req, res, next) => {
 // @route   PUT /api/v1/registredmusician/:id
 // @access  Private
 exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findByIdAndUpdate(req.params.id, req.body, {
-		new: true,
-		runValidators: true
-	})
+	const registredmusician = await RegistredMusician.findById(req.params.id);
+
+	const musician = await Musician.findById(registredmusician.musican);
+
+	const ad = await Ad.findById(registredmusician.ad);
+
+	const employer = await Employer.findById(ad.employer);
 
 
 	if (!registredmusician) {
@@ -88,6 +110,16 @@ exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
 			)
 		);
 	}
+
+	// Make sure user is musician or employer is owner
+	if (musician.user.toString() !== req.user.id && employer.user.toString() !== req.user.id) {
+		return next(new ErrorResponse(`User ${req.params.username} is not authorized to update this employer`, 401));
+	}
+
+	registredmusician = await RegistredMusician.findOneAndUpdate({ id: `${req.params.id}` }, req.body, {
+		new: true,
+		runValidators: true
+	});
 
 	res.status(200).json({ success: true, data: registredmusician });
 });
@@ -98,6 +130,13 @@ exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
 exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
 	const registredmusician = await RegistredMusician.findById(req.params.id);
 
+	const musician = await Musician.findById(registredmusician.musican);
+
+	const ad = await Ad.findById(registredmusician.ad);
+
+	const employer = await Employer.findById(ad.employer);
+
+
 	if (!registredmusician) {
 		return next(
 			new ErrorResponse(
@@ -106,9 +145,16 @@ exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
 			)
 		);
 	}
-	//Need to check if this is alowed 
 
-	registredmusician.remove();
+	// Make sure user is musician owner or employer
+	if (musician.user.toString() !== req.user.id && employer.user.toString() !== req.user.id) {
+		return next(new ErrorResponse(`User ${req.params.username} is not authorized to update this employer`, 401));
+	}
 
-	res.status(200).json({ success: true, data: employer });
+	registredmusician = await RegistredMusician.findOneAndDelete({ id: `${req.params.id}` }, req.body, {
+		new: true,
+		runValidators: true
+	});
+
+	res.status(200).json({ success: true, data: registredmusician });
 });

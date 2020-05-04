@@ -25,7 +25,7 @@ router.use('/:adId/registredMusician', registredMusicianRouter);
 
 router.route('/').get(advancedResults(Ad, {
     path: 'employer',
-    select: 'userName , user'
+    select: 'username , user'
 }), getAds)
     .post(protect, authorize('Employer', 'admin'), createAd);
 

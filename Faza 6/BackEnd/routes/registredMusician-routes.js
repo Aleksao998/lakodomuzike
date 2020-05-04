@@ -12,9 +12,10 @@ const registredMusician = require('../models/RegistredMusician');
 
 const advancedResults = require('../middlewares/advancedResults');
 
-
 // mergeParams if I use two tables cause we are merging urls
 const router = express.Router({ mergeParams: true });
+
+const { protect, authorize } = require('../middlewares/auth');
 
 router.route('/').get(advancedResults(registredMusician, [{
 	path: 'musician',
@@ -23,11 +24,11 @@ router.route('/').get(advancedResults(registredMusician, [{
 	path: 'ad',
 	select: 'adName '
 }]), getRegistredMusicians)
-	.post(createRegistredMusician);
+	.post(protect, authorize('Musician'), createRegistredMusician);
 
 router
 	.route('/:id')
 	.get(getRegistredMusician)
-	.put(updateRegistredMusician)
-	.delete(deleteRegistredMusician);
+	.put(protect, authorize('Musician', 'Employer'), updateRegistredMusician)
+	.delete(protect, authorize('Musician', 'Employer'), deleteRegistredMusician);
 module.exports = router;

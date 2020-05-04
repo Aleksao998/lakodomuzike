@@ -10,19 +10,18 @@ exports.getMusicians = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Get specific musician
-// @route   GET /api/v1/musician/:username
+// @route   GET /api/v1/musician/:id
 // @access  Public
 exports.getMusician = asyncHandler(async (req, res, next) => {
-	const musician = await Musician.findOne({
-		username: `${req.params.username}`,
-	});
+	console.log(req.params.id);
+	const musician = await Musician.findById(req.params.id);
 
 	// if there isn't one
 	if (!musician) {
 		//formatted but doesnt exist
 		return next(
 			new ErrorResponse(
-				`Musician not found with username of ${req.params.username}`,
+				`Musician not found with id  ${req.params.id}`,
 				404
 			)
 		);
@@ -51,47 +50,44 @@ exports.createMusician = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Update specific musician
-// @route   PUT /api/v1/musician/:username
+// @route   PUT /api/v1/musician/:id
 // @access  Private
 exports.updateMusician = asyncHandler(async (req, res, next) => {
-	let musician = await Musician.findOne({ username: `${req.params.username}` });
+	let musician = await Musician.findById(req.params.id);
 
 	if (!musician) {
 		return next(
 			new ErrorResponse(
-				`Musician not found with username of ${req.params.username}`,
+				`Musician not found with id of ${req.params.id}`,
 				404
 			)
 		);
 	}
 
 
-	// Make sure user is employers owner
+	// Make sure user is musician owner
 	if (musician.user.toString() !== req.user.id && req.user.role !== 'admin') {
-		return next(new ErrorResponse(`User ${req.params.username} is not authorized to update this employer`, 401));
+		return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to update this employer`, 401));
 	}
 
-	musician = await Musician.findOneAndUpdate({ username: `${req.params.username}` }, req.body, {
-		new: true,
-		runValidators: true
-	});
+	musician = await Musician.findByIdAndUpdate(req.params.id, body);
 
 	res.status(200).json({ success: true, data: musician });
 });
 
 // @desc    Delete specific musician
-// @route   DEL /api/v1/musician/:username
+// @route   DEL /api/v1/musician/:id
 // @access  Private
 exports.deleteMusician = asyncHandler(async (req, res, next) => {
-	const musician = await Musician.findOne({ username: `${req.params.username}` });
+	const musician = await Musician.findById(req.params.id);
 
 	if (!musician) {
-		return next(new ErrorResponse(`musician not found with username of ${req.params.username}`, 404));
+		return next(new ErrorResponse(`Musician not found with id ${req.params.id}`, 404));
 	}
 
 	// Make sure user is musicians owner
 	if (musician.user.toString() !== req.user.id && req.user.role !== 'admin') {
-		return next(new ErrorResponse(`User ${req.params.username} is not authorized to delete this musician`, 401));
+		return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to delete this musician`, 401));
 	}
 
 	musician.remove();

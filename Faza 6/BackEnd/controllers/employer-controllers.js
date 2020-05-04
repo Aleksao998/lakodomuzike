@@ -14,17 +14,17 @@ exports.getEmployers = asyncHandler(async (req, res, next) => {
 
 
 // @desc    Get specific employer
-// @route   GET /api/v1/employer/:userName
+// @route   GET /api/v1/employer/:id
 // @access  Public
 
 exports.getEmployer = asyncHandler(async (req, res, next) => {
 
     //const employer = await Employer.findById(req.params.id);
-    const employer = await Employer.findOne({ userName: `${req.params.userName}` });
+    const employer = await Employer.findById(req.params.id);
     // if there isn't one
     if (!employer) {
         //formatted but doesnt exist
-        return next(new ErrorResponse(`Employer not found with userName of ${req.params.userName}`, 404));
+        return next(new ErrorResponse(`Employer not found with id of ${req.params.id}`, 404));
     }
     res.status(200).json({ success: true, data: employer });
 
@@ -40,7 +40,7 @@ exports.createEmployer = asyncHandler(async (req, res, next) => {
     req.body.user = req.user.id;
 
     // User can be only one employer
-    const empl = await Employer.findOne({ user: req.user.id });
+    const empl = await Employer.findById(req.user.id);
 
     // If the user is not an admin, user can have only one employer
     if (empl && req.user.role !== 'admin') {
@@ -58,26 +58,25 @@ exports.createEmployer = asyncHandler(async (req, res, next) => {
 
 
 // @desc    Update specific employer
-// @route   PUT /api/v1/employer/:userName
+// @route   PUT /api/v1/employer/:id
 // @access  Private
 
 exports.updateEmployer = asyncHandler(async (req, res, next) => {
 
-    //let employer = await Employer.find({ userName: `${req.params.userName}` })
-    //console.log(employer);
-    let employer = await Employer.findOne({ userName: `${req.params.userName}` });
+
+    let employer = await Employer.findById(req.params.id);
 
     if (!employer) {
-        return next(new ErrorResponse(`Employer not found with userName of ${req.params.userName}`, 404));
+        return next(new ErrorResponse(`Employer not found with id of ${req.params.id}`, 404));
     }
 
 
     // Make sure user is employers owner
     if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User ${req.params.userName} is not authorized to update this employer`, 401));
+        return next(new ErrorResponse(`User with id ${req.params.req.params.id} is not authorized to update this employer`, 401));
     }
 
-    employer = await Employer.findOneAndUpdate({ userName: `${req.params.userName}` }, req.body, {
+    employer = await Employer.findByIdAndUpdate({ id: `${req.params.id}` }, req.body, {
         new: true,
         runValidators: true
     });
@@ -88,20 +87,20 @@ exports.updateEmployer = asyncHandler(async (req, res, next) => {
 
 
 // @desc    Delete specific employer
-// @route   DEL /api/v1/employer/:userName
+// @route   DEL /api/v1/employer/:id
 // @access  Private
 
 exports.deleteEmployer = asyncHandler(async (req, res, next) => {
 
-    const employer = await Employer.findOne({ userName: `${req.params.userName}` });
+    const employer = await Employer.findById(req.params.id);
 
     if (!employer) {
-        return next(new ErrorResponse(`Employer not found with userName of ${req.params.userName}`, 404));
+        return next(new ErrorResponse(`Employer not found with id of ${req.params.id}`, 404));
     }
 
     // Make sure user is employers owner
     if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User ${req.params.userName} is not authorized to delete this employer`, 401));
+        return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to delete this employer`, 401));
     }
 
     employer.remove();

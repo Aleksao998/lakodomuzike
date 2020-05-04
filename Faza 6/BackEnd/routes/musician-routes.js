@@ -29,7 +29,7 @@ router.use('/:musicianId/registredmusician', registredMusicianRouter);
 router.route("/").get(advancedResults(Musician, 'musician'), getMusicians).post(protect, authorize('Musician', 'admin'), createMusician);
 
 router
-	.route("/:username")
+	.route("/:id")
 	.get(getMusician)
 	.put(protect, authorize('Musician', 'admin'), updateMusician)
 	.delete(protect, authorize('Musician', 'admin'), deleteMusician);
