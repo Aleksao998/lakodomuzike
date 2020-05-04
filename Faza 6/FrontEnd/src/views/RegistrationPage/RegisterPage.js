@@ -15,72 +15,57 @@ function RegisterPage() {
   });
   return (
     <>
-      <div
-        className="page-header"
-        style={{
-          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")",
-        }}
-      >
-        <div className="filter" />
-        <Container>
-          <Row>
-            <Col className="ml-auto mr-auto" lg="4">
-              <Card className="card-register ml-auto mr-auto">
-                <h3 className="title mx-auto">Welcome</h3>
-                <div className="social-line text-center">
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="facebook"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="fa fa-facebook-square" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="google"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="fa fa-google-plus" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon"
-                    color="twitter"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="fa fa-twitter" />
-                  </Button>
-                </div>
-                <Form className="register-form">
-                  <label>Email</label>
-                  <Input placeholder="Email" type="text" />
-                  <label>Password</label>
-                  <Input placeholder="Password" type="password" />
-                  <Button block className="btn-round" color="danger">
-                    Register
-                  </Button>
-                </Form>
-                <div className="forgot">
-                  <Button
-                    className="btn-link"
-                    color="danger"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    Forgot password?
-                  </Button>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-        <div className="footer register-footer text-center">
-          <h6>
-            © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
-          </h6>
+      <div class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100">
+            <div
+              class="login100-form-title"
+              style={{
+                backgroundImage: "url(" + require("assets/img/bg-01.jpg") + ")",
+              }}
+            >
+              <span class="login100-form-title-1">registracija</span>
+            </div>
+
+            <div
+              class="registration-type"
+              style={{
+                marginTop: "20px",
+              }}
+            >
+              <span></span>
+              <span
+                class="login100-form-title-1"
+                style={{
+                  marginTop: "20px",
+                  color: "black",
+                  justifyContent: "center",
+                }}
+              >
+                REGISTRUJ SE KAO:
+              </span>
+              <div
+                class="container-login100-form-btn"
+                style={{
+                  margin: "20px",
+                }}
+              >
+                <a href="http://localhost:3000/register-page-employer">
+                  <button class="login100-form-btn">POSLODAVAC</button>
+                </a>
+              </div>
+              <div
+                class="container-login100-form-btn"
+                style={{
+                  margin: "20px",
+                }}
+              >
+                <a href="http://localhost:3000/register-page-musician">
+                  <button class="login100-form-btn">MUZIČAR</button>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
