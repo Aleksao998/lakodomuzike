@@ -15,6 +15,7 @@ connectDB();
 //Route files
 const employers = require("./routes/employer-routes");
 const musicians = require("./routes/musician-routes");
+const ads = require('./routes/ad-routes');
 
 const app = express();
 
@@ -29,6 +30,7 @@ if (process.env.NODE_ENV === "development") {
 // Mount routers
 app.use("/api/v1/employer", employers);
 app.use("/api/v1/musician", musicians);
+app.use('/api/v1/ad', ads);
 
 app.use(errorHandler);
 

@@ -11,15 +11,22 @@ Muzicar:
     DELETE: URL/api/v1/musician/:id-type DELETE
 
 
-Muzicar:
+Poslodavac:
     URL+/api/v1/employer
     
     CREATE: URL/api/v1/employer-type POST
     GETALL: URL/api/v1/employer-type GET
-    GET: URL/api/v1/employer/:username-type GET 
-    UPDATE: URL/api/v1/employer/:username-type PUT
-    DELETE: URL/api/v1/employer/:username-type DELETE
+    GET: URL/api/v1/employer/:userName-type GET 
+    UPDATE: URL/api/v1/employer/:userName-type PUT
+    DELETE: URL/api/v1/employer/:userName-type DELETE
 
 
+Ad:
+    URL+/api/v1/
 
-        
+    CREATE: URL/api/v1/employer/:employerId/ad POST
+    GETALL: URL/api/v1/ad GET
+    GET:    URL/api/v1/employer/:employerId/ad GET
+    GET:    URL/api/v1/ad/:id GET
+    UPDATE: URL/api/v1/ad/:id PUT
+    DELETE: URL/api/v1/ad/:id DELETE 
