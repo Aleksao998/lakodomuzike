@@ -1,0 +1,24 @@
+.cont {
+  padding: 20px;
+  margin: 0 auto 100px;
+  background: red;
+  margin-top: 200px;
+}
+
+.form {
+  position: relative;
+  height: 100%;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.sub-cont {
+  height: 100%;
+  background: green;
+}
