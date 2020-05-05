@@ -9,7 +9,8 @@
         "priceTo": "300",
         "location": {
             "address": "Ustanicka",
-            "number": "15"
+            "number": "15",
+            "city": "Belgrade"
         },
         "employer": "5ead898a70dc4406e084756f"
     }, {
@@ -23,7 +24,8 @@
         "priceTo": "300",
         "location": {
             "address": "Ustanicka",
-            "number": "15"
+            "number": "15",
+            "city": "Belgrade"
         },
         "employer": "5ead898a70dc4406e084756f"
     },
@@ -38,7 +40,8 @@
         "priceTo": "250",
         "location": {
             "address": "Vojislava Ilica",
-            "number": "135"
+            "number": "135",
+            "city": "Belgrade"
         },
         "employer": "5ead898a70dc4406e0847570"
     },
@@ -53,7 +56,8 @@
         "priceTo": "360",
         "location": {
             "address": "Vojislava Ilica",
-            "number": "135"
+            "number": "135",
+            "city": "Kragujevac"
         },
         "employer": "5ead898a70dc4406e0847571"
     },
@@ -68,7 +72,8 @@
         "priceTo": "3000",
         "location": {
             "address": "Vojislava Ilica",
-            "number": "135"
+            "number": "135",
+            "city": "Nis"
         },
         "employer": "5ead898a70dc4406e0847572"
     }

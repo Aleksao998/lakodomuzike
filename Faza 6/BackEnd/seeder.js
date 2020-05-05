@@ -60,8 +60,8 @@ const deleteEmployers = async () => {
     }
 }
 
-if (process.argv[2] === '-ie') {
+if (process.argv[2] === '-i') {
     importEmployers();
-} else if (process.argv[2] === '-de') {
+} else if (process.argv[2] === '-d') {
     deleteEmployers();
 }
