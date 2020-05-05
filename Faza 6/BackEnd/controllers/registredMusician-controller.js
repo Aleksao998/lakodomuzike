@@ -52,7 +52,7 @@ exports.getRegistredMusician = asyncHandler(async (req, res, next) => {
 		//formatted but doesnt exist
 		return next(
 			new ErrorResponse(
-				`Registrd musician not found with id of ${req.params.id}`,
+				`Registred musician not found with id of ${req.params.id}`,
 				404
 			)
 		);
@@ -93,14 +93,8 @@ exports.createRegistredMusician = asyncHandler(async (req, res, next) => {
 // @route   PUT /api/v1/registredmusician/:id
 // @access  Private
 exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findById(req.params.id);
 
-	const musician = await Musician.findById(registredmusician.musican);
-
-	const ad = await Ad.findById(registredmusician.ad);
-
-	const employer = await Employer.findById(ad.employer);
-
+	let registredmusician = await RegistredMusician.findById(req.params.id);
 
 	if (!registredmusician) {
 		return next(
@@ -111,12 +105,19 @@ exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
 		);
 	}
 
+	const musician = await Musician.findById(registredmusician.musician);
+
+	const ad = await Ad.findById(registredmusician.ad);
+
+	const employer = await Employer.findById(ad.employer);
+
+
 	// Make sure user is musician or employer is owner
 	if (musician.user.toString() !== req.user.id && employer.user.toString() !== req.user.id) {
-		return next(new ErrorResponse(`User ${req.params.username} is not authorized to update this employer`, 401));
+		return next(new ErrorResponse(`RegistratedMusician id ${req.params.id} is not authorized to update`, 401));
 	}
 
-	registredmusician = await RegistredMusician.findOneAndUpdate({ id: `${req.params.id}` }, req.body, {
+	registredmusician = await RegistredMusician.findByIdAndUpdate(req.params.id, req.body, {
 		new: true,
 		runValidators: true
 	});
@@ -128,14 +129,7 @@ exports.updateRegistredMusician = asyncHandler(async (req, res, next) => {
 // @route   DEL /api/v1/registredmusician/:id
 // @access  Private
 exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
-	const registredmusician = await RegistredMusician.findById(req.params.id);
-
-	const musician = await Musician.findById(registredmusician.musican);
-
-	const ad = await Ad.findById(registredmusician.ad);
-
-	const employer = await Employer.findById(ad.employer);
-
+	let registredmusician = await RegistredMusician.findById(req.params.id);
 
 	if (!registredmusician) {
 		return next(
@@ -146,15 +140,21 @@ exports.deleteRegistredMusician = asyncHandler(async (req, res, next) => {
 		);
 	}
 
+	const musician = await Musician.findById(registredmusician.musician);
+
+	const ad = await Ad.findById(registredmusician.ad);
+
+	const employer = await Employer.findById(ad.employer);
+
+
+
+
 	// Make sure user is musician owner or employer
 	if (musician.user.toString() !== req.user.id && employer.user.toString() !== req.user.id) {
-		return next(new ErrorResponse(`User ${req.params.username} is not authorized to update this employer`, 401));
+		return next(new ErrorResponse(`RegistredMusician id ${req.params.id} is not authorized to delete`, 401));
 	}
 
-	registredmusician = await RegistredMusician.findOneAndDelete({ id: `${req.params.id}` }, req.body, {
-		new: true,
-		runValidators: true
-	});
+	registredmusician = await RegistredMusician.findByIdAndRemove(req.params.id);
 
 	res.status(200).json({ success: true, data: registredmusician });
 });

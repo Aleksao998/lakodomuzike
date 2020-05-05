@@ -73,10 +73,10 @@ exports.updateEmployer = asyncHandler(async (req, res, next) => {
 
     // Make sure user is employers owner
     if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User with id ${req.params.req.params.id} is not authorized to update this employer`, 401));
+        return next(new ErrorResponse(`Employer id ${req.params.id} is not authorized to update`, 401));
     }
 
-    employer = await Employer.findByIdAndUpdate({ id: `${req.params.id}` }, req.body, {
+    employer = await Employer.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
     });
@@ -100,7 +100,7 @@ exports.deleteEmployer = asyncHandler(async (req, res, next) => {
 
     // Make sure user is employers owner
     if (employer.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to delete this employer`, 401));
+        return next(new ErrorResponse(`Employer id ${req.params.id} is not authorized to delete`, 401));
     }
 
     employer.remove();

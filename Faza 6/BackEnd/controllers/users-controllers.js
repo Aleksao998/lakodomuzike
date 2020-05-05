@@ -6,7 +6,7 @@ const User = require('../models/User');
 
 // @desc    Get all users
 // @route   GET /api/v1/user
-// @access  Private/Admin
+// @access  Admin
 
 exports.getUsers = asyncHandler(async (req, res, next) => {
     res.status(200).json(res.advancedResults);
@@ -19,6 +19,12 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
 
 exports.getUser = asyncHandler(async (req, res, next) => {
     const user = await User.findById(req.params.id);
+
+    // Make sure loged user is same user
+    if (user.id !== req.user.id && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`User id ${req.params.id} is not authorized to get`, 401));
+    }
+
     res.status(200).json({
         success: true,
         data: user
@@ -29,7 +35,7 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 
 // @desc    Create user
 // @route   POST /api/v1/user
-// @access  Private/Admin
+// @access  Admin
 
 exports.createUser = asyncHandler(async (req, res, next) => {
     const user = await User.create(req.body);
@@ -43,13 +49,14 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 
 // @desc    Update user
 // @route   PUT /api/v1/user/:id
-// @access  Private/Admin
+// @access  Admin
 
 exports.updateUser = asyncHandler(async (req, res, next) => {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
     });
+
 
     res.status(200).json({
         success: true,
@@ -64,7 +71,14 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
 // @access  Private/Admin
 
 exports.deleteUser = asyncHandler(async (req, res, next) => {
-    const user = await User.findByIdAndDelete(req.params.id);
+    let user = await User.findById(req.params.id);
+
+    // Make sure loged user is same user
+    if (user.id !== req.user.id && req.user.role !== 'admin') {
+        return next(new ErrorResponse(`User id ${req.params.id} is not authorized to delete`, 401));
+    }
+
+    user.remove();
 
     res.status(200).json({
         success: true,

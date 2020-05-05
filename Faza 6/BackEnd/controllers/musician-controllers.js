@@ -67,10 +67,10 @@ exports.updateMusician = asyncHandler(async (req, res, next) => {
 
 	// Make sure user is musician owner
 	if (musician.user.toString() !== req.user.id && req.user.role !== 'admin') {
-		return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to update this employer`, 401));
+		return next(new ErrorResponse(`Musician id ${req.params.id} is not authorized to update`, 401));
 	}
 
-	musician = await Musician.findByIdAndUpdate(req.params.id, body);
+	musician = await Musician.findByIdAndUpdate(req.params.id, req.body);
 
 	res.status(200).json({ success: true, data: musician });
 });
@@ -87,7 +87,7 @@ exports.deleteMusician = asyncHandler(async (req, res, next) => {
 
 	// Make sure user is musicians owner
 	if (musician.user.toString() !== req.user.id && req.user.role !== 'admin') {
-		return next(new ErrorResponse(`User with id ${req.params.id} is not authorized to delete this musician`, 401));
+		return next(new ErrorResponse(`Musican id ${req.params.id} is not authorized to delete`, 401));
 	}
 
 	musician.remove();

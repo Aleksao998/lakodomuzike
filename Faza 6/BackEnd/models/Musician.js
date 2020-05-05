@@ -70,11 +70,7 @@ const MusicianSchema = new mongoose.Schema({
 		ref: 'User',
 		required: true
 	}
-},
-	{
-		toJSON: { virtuals: true },
-		toObject: { virtuals: true }
-	});
+});
 
 // Cascade delete registredMusician when a musician is deleted
 MusicianSchema.pre('remove', async function (next) {

@@ -24,9 +24,6 @@ const EmployerSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     }
-}, {
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true }
 });
 
 
