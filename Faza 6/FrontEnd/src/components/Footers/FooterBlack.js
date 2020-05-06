@@ -3,11 +3,16 @@ import React from "react";
 // reactstrap components
 import { Row, Container } from "reactstrap";
 
-function DemoFooter() {
+function FooterBlack() {
   return (
-    <footer
-      className="footer footer-black footer-white"
-      style={{ backgroundColor: "black" }}
+    <div
+      className="footer footer-black "
+      style={{
+        backgroundColor: "black",
+        bottom: "0px",
+        position: "absolute",
+        width: "100%",
+      }}
     >
       <Container>
         <Row>
@@ -19,8 +24,8 @@ function DemoFooter() {
           </div>
         </Row>
       </Container>
-    </footer>
+    </div>
   );
 }
 
-export default DemoFooter;
+export default FooterBlack;

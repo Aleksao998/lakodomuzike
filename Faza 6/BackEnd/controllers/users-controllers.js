@@ -13,6 +13,7 @@ exports.getUsers = asyncHandler(async (req, res, next) => {
 });
 
 
+
 // @desc    Get a specific user
 // @route   GET /api/v1/user/:id
 // @access  Private/Admin

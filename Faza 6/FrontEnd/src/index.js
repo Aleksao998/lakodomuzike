@@ -22,6 +22,8 @@ import ErrorPage500 from "views/ErrorPages/500ErrorPage/500ErrorPage";
 
 import ProfilePageMusician from "views/ProfilePage/ProfilePageMusician/ProfilePageMusician";
 import ProfilePageEmployer from "views/ProfilePage/ProfilePageEmployer/ProfilePageEmployer";
+import AdsPage from "./views/AdsPage/Ads";
+import SingleAddDetail from "./views/SingleAddDetail/SingleAddDetail";
 // others
 
 ReactDOM.render(
@@ -30,6 +32,7 @@ ReactDOM.render(
       <NavBar />
       <Switch>
         <Route path="/index" render={(props) => <LandingPage {...props} />} />
+        <Route path="/ads" render={(props) => <AdsPage {...props} />} />
         <Route
           path="/profile-page-musician"
           render={(props) => <ProfilePageMusician {...props} />}
@@ -37,6 +40,10 @@ ReactDOM.render(
         <Route
           path="/profile-page-employer"
           render={(props) => <ProfilePageEmployer {...props} />}
+        />
+        <Route
+          path="/single-add-detail"
+          render={(props) => <SingleAddDetail {...props} />}
         />
         <Route
           path="/register-page"
