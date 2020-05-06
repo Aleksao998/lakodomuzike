@@ -45,4 +45,12 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
 };
 
+// Cascade delete musician or employer when a user is deleted
+userSchema.pre('remove', async function (next) {
+    //console.log(`Ads being removed from employer ${this._id}`);
+    await this.model('Employer').deleteMany({ user: this._id });
+    await this.model('Musician').deleteMany({ user: this._id });
+    next();
+});
+
 module.exports = mongoose.model('User', userSchema);

@@ -80,7 +80,7 @@ exports.updateAd = asyncHandler(async (req, res, next) => {
 
     // checking if the employer that made ad is the one that is logged in
     if (check.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User ${req.params.id} is not authorized to update this ad`, 401));
+        return next(new ErrorResponse(`Ad id ${req.params.id} is not authorized to update`, 401));
     }
 
     ad = await Ad.findByIdAndUpdate(req.params.id, req.body, {
@@ -109,7 +109,7 @@ exports.deleteAd = asyncHandler(async (req, res, next) => {
 
     // checking if the employer that made ad is the one that is logged in
     if (check.user.toString() !== req.user.id && req.user.role !== 'admin') {
-        return next(new ErrorResponse(`User ${req.params.id} is not authorized to delete this ad`, 401));
+        return next(new ErrorResponse(`Ad id ${req.params.id} is not authorized to delete`, 401));
     }
 
     await ad.remove();

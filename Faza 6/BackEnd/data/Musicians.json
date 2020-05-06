@@ -1,33 +1,38 @@
-[{
-		"ime": "Petar",
-		"prezime": "Petrovic",
-		"username": "peraPetrovic",
-		"ocena": "4.5",
-		"brojOcena": "10",
+[
+	{
+		"_id": "5eafe9cdfd3f362c1c759468",
+		"name": "Opaca",
+		"surname": "Violinista",
+		"username": "aleksa123",
+		"rating": "4.5",
+		"numOfRating": "10",
 		"user": "5eaee33c6e5f2e5df4325da8"
 	},
 	{
-		"ime": "Marko",
-		"prezime": "Markovic",
-		"username": "rema123",
-		"ocena": "3.0",
-		"brojOcena": "5",
+		"_id": "5eafe9cdfd3f362c1c759469",
+		"name": "Siki",
+		"surname": "Flauta",
+		"username": "vlada123",
+		"rating": "3.0",
+		"numOfRating": "5",
 		"user": "5eaefe3118a68e473cbf94e6"
 	},
 	{
-		"ime": "Jovan",
-		"prezime": "Jovanovic",
-		"username": "jocaZmaj",
-		"ocena": "3.4",
-		"brojOcena": "20",
+		"_id": "5eafe9cdfd3f362c1c75946a",
+		"name": "Sara",
+		"surname": "Violoncelo",
+		"username": "sara123",
+		"rating": "3.4",
+		"numOfRating": "20",
 		"user": "5eaefe0918a68e473cbf94e4"
 	},
 	{
-		"ime": "Nikola ",
-		"prezime": "Nikolic",
-		"username": "dzoni123",
-		"ocena": "4",
-		"brojOcena": "4",
+		"_id": "5eafe9cdfd3f362c1c75946b",
+		"name": "Sveta ",
+		"surname": "Harmonika",
+		"username": "sveta123",
+		"rating": "2",
+		"numOfRating": "4",
 		"user": "5eaefe1818a68e473cbf94e5"
 	}
 ]

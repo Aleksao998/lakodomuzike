@@ -25,7 +25,7 @@ router.use('/:employerId/ad', adRouter);
 router.route("/").get(advancedResults(Employer, 'ads'), getEmployers).post(protect, authorize('Employer', 'admin'), createEmployer);
 
 router
-	.route("/:userName")
+	.route("/:id")
 	.get(getEmployer)
 	.put(protect, authorize('Employer', 'admin'), updateEmployer)
 	.delete(protect, authorize('Employer', 'admin'), deleteEmployer);

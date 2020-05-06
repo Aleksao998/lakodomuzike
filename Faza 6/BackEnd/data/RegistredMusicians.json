@@ -1,0 +1,38 @@
+[
+	{
+		"musician": "5eafe9cdfd3f362c1c759468",
+		"ad": "5eaeff27ded9e45d6c1843f4",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "5eafe9cdfd3f362c1c759469",
+		"ad": "5eaeff27ded9e45d6c1843f4",
+		"accepted": "false",
+		"price": "220"
+	},
+	{
+		"musician": "5eafe9cdfd3f362c1c75946a",
+		"ad": "5eaeff27ded9e45d6c1843f6",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "5eafe9cdfd3f362c1c75946b",
+		"ad": "5eaeff27ded9e45d6c1843f6",
+		"accepted": "false",
+		"price": "220"
+	},
+	{
+		"musician": "5eafe9cdfd3f362c1c759468",
+		"ad": "5eaeff27ded9e45d6c1843f7",
+		"accepted": "false",
+		"price": "250"
+	},
+	{
+		"musician": "5eafe9cdfd3f362c1c75946b",
+		"ad": "5eaeff27ded9e45d6c1843f8",
+		"accepted": "false",
+		"price": "220"
+	}
+]

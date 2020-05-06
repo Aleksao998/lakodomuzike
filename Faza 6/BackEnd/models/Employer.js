@@ -11,9 +11,9 @@ const EmployerSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a surname']
     },
-    userName: {
+    username: {
         type: String,
-        required: [true, 'Please add a userName'],
+        required: [true, 'Please add a username'],
         unique: true
     },
     contact: {
@@ -24,9 +24,6 @@ const EmployerSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     }
-}, {
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true }
 });
 
 
