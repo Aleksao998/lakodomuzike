@@ -22,6 +22,17 @@ const registredmusicians = require('./routes/registredMusician-routes');
 const auth = require('./routes/auth-routes');
 const user = require('./routes/users-routes');
 
+//Allow
+app.use((req, res, next) => {
+	console.log("usao");
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader(
+		"Access-Control-Allow-Methods",
+		"GET, POST, OPTIONS, PUT, PATCH, DELETE"
+	);
+	res.setHeader("Access-Control-Allow-Headers", "Content-type, Authorization");
+	next();
+});
 
 const app = express();
 
@@ -43,19 +54,6 @@ app.use('/api/v1/ad', ads);
 app.use('/api/v1/registredmusician', registredmusicians);
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/user', user);
-
-//Allow
-app.use((req, res, next) => {
-	console.log("usao");
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader(
-		"Access-Control-Allow-Methods",
-		"GET, POST, OPTIONS, PUT, PATCH, DELETE"
-	);
-	res.setHeader("Access-Control-Allow-Headers", "Content-type, Authorization");
-	next();
-});
-
 
 app.use(errorHandler);
 
