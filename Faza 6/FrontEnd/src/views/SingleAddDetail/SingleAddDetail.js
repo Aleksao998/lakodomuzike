@@ -33,7 +33,7 @@ function SignleAddDetail() {
               <div class="job-post-details">
                 <div class="post-details1 mb-50">
                   <div class="small-section-tittle">
-                    <h4>Job Description</h4>
+                    <h4>Opis</h4>
                   </div>
                   <p>
                     It is a long established fact that a reader will beff
@@ -54,27 +54,21 @@ function SignleAddDetail() {
                 </div>
                 <ul>
                   <li>
-                    Posted date : <span>12 Aug 2019</span>
+                    Postavljen oglas : <span>12 Aug 2019</span>
                   </li>
                   <li>
-                    Location : <span>New York</span>
+                    Lokacija : <span>New York</span>
                   </li>
                   <li>
-                    Vacancy : <span>02</span>
+                    Tip Muzike : <span>Full time</span>
                   </li>
                   <li>
-                    Job nature : <span>Full time</span>
-                  </li>
-                  <li>
-                    Salary : <span>$7,800 yearly</span>
-                  </li>
-                  <li>
-                    Application date : <span>12 Sep 2020</span>
+                    Cena : <span>3500-5500</span>
                   </li>
                 </ul>
                 <div class="apply-btn2">
                   <a href="#" class="btn">
-                    Apply Now
+                    Prijavi se na oglas
                   </a>
                 </div>
               </div>

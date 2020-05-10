@@ -1,13 +1,10 @@
-import React from "react";
-
-// reactstrap components
-import { Button, Container } from "reactstrap";
-
+import React, { useRef } from "react";
+import { withRouter } from "react-router-dom";
 // core components
 
-function LandingPageHeader() {
+function LandingPageHeader(props) {
   let pageHeader = React.createRef();
-
+  const MusicTypeRef = useRef(null);
   React.useEffect(() => {
     if (window.innerWidth < 991) {
       const updateScroll = () => {
@@ -21,7 +18,10 @@ function LandingPageHeader() {
       };
     }
   });
-
+  const handleOnClick = () => {
+    console.log(MusicTypeRef.current.value);
+    props.history.push("/ads");
+  };
   return (
     <div
       style={{
@@ -46,24 +46,24 @@ function LandingPageHeader() {
               <div className="row">
                 <div className="col-xl-8">
                   <form action="#" className="search-box">
-                    <div className="input-form">
-                      <input type="text" placeholder="Datum" />
-                    </div>
                     <div className="select-form">
                       <div className="select-itms">
                         <select
                           name="select"
                           id="select1"
                           className="form-select"
+                          ref={MusicTypeRef}
                         >
-                          <option value="">Rock</option>
-                          <option value="">Narodna</option>
-                          <option value="">Dj</option>
+                          <option value="Rock">Rock</option>
+                          <option value="Narodna">Narodna</option>
+                          <option value="Dj">Dj</option>
                         </select>
                       </div>
                     </div>
                     <div className="search-form">
-                      <a href="#">Find job</a>
+                      <a href="#" onClick={handleOnClick}>
+                        Find job
+                      </a>
                     </div>
                   </form>
                 </div>
@@ -76,4 +76,4 @@ function LandingPageHeader() {
   );
 }
 
-export default LandingPageHeader;
+export default withRouter(LandingPageHeader);
