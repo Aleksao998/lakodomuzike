@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FormGroup, Label, Input } from "reactstrap";
 function AdsCategory() {
   return (
     <div class="col-xl-3 col-lg-3 col-md-4">
@@ -27,118 +27,77 @@ function AdsCategory() {
           </div>
 
           <div class="select-job-items2">
-            <select name="select">
-              <option value="">Sve kategorije</option>
-              <option value="">Rock</option>
-              <option value="">Narodna</option>
-              <option value="">Ex You</option>
-            </select>
+            <Input type="select" name="select">
+              <option value="Rock">Rock</option>
+              <option value="Narodna">Narodna</option>
+              <option value="Ex You">Ex You</option>
+            </Input>
           </div>
 
           <div class="select-Categories pt-80 pb-50">
             <div class="small-section-tittle2">
-              <h4>Job Type</h4>
+              <h4>Period</h4>
             </div>
             <label class="container">
-              Full Time
+              Sledecih 3 dana
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <label class="container">
-              Part Time
+              Sledecih 7 dana
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <label class="container">
-              Remote
+              Sledecih 14 dana
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <label class="container">
-              Freelance
+              Sledecih 30 dana
               <input type="checkbox" />
               <span class="checkmark"></span>
             </label>
+          </div>
+        </div>
+
+        <div class="single-listing pb-50">
+          <div class="small-section-tittle2">
+            <h4>Lokacija</h4>
+          </div>
+
+          <div class="select-job-items2">
+            <Input type="select" name="select">
+              <option value="Beograd">Beograd</option>
+              <option value="Novi Sad">Novi Sad</option>
+              <option value="Kragujevac">Kragujevac</option>
+            </Input>
           </div>
         </div>
 
         <div class="single-listing">
           <div class="small-section-tittle2">
-            <h4>Job Location</h4>
+            <h4>Cena od - Cena do</h4>
           </div>
 
-          <div class="select-job-items2">
-            <select name="select">
-              <option value="">Anywhere</option>
-              <option value="">Category 1</option>
-              <option value="">Category 2</option>
-              <option value="">Category 3</option>
-              <option value="">Category 4</option>
-            </select>
-          </div>
-
-          <div class="select-Categories pt-80 pb-50">
-            <div class="small-section-tittle2">
-              <h4>Experience</h4>
+          <div class="select-job-items2 pb-50">
+            <div className="row">
+              <div className="col-6">
+                <Input type="text" name="CenOd" placeholder="Od"></Input>
+              </div>
+              <div className="col-6">
+                <Input type="text" name="CenDo" placeholder="Do"></Input>
+              </div>
             </div>
-            <label class="container">
-              1-2 Years
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              2-3 Years
-              <input type="checkbox" checked="checked active" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              3-6 Years
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              6-more..
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
           </div>
-        </div>
 
-        <div class="single-listing">
-          <div class="select-Categories pb-50">
+          <div class="single-listing pb-50">
             <div class="small-section-tittle2">
-              <h4>Posted Within</h4>
+              <h4>Datum</h4>
             </div>
-            <label class="container">
-              Any
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Today
-              <input type="checkbox" checked="checked active" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Last 2 days
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Last 3 days
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Last 5 days
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Last 10 days
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
+            <div class="select-job-items2">
+              <Input type="date" name="datum"></Input>
+            </div>
           </div>
         </div>
       </div>
