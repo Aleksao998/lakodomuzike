@@ -31,7 +31,10 @@ ReactDOM.render(
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path="/index" render={(props) => <LandingPage {...props} />} />
+        <Route
+          path="/lakodomuzike/"
+          render={(props) => <LandingPage {...props} />}
+        />
         <Route path="/ads" render={(props) => <AdsPage {...props} />} />
         <Route
           path="/profile-page-musician"

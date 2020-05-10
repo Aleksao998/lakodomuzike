@@ -23,7 +23,7 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import FeatureJob from "./FeatureJobs/FeatureJobs";
 import HowItWorks from "./HowItWorks/HowItWorks";
-function LandingPage() {
+function LandingPage(props) {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("profile-page");
@@ -33,7 +33,7 @@ function LandingPage() {
   });
   return (
     <>
-      <LandingPageHeader />
+      <LandingPageHeader props={props} />
 
       <div className="main">
         <FeatureJob />

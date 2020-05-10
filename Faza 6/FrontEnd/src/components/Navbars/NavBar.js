@@ -62,7 +62,7 @@ function NavbarMenu() {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/Index" tag={Link}>
+              <NavLink to="/lakodomuzike/" tag={Link}>
                 Pocetna
               </NavLink>
             </NavItem>

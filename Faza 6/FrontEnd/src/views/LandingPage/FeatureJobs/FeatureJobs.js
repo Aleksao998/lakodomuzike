@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 import Image1 from "./job-list1.png";
 import Image2 from "./job-list2.png";
 import Image3 from "./job-list3.png";
@@ -20,12 +22,12 @@ function FeatureJob() {
             <div class="single-job-items mb-30">
               <div class="job-items">
                 <div class="company-img">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <img src={Image1} alt="" />
                   </a>
                 </div>
                 <div class="job-tittle">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <h4>Ceger Kafic</h4>
                   </a>
                   <ul>
@@ -38,7 +40,7 @@ function FeatureJob() {
                 </div>
               </div>
               <div class="items-link f-right">
-                <a href="job_details.html">Pogledaj ceo oglas</a>
+                <a href="/single-add-detail">Pogledaj ceo oglas</a>
                 <span>4 hours ago</span>
               </div>
             </div>
@@ -46,12 +48,12 @@ function FeatureJob() {
             <div class="single-job-items mb-30">
               <div class="job-items">
                 <div class="company-img">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <img src={Image2} alt="" />
                   </a>
                 </div>
                 <div class="job-tittle">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <h4>Kucna Zurka</h4>
                   </a>
                   <ul>
@@ -72,12 +74,12 @@ function FeatureJob() {
             <div class="single-job-items mb-30">
               <div class="job-items">
                 <div class="company-img">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <img src={Image3} alt="" />
                   </a>
                 </div>
                 <div class="job-tittle">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <h4>Exponto</h4>
                   </a>
                   <ul>
@@ -90,19 +92,19 @@ function FeatureJob() {
                 </div>
               </div>
               <div class="items-link f-right">
-                <a href="job_details.html">Pogledaj ceo oglas</a>
+                <a href="/single-add-detail">Pogledaj ceo oglas</a>
                 <span>4 hours ago</span>
               </div>
             </div>
             <div class="single-job-items mb-30">
               <div class="job-items">
                 <div class="company-img">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <img src={Image4} alt="" />
                   </a>
                 </div>
                 <div class="job-tittle">
-                  <a href="job_details.html">
+                  <a href="/single-add-detail">
                     <h4>Exponto</h4>
                   </a>
                   <ul>
@@ -115,7 +117,7 @@ function FeatureJob() {
                 </div>
               </div>
               <div class="items-link f-right">
-                <a href="job_details.html">Pogledaj ceo oglas</a>
+                <a href="/single-add-detail">Pogledaj ceo oglas</a>
                 <span>4 hours ago</span>
               </div>
             </div>
@@ -126,4 +128,4 @@ function FeatureJob() {
   );
 }
 
-export default FeatureJob;
+export default withRouter(FeatureJob);
