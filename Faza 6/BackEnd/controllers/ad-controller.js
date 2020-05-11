@@ -52,7 +52,7 @@ exports.getAd = asyncHandler(async (req, res, next) => {
 
 exports.createAd = asyncHandler(async (req, res, next) => {
     req.body.employer = req.params.employerId;
-
+    req.body.isActive = true;
 
     const employer = await Employer.findById(req.params.employerId);
 
