@@ -63,8 +63,22 @@ const tableIcons = {
 };
 
 function ProfilePageEmployer() {
+  const [state, setState] = React.useState({
+    adName: "",
+    description: "",
+    date: "",
+    time: "",
+    priceFrom: "",
+    priceTo: "",
+    location: "",
+    number: "",
+    city: "",
+  });
   const [activeTab, setActiveTab] = React.useState("1");
-
+  const [name, setName] = React.useState("");
+  const [adds, setAdds] = React.useState([]);
+  const [lastname, setLastname] = React.useState("");
+  const [id, setId] = React.useState("");
   const toggle = (tab) => {
     if (activeTab !== tab) {
       setActiveTab(tab);
@@ -73,11 +87,131 @@ function ProfilePageEmployer() {
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
+    fetch(
+      "http://localhost:5000/api/v1/employer/" + localStorage.getItem("id"),
+      {
+        method: "GET",
+      }
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        setName(resData.data.name);
+        setLastname(resData.data.surname);
+        setId(resData.data._id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    fetch(
+      "http://localhost:5000/api/v1/employer/" +
+        localStorage.getItem("id") +
+        "/ad",
+      {
+        method: "GET",
+      }
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        var array = [];
+        resData.data.forEach((element) => {
+          var addName = element.adName;
+          var addDescription = element.description;
+          var addEndDate = element.maintenanceDate.date.slice(0, 10);
+          var addId = element._id;
+          var expiration;
+          var obj = {
+            addName,
+            addDescription,
+            addEndDate,
+            addId,
+          };
+          array.push(obj);
+        });
+        console.log(array);
+        setAdds(array);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     document.body.classList.add("landing-page");
     return function cleanup() {
       document.body.classList.remove("landing-page");
     };
-  });
+  }, []);
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setState({ ...state, [name]: value });
+  };
+  const postAdd = (event) => {
+    event.preventDefault();
+    fetch("http://localhost:5000/api/v1/employer/" + id + "/ad", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        adName: state.adName,
+        maintenanceDate: {
+          date: state.date,
+          time: state.time,
+        },
+        priceFrom: state.priceFrom,
+        priceTo: state.priceTo,
+        location: {
+          address: state.location,
+          number: state.number,
+          city: state.city,
+        },
+        description: state.description,
+      }),
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        var addName = state.addName;
+        var addDescription = state.description;
+        var addEndDate = state.date.slice(0, 10);
+        var addId = resData.data._id;
+        var obj = {
+          addName,
+          addDescription,
+          addEndDate,
+          addId,
+        };
+        setAdds([...adds, obj]);
+        setState({
+          adName: "",
+          description: "",
+          date: "",
+          time: "",
+          priceFrom: "",
+          priceTo: "",
+          location: "",
+          number: "",
+          city: "",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <ProfilePageHeader />
@@ -93,7 +227,7 @@ function ProfilePageEmployer() {
             </div>
             <div className="name">
               <h4 className="title">
-                Jane Faker <br />
+                {name} {lastname} <br />
               </h4>
             </div>
           </div>
@@ -101,10 +235,24 @@ function ProfilePageEmployer() {
             <div class="CreateAdd">
               <h4 style={{ marginBottom: "10px" }}>Postavi oglas</h4>
               <div className="addForm">
-                <Input type="text" placeholder="Naziv oglasa"></Input>
+                <Input
+                  value={state.adName}
+                  onChange={handleOnChange}
+                  name="adName"
+                  type="text"
+                  placeholder="Naziv oglasa"
+                  className=""
+                ></Input>
               </div>
               <div className="addForm">
-                <Input type="text" placeholder="Opis"></Input>
+                <Input
+                  value={state.description}
+                  onChange={handleOnChange}
+                  name="description"
+                  type="text"
+                  placeholder="Opis"
+                  class="inputField"
+                ></Input>
               </div>
               <div className="addForm">
                 <Label
@@ -152,18 +300,78 @@ function ProfilePageEmployer() {
                   <span className="form-check-sign"></span>
                 </Label>
               </div>
-              <div className="addForm">
-                <Input type="date"></Input>
-              </div>
-              <div className="addForm">
-                <Input type="text" placeholder="cena"></Input>
-              </div>
-              <div className="addForm">
-                <Input type="text" placeholder="Lokacija"></Input>
+              <div className="addForm row">
+                <div className="col-6">
+                  <Input
+                    value={state.date}
+                    type="date"
+                    name="date"
+                    onChange={handleOnChange}
+                  ></Input>
+                </div>
+                <div className="col-6">
+                  <Input
+                    value={state.time}
+                    name="time"
+                    type="text"
+                    placeholder="Vreme hh:mm"
+                    onChange={handleOnChange}
+                  ></Input>
+                </div>
               </div>
 
               <div className="addForm">
-                <Button color="success">Postavi oglas</Button>
+                <Input
+                  value={state.priceFrom}
+                  onChange={handleOnChange}
+                  type="text"
+                  placeholder="cenaOd"
+                  name="priceFrom"
+                ></Input>
+              </div>
+              <div className="addForm">
+                <Input
+                  value={state.priceTo}
+                  onChange={handleOnChange}
+                  type="text"
+                  placeholder="cenaDo"
+                  name="priceTo"
+                ></Input>
+              </div>
+              <div className="addForm row">
+                <div className="col-6">
+                  <Input
+                    value={state.location}
+                    onChange={handleOnChange}
+                    type="text"
+                    placeholder="Lokacija"
+                    name="location"
+                  ></Input>
+                </div>
+                <div className="col-3">
+                  <Input
+                    value={state.number}
+                    onChange={handleOnChange}
+                    type="text"
+                    placeholder="Broj"
+                    name="number"
+                  ></Input>
+                </div>
+                <div className="col-3">
+                  <Input
+                    value={state.city}
+                    onChange={handleOnChange}
+                    type="text"
+                    placeholder="Grad"
+                    name="city"
+                  ></Input>
+                </div>
+              </div>
+
+              <div className="addForm">
+                <Button color="success" onClick={postAdd}>
+                  Postavi oglas
+                </Button>
               </div>
             </div>
           </row>
@@ -173,30 +381,38 @@ function ProfilePageEmployer() {
             <MaterialTable
               icons={tableIcons}
               columns={[
-                { title: "Id oglasa", field: "addId" },
+                { title: "Id", field: "addId" },
+                { title: "Naziv oglasa", field: "addName" },
                 { title: "Opis", field: "addDescription" },
                 { title: "Datum isteka", field: "addEndDate" },
               ]}
-              data={[
-                {
-                  addId: "1231",
-                  addDescription: "Ovde ide neki opis",
-                  addEndDate: "24.05.2020",
-                },
-              ]}
+              data={adds}
               actions={[
-                {
-                  icon: "save",
-                  tooltip: "Open detail",
-                  onClick: (event, rowData) => {
-                    console.log("save Action");
-                  },
-                },
                 {
                   icon: "delete",
                   tooltip: "Delete User",
                   onClick: (event, rowData) => {
-                    console.log("delete Action");
+                    fetch("http://localhost:5000/api/v1/ad/" + rowData.addId, {
+                      method: "DELETE",
+                      headers: {
+                        Authorization:
+                          "Bearer " + localStorage.getItem("token"),
+                      },
+                    })
+                      .then((res) => {
+                        if (res.status !== 200) {
+                          throw new Error("Error creating User");
+                        }
+                        return res.json();
+                      })
+                      .then((resData) => {
+                        setAdds(
+                          adds.filter((item) => item.addId !== rowData.addId)
+                        );
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
                   },
                 },
               ]}
