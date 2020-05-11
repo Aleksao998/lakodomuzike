@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
-
-function RegisterPageEmployer() {
+import { withRouter } from "react-router-dom";
+function RegisterPageEmployer(props) {
   const [state, setState] = useState({
     username: "",
     email: "",
@@ -32,7 +32,9 @@ function RegisterPageEmployer() {
     }
 
     //api poziv
-    fetch("http://localhost:5000/api/v1/user", {
+    var token;
+    var id;
+    fetch("http://localhost:5000/api/v1/auth/register ", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -42,7 +44,39 @@ function RegisterPageEmployer() {
       }),
     })
       .then((res) => {
-        console.log(res);
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        token = resData.token;
+        id = resData.data;
+        fetch("http://localhost:5000/api/v1/employer ", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+          body: JSON.stringify({
+            name: state.name,
+            surname: state.lastname,
+            username: state.username,
+            contact: state.kontaktBr,
+            user: id,
+          }),
+        })
+          .then((res) => {
+            if (res.status !== 201) {
+              throw new Error("Error creating Employer");
+            }
+            return res.json();
+          })
+          .then((resData) => {
+            localStorage.setItem("token", token);
+            localStorage.setItem("id", id);
+            props.history.push("/profile-page-employer/" + id);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -201,4 +235,4 @@ function RegisterPageEmployer() {
   );
 }
 
-export default RegisterPageEmployer;
+export default withRouter(RegisterPageEmployer);

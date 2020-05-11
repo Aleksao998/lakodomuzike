@@ -24,18 +24,6 @@ const user = require("./routes/users-routes");
 
 const app = express();
 
-//Allow
-app.use((req, res, next) => {
-  console.log("usao");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-type, Authorization");
-  next();
-});
-
 // Body parser
 
 app.use(express.json());
@@ -47,6 +35,18 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+//Allow
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  next();
+});
 // Mount routers
 app.use("/api/v1/employer", employers);
 app.use("/api/v1/musician", musicians);
