@@ -41,7 +41,7 @@ ReactDOM.render(
           render={(props) => <ProfilePageMusician {...props} />}
         />
         <Route
-          path="/profile-page-employer"
+          path="/profile-page-employer/:id"
           render={(props) => <ProfilePageEmployer {...props} />}
         />
         <Route
