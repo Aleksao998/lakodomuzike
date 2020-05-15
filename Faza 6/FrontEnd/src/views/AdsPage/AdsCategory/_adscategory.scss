@@ -79,17 +79,6 @@ p {
   font-weight: 400;
 }
 
-input:focus {
-  outline: 0;
-}
-
-input:focus::-moz-placeholder {
-  opacity: 0;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
 .mb-90 {
   margin-bottom: 90px;
 }

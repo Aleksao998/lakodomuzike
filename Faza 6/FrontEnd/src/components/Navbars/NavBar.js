@@ -26,6 +26,10 @@ function NavbarMenu() {
   React.useEffect(() => {
     setNavbarColor("");
   });
+  const logOut = () => {
+    localStorage.removeItem("id");
+    localStorage.removeItem("token");
+  };
   return (
     <Navbar
       className={classnames("fixed-top", navbarColor)}
@@ -73,27 +77,32 @@ function NavbarMenu() {
               </NavLink>
             </NavItem>
 
-            <NavItem>
-              <NavLink to="/single-add-detail" tag={Link}>
-                Oglasi detaljnije
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/profile-page-employer" tag={Link}>
-                Profil Poslodavca
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/register-page" tag={Link}>
-                Registruj se
-              </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink to="/login-page" tag={Link}>
-                Uloguj se
-              </NavLink>
-            </NavItem>
+            {localStorage.getItem("id") === null ? (
+              <NavItem>
+                <NavLink to="/register-page" tag={Link}>
+                  Registruj se
+                </NavLink>
+              </NavItem>
+            ) : (
+              <NavItem>
+                <NavLink to="/profile-page-employer" tag={Link}>
+                  Profil
+                </NavLink>
+              </NavItem>
+            )}
+            {localStorage.getItem("id") === null ? (
+              <NavItem>
+                <NavLink to="/login-page" tag={Link}>
+                  Uloguj se
+                </NavLink>
+              </NavItem>
+            ) : (
+              <NavItem onClick={logOut}>
+                <NavLink to="/lakodomuzike/" tag={Link}>
+                  Izloguj se
+                </NavLink>
+              </NavItem>
+            )}
           </Nav>
         </Collapse>
       </Container>

@@ -74,8 +74,8 @@ function RegisterPageEmployer(props) {
           })
           .then((resData) => {
             localStorage.setItem("token", token);
-            localStorage.setItem("id", id);
-            props.history.push("/profile-page-employer/" + id);
+            localStorage.setItem("id", resData.data._id);
+            props.history.push("/profile-page-employer/" + resData.data._id);
           });
       })
       .catch((err) => {

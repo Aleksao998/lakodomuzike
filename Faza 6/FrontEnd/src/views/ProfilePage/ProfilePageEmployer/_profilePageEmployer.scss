@@ -3,6 +3,12 @@
   width: 60%;
 }
 
+.addForm:focus {
+  background-color: red !important;
+  margin-bottom: 10px;
+  width: 60%;
+}
+
 @media only screen and (max-width: 600px) {
   .addForm {
     width: 100%;
