@@ -1,6 +1,8 @@
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middlewares/async');
 const User = require('../models/User');
+const Employer = require('../models/Employer');
+const Muscian = require('../models/Musician');
 
 
 // @desc    Register user
@@ -17,7 +19,7 @@ exports.register = asyncHandler(async (req, res, next) => {
         role
     });
 
-    sendTokenResponse(user, 200, res);
+    sendTokenResponse(user, 200, res, 0);
 });
 
 
@@ -48,12 +50,28 @@ exports.login = asyncHandler(async (req, res, next) => {
         return next(new ErrorResponse('Invalid credentials', 401));
     }
 
-    sendTokenResponse(user, 200, res);
+    if (user.role === 'Employer') {
+
+        const EmployerId = await Employer.findOne({ user: user.id });
+        if (EmployerId === null) {
+            sendTokenResponse(user, 200, res, 0);
+        } else {
+            sendTokenResponse(user, 200, res, EmployerId.id);
+        }
+    } else if (user.role === 'Musician') {
+
+        const MusicianId = await Muscian.findOne({ user: user.id });
+        if (MusicianId === null) {
+            sendTokenResponse(user, 200, res, 0);
+        } {
+            sendTokenResponse(user, 200, res, MusicianId.id);
+        }
+    }
 });
 
 
 // Get token from model,create cookie and send response
-const sendTokenResponse = (user, statusCode, res) => {
+const sendTokenResponse = (user, statusCode, res, id) => {
     // Create token
     const token = user.getSignedJwtToken();
 
@@ -62,7 +80,10 @@ const sendTokenResponse = (user, statusCode, res) => {
         httpOnly: true
     };
 
-    res.status(statusCode).cookie('token', token, options).json({ success: true, token, data: user.id });
+    if (id == 0) {
+        id = user.id;
+    }
+    res.status(statusCode).cookie('token', token, options).json({ success: true, token, data: id });
 };
 
 
