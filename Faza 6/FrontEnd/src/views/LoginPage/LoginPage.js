@@ -39,9 +39,18 @@ function LoginPage(props) {
         return res.json();
       })
       .then((resData) => {
+        console.log(resData);
         localStorage.setItem("token", resData.token);
         localStorage.setItem("id", resData.data);
-        props.history.push("/profile-page-employer/" + resData.id);
+        if (resData.role === "Employer") {
+          console.log("asd");
+          props.authenticateUser(
+            resData.token,
+            resData.data,
+            "/profile-page-employer/" + resData.data
+          );
+          props.history.push("/profile-page-employer/" + resData.data);
+        }
       })
       .catch((err) => {
         console.log(err);
