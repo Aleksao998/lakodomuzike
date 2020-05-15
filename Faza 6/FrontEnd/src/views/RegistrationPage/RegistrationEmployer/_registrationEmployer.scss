@@ -14,10 +14,6 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-input:focus {
-  border-color: transparent !important;
-}
-
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }

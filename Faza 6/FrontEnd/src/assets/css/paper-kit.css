@@ -2162,12 +2162,11 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .form-control {
-  background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 4px;
   color: #66615b;
   font-size: 14px;
-  transition: background-color 0.3s ease 0s;
+
   padding-right: 0 !important;
   padding: 7px 12px;
   height: 40px;
@@ -2175,11 +2174,6 @@ fieldset[disabled] .btn-neutral.active {
   box-shadow: none;
 }
 .form-control:focus {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: 0 !important;
 }
 .form-control:focus + .input-group-prepend .input-group-text,
 .form-control:focus + .input-group-append .input-group-text {
