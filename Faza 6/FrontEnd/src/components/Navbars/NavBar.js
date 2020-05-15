@@ -14,7 +14,7 @@ import {
   Container,
 } from "reactstrap";
 
-function NavbarMenu() {
+function NavbarMenu(props) {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -29,6 +29,7 @@ function NavbarMenu() {
   const logOut = () => {
     localStorage.removeItem("id");
     localStorage.removeItem("token");
+    props.logOut();
   };
   return (
     <Navbar
@@ -77,7 +78,7 @@ function NavbarMenu() {
               </NavLink>
             </NavItem>
 
-            {localStorage.getItem("id") === null ? (
+            {props.isAutenticated === false ? (
               <NavItem>
                 <NavLink to="/register-page" tag={Link}>
                   Registruj se
@@ -85,12 +86,12 @@ function NavbarMenu() {
               </NavItem>
             ) : (
               <NavItem>
-                <NavLink to="/profile-page-employer" tag={Link}>
+                <NavLink to={props.profileRoute} tag={Link}>
                   Profil
                 </NavLink>
               </NavItem>
             )}
-            {localStorage.getItem("id") === null ? (
+            {props.isAutenticated === false ? (
               <NavItem>
                 <NavLink to="/login-page" tag={Link}>
                   Uloguj se

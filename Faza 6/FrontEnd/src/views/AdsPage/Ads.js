@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Adsheader from "./AdsHeader/AdsHeader";
 import AdsCategory from "./AdsCategory/AdsCategory";
 import AdsListing from "./AdsListing/AdsListing";

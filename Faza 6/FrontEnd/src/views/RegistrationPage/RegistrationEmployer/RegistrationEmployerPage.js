@@ -75,6 +75,11 @@ function RegisterPageEmployer(props) {
           .then((resData) => {
             localStorage.setItem("token", token);
             localStorage.setItem("id", resData.data._id);
+            props.authenticateUser(
+              token,
+              resData.data._id,
+              "/profile-page-employer/" + resData.data._id
+            );
             props.history.push("/profile-page-employer/" + resData.data._id);
           });
       })
