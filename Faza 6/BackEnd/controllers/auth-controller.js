@@ -56,7 +56,7 @@ exports.login = asyncHandler(async (req, res, next) => {
         if (EmployerId === null) {
             sendTokenResponse(user, 200, res, 0);
         } else {
-            sendTokenResponse(user, 200, res, EmployerId.id);
+            sendTokenResponse(user, 200, res, EmployerId.id, 'Employer');
         }
     } else if (user.role === 'Musician') {
 
@@ -64,14 +64,14 @@ exports.login = asyncHandler(async (req, res, next) => {
         if (MusicianId === null) {
             sendTokenResponse(user, 200, res, 0);
         } {
-            sendTokenResponse(user, 200, res, MusicianId.id);
+            sendTokenResponse(user, 200, res, MusicianId.id, 'Musician');
         }
     }
 });
 
 
 // Get token from model,create cookie and send response
-const sendTokenResponse = (user, statusCode, res, id) => {
+const sendTokenResponse = (user, statusCode, res, id, role) => {
     // Create token
     const token = user.getSignedJwtToken();
 
@@ -83,7 +83,7 @@ const sendTokenResponse = (user, statusCode, res, id) => {
     if (id == 0) {
         id = user.id;
     }
-    res.status(statusCode).cookie('token', token, options).json({ success: true, token, data: id });
+    res.status(statusCode).cookie('token', token, options).json({ success: true, token, data: id, role: role });
 };
 
 
