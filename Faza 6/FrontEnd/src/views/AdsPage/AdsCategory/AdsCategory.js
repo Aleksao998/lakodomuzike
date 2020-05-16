@@ -1,6 +1,59 @@
-import React from "react";
-import { FormGroup, Label, Input } from "reactstrap";
-function AdsCategory() {
+import React, { useState } from "react";
+import { FormGroup, Label, Input, Button } from "reactstrap";
+
+function AdsCategory(props) {
+  const [state, setState] = React.useState({
+    type: "",
+    location: "",
+    priceFrom: "",
+    priceTo: "",
+    selectedOption: "",
+    date: "",
+  });
+
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setState({ ...state, [name]: value });
+  };
+  const handleOptionChange = (changeEvent) => {
+    setState({ ...state, ["selectedOption"]: changeEvent.target.value });
+  };
+  const restartFilter = () => {
+    setState({
+      type: "",
+      location: "",
+      priceFrom: "",
+      priceTo: "",
+      selectedOption: "",
+      date: "",
+    });
+    props.setListFiltered(props.lista);
+    document.getElementById("create-course-form").reset();
+  };
+  const filter = () => {
+    console.log(state);
+    console.log(props.lista);
+    var arr = props.lista.filter(function (elem) {
+      if (state.type != "") {
+        if (state.type !== elem.type) return false;
+      }
+      if (state.location != "") {
+        if (state.location !== elem.city) return false;
+      }
+      if (state.priceFrom != "") {
+        if (state.priceFrom >= elem.priceFrom) return false;
+      }
+      if (state.priceTo != "") {
+        if (state.priceTo <= elem.priceTo) return false;
+      }
+      if (state.date != "") {
+        if (state.date !== elem.date) return false;
+      }
+      return true;
+    });
+    console.log(arr);
+    props.setListFiltered(arr);
+  };
   return (
     <div class="col-xl-3 col-lg-3 col-md-4">
       <div class="row">
@@ -19,88 +72,89 @@ function AdsCategory() {
           </div>
         </div>
       </div>
-
-      <div class="job-category-listing mb-50">
-        <div class="single-listing">
-          <div class="small-section-tittle2">
-            <h4>Kategorija oglasa</h4>
-          </div>
-
-          <div class="select-job-items2">
-            <Input type="select" name="select">
-              <option value="Rock">Rock</option>
-              <option value="Narodna">Narodna</option>
-              <option value="Ex You">Ex You</option>
-            </Input>
-          </div>
-
-          <div class="select-Categories pt-80 pb-50">
+      <form id="create-course-form">
+        <div class="job-category-listing mb-50">
+          <div class="single-listing">
             <div class="small-section-tittle2">
-              <h4>Period</h4>
+              <h4>Kategorija oglasa</h4>
             </div>
-            <label class="container">
-              Sledecih 3 dana
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Sledecih 7 dana
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Sledecih 14 dana
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">
-              Sledecih 30 dana
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
 
-        <div class="single-listing pb-50">
-          <div class="small-section-tittle2">
-            <h4>Lokacija</h4>
-          </div>
-
-          <div class="select-job-items2">
-            <Input type="select" name="select">
-              <option value="Beograd">Beograd</option>
-              <option value="Novi Sad">Novi Sad</option>
-              <option value="Kragujevac">Kragujevac</option>
-            </Input>
-          </div>
-        </div>
-
-        <div class="single-listing">
-          <div class="small-section-tittle2">
-            <h4>Cena od - Cena do</h4>
-          </div>
-
-          <div class="select-job-items2 pb-50">
-            <div className="row">
-              <div className="col-6">
-                <Input type="text" name="CenOd" placeholder="Od"></Input>
-              </div>
-              <div className="col-6">
-                <Input type="text" name="CenDo" placeholder="Do"></Input>
-              </div>
+            <div class="select-job-items2 mb-50">
+              <Input type="select" name="type" onChange={handleOnChange}>
+                <option value="">Izaberi Tip</option>
+                <option value="Rock">Rock</option>
+                <option value="Narodna">Narodna</option>
+                <option value="Ex You">Ex You</option>
+              </Input>
             </div>
           </div>
 
           <div class="single-listing pb-50">
             <div class="small-section-tittle2">
-              <h4>Datum</h4>
+              <h4>Lokacija</h4>
             </div>
+
             <div class="select-job-items2">
-              <Input type="date" name="datum"></Input>
+              <Input type="select" name="location" onChange={handleOnChange}>
+                <option value="">Izaberi grad</option>
+                <option value="Beograd">Beograd</option>
+                <option value="Novi Sad">Novi Sad</option>
+                <option value="Kragujevac">Kragujevac</option>
+              </Input>
             </div>
           </div>
+
+          <div class="single-listing">
+            <div class="small-section-tittle2">
+              <h4>Cena od - Cena do</h4>
+            </div>
+
+            <div class="select-job-items2 pb-50">
+              <div className="row">
+                <div className="col-6">
+                  <Input
+                    type="text"
+                    name="priceFrom"
+                    placeholder="Od"
+                    onChange={handleOnChange}
+                  ></Input>
+                </div>
+                <div className="col-6">
+                  <Input
+                    type="text"
+                    name="priceTo"
+                    placeholder="Do"
+                    onChange={handleOnChange}
+                  ></Input>
+                </div>
+              </div>
+            </div>
+
+            <div class="single-listing pb-50">
+              <div class="small-section-tittle2">
+                <h4>Datum</h4>
+              </div>
+              <div class="select-job-items2">
+                <Input
+                  type="date"
+                  name="date"
+                  onChange={handleOnChange}
+                ></Input>
+              </div>
+            </div>
+          </div>
+          <div class="select-job-items2 mb-10" style={{ textAlign: "center" }}>
+            <Button color="success" onClick={filter}>
+              Filtriraj
+            </Button>
+          </div>
+          <div class="select-job-items2 mb-50" style={{ textAlign: "center" }}>
+            <Button color="danger" onClick={restartFilter}>
+              Restartuj
+            </Button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

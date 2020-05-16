@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image1 from "../LandingPage/FeatureJobs/job-list1.png";
 import FooterBlack from "../../components/Footers/FooterBlack";
-function SignleAddDetail() {
+function SignleAddDetail(props) {
+  const [state, setState] = useState({
+    adName: "",
+    cratedAt: "",
+    description: "",
+    location: { address: "", number: 0, city: "" },
+    maintenanceDate: { date: "", time: "" },
+    priceFrom: 0,
+    priceTo: 0,
+    typeOfMusic: "",
+  });
+  React.useEffect(() => {
+    fetch("http://localhost:5000/api/v1/ad/" + props.match.params.id, {
+      method: "GET",
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        setState(resData.data);
+      });
+  }, []);
+
   return (
     <div>
       <div class="job-post-company pt-120 pb-120 mt-85">
@@ -17,14 +42,18 @@ function SignleAddDetail() {
                   </div>
                   <div class="job-tittle">
                     <a href="#">
-                      <h4>Digital Marketer</h4>
+                      <h4>{state.adName}</h4>
                     </a>
                     <ul>
-                      <li>Creative Agency</li>
                       <li>
-                        <i class="fas fa-map-marker-alt"></i>Athens, Greece
+                        <i class="fas fa-map-marker-alt">
+                          {state.location.address},{state.location.number},
+                          {state.location.city}
+                        </i>
                       </li>
-                      <li>$3500 - $4000</li>
+                      <li>
+                        {state.priceFrom}rsd - {state.priceTo}rsd
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -35,14 +64,7 @@ function SignleAddDetail() {
                   <div class="small-section-tittle">
                     <h4>Opis</h4>
                   </div>
-                  <p>
-                    It is a long established fact that a reader will beff
-                    distracted by vbthe creadable content of a page when looking
-                    at its layout. The pointf of using Lorem Ipsum is that it
-                    has ahf mcore or-lgess normal distribution of letters, as
-                    opposed to using, Content here content here making it look
-                    like readable.
-                  </p>
+                  <p>{state.description}</p>
                 </div>
               </div>
             </div>
@@ -54,16 +76,26 @@ function SignleAddDetail() {
                 </div>
                 <ul>
                   <li>
-                    Postavljen oglas : <span>12 Aug 2019</span>
+                    Postavljen oglas :{" "}
+                    <span>{state.maintenanceDate.date.slice(0, 10)}</span>
                   </li>
                   <li>
-                    Lokacija : <span>New York</span>
+                    Lokacija :{" "}
+                    <span>
+                      {" "}
+                      {state.location.address},{state.location.number},
+                      {state.location.city}
+                    </span>
                   </li>
                   <li>
-                    Tip Muzike : <span>Full time</span>
+                    Tip Muzike : {state.typeOfMusic}
+                    <span>Full time</span>
                   </li>
                   <li>
-                    Cena : <span>3500-5500</span>
+                    Cena :{" "}
+                    <span>
+                      {state.priceFrom}rsd - {state.priceTo}rsd
+                    </span>
                   </li>
                 </ul>
                 <div class="apply-btn2">

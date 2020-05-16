@@ -73,6 +73,7 @@ function ProfilePageEmployer() {
     location: "",
     number: "",
     city: "",
+    selectedOption: "Rock",
   });
   const [activeTab, setActiveTab] = React.useState("1");
   const [name, setName] = React.useState("");
@@ -168,6 +169,8 @@ function ProfilePageEmployer() {
           date: state.date,
           time: state.time,
         },
+        typeOfMusic: state.selectedOption,
+
         priceFrom: state.priceFrom,
         priceTo: state.priceTo,
         location: {
@@ -211,6 +214,9 @@ function ProfilePageEmployer() {
       .catch((err) => {
         console.log(err);
       });
+  };
+  const handleOptionChange = (changeEvent) => {
+    setState({ ...state, ["selectedOption"]: changeEvent.target.value });
   };
   return (
     <>
@@ -260,10 +266,12 @@ function ProfilePageEmployer() {
                   style={{ marginLeft: "40px" }}
                 >
                   <Input
+                    onChange={handleOptionChange}
+                    checked={state.selectedOption === "Rock"}
                     type="radio"
                     name="exampleRadios"
                     id="exampleRadios2"
-                    value="option2"
+                    value="Rock"
                     defaultChecked
                   />
                   Rock
@@ -275,10 +283,12 @@ function ProfilePageEmployer() {
                   style={{ marginLeft: "40px" }}
                 >
                   <Input
+                    onChange={handleOptionChange}
+                    checked={state.selectedOption === "Narodna"}
                     type="radio"
                     name="exampleRadios"
                     id="exampleRadios2"
-                    value="option2"
+                    value="Narodna"
                     defaultChecked
                   />
                   Narodna
@@ -290,10 +300,12 @@ function ProfilePageEmployer() {
                   style={{ marginLeft: "40px" }}
                 >
                   <Input
+                    onChange={handleOptionChange}
+                    checked={state.selectedOption === "Dj"}
                     type="radio"
                     name="exampleRadios"
                     id="exampleRadios2"
-                    value="option2"
+                    value="Dj"
                     defaultChecked
                   />
                   Dj
