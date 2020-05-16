@@ -47,6 +47,7 @@ const MusicianSchema = new mongoose.Schema({
 	socialMedia: {
 		Instagram: { type: String },
 		Facebook: { type: String },
+		YouTube: { type: String }
 	},
 	//Opis muzicara
 	//
