@@ -1,0 +1,51 @@
+.title {
+  margin-top: 30px;
+  margin-bottom: 10px !important;
+  min-height: 32px;
+}
+.checked {
+  color: orange;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa-instagram {
+  background: #ea4c89;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.social-media {
+  font-size: 30px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
