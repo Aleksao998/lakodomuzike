@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 
 import Image1 from "./job-list1.png";
 import Image2 from "./job-list2.png";
 import Image3 from "./job-list3.png";
 import Image4 from "./job-list4.png";
-function FeatureJob() {
+function FeatureJob(props) {
   return (
     <section class="featured-job-area ">
       <div class="container">
@@ -19,108 +19,37 @@ function FeatureJob() {
         </div>
         <div class="row justify-content-center">
           <div class="col-xl-10">
-            <div class="single-job-items mb-30">
-              <div class="job-items">
-                <div class="company-img">
-                  <a href="/single-add-detail">
-                    <img src={Image1} alt="" />
-                  </a>
+            {props.lista.map((item) => {
+              console.log(item);
+              return (
+                <div class="single-job-items mb-30">
+                  <div class="job-items">
+                    <div class="company-img">
+                      <a href="/single-add-detail">
+                        <img src={Image1} alt="" />
+                      </a>
+                    </div>
+                    <div class="job-tittle">
+                      <a href="/single-add-detail">
+                        <h4>{item.addsName}</h4>
+                      </a>
+                      <ul>
+                        <li>{item.date}</li>
+                        <li>
+                          <i class="fas fa-map-marker-alt"></i>Athens, Greece
+                        </li>
+                        <li>
+                          {item.priceFrom}rsd - {item.priceTo}rsd
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="items-link f-right">
+                    <a href={item.link}>Pogledaj ceo oglas</a>
+                  </div>
                 </div>
-                <div class="job-tittle">
-                  <a href="/single-add-detail">
-                    <h4>Ceger Kafic</h4>
-                  </a>
-                  <ul>
-                    <li>26.03.2020</li>
-                    <li>
-                      <i class="fas fa-map-marker-alt"></i>Athens, Greece
-                    </li>
-                    <li>3500rsd - 5000rsd</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="items-link f-right">
-                <a href="/single-add-detail">Pogledaj ceo oglas</a>
-                <span>4 hours ago</span>
-              </div>
-            </div>
-
-            <div class="single-job-items mb-30">
-              <div class="job-items">
-                <div class="company-img">
-                  <a href="/single-add-detail">
-                    <img src={Image2} alt="" />
-                  </a>
-                </div>
-                <div class="job-tittle">
-                  <a href="/single-add-detail">
-                    <h4>Kucna Zurka</h4>
-                  </a>
-                  <ul>
-                    <li>26.03.2020</li>
-                    <li>
-                      <i class="fas fa-map-marker-alt"></i>Athens, Greece
-                    </li>
-                    <li>3500rsd - 5000rsd</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="items-link f-right">
-                <a href="job_details.html">Pogledaj ceo oglas</a>
-                <span>4 hours ago</span>
-              </div>
-            </div>
-
-            <div class="single-job-items mb-30">
-              <div class="job-items">
-                <div class="company-img">
-                  <a href="/single-add-detail">
-                    <img src={Image3} alt="" />
-                  </a>
-                </div>
-                <div class="job-tittle">
-                  <a href="/single-add-detail">
-                    <h4>Exponto</h4>
-                  </a>
-                  <ul>
-                    <li>23.03.2020</li>
-                    <li>
-                      <i class="fas fa-map-marker-alt"></i>Athens, Greece
-                    </li>
-                    <li>1500rsd - 3000rsd</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="items-link f-right">
-                <a href="/single-add-detail">Pogledaj ceo oglas</a>
-                <span>4 hours ago</span>
-              </div>
-            </div>
-            <div class="single-job-items mb-30">
-              <div class="job-items">
-                <div class="company-img">
-                  <a href="/single-add-detail">
-                    <img src={Image4} alt="" />
-                  </a>
-                </div>
-                <div class="job-tittle">
-                  <a href="/single-add-detail">
-                    <h4>Exponto</h4>
-                  </a>
-                  <ul>
-                    <li>27.03.2020</li>
-                    <li>
-                      <i class="fas fa-map-marker-alt"></i>Athens, Greece
-                    </li>
-                    <li>1500rsd - 3000rsd</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="items-link f-right">
-                <a href="/single-add-detail">Pogledaj ceo oglas</a>
-                <span>4 hours ago</span>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

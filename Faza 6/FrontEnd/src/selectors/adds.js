@@ -1,3 +1,3 @@
-export const getUserData = (profileData) => {
-  return profileData;
+export const getAddData = (getAddData) => {
+  return getAddData;
 };
