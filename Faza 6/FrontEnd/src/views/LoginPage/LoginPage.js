@@ -43,13 +43,19 @@ function LoginPage(props) {
         localStorage.setItem("token", resData.token);
         localStorage.setItem("id", resData.data);
         if (resData.role === "Employer") {
-          console.log("asd");
           props.authenticateUser(
             resData.token,
             resData.data,
             "/profile-page-employer/" + resData.data
           );
           props.history.push("/profile-page-employer/" + resData.data);
+        } else {
+          props.authenticateUser(
+            resData.token,
+            resData.data,
+            "/profile-page-musician/" + resData.data
+          );
+          props.history.push("/profile-page-musician/" + resData.data);
         }
       })
       .catch((err) => {
