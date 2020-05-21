@@ -6,6 +6,9 @@ import Image2 from "./job-list2.png";
 import Image3 from "./job-list3.png";
 import Image4 from "./job-list4.png";
 function FeatureJob(props) {
+  const handleOnClick = (route) => {
+    props.history.push(route);
+  };
   return (
     <section class="featured-job-area ">
       <div class="container">
@@ -45,7 +48,9 @@ function FeatureJob(props) {
                     </div>
                   </div>
                   <div class="items-link f-right">
-                    <a href={item.link}>Pogledaj ceo oglas</a>
+                    <a onClick={() => handleOnClick(item.link)}>
+                      Pogledaj ceo oglas
+                    </a>
                   </div>
                 </div>
               );

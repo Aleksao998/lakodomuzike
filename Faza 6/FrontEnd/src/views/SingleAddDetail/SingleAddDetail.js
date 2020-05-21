@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Input } from "reactstrap";
 import Image1 from "../LandingPage/FeatureJobs/job-list1.png";
 import FooterBlack from "../../components/Footers/FooterBlack";
 function SignleAddDetail(props) {
@@ -12,7 +13,55 @@ function SignleAddDetail(props) {
     priceTo: 0,
     typeOfMusic: "",
   });
+  const [price, setPrice] = useState("");
+
+  const handleOnChange = (event) => {
+    const { name, value } = event.target;
+    setPrice(value);
+  };
+
+  const onSubmit = (title) => {
+    console.log(price);
+    console.log(props.match.params.id);
+    console.log(props.userId);
+
+    fetch(
+      "http://localhost:5000/api/v1/musician/" +
+        props.userId +
+        "/" +
+        props.match.params.id +
+        "/registredmusician",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + props.token,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          musician: props.userId,
+          ad: props.userId,
+          price: price,
+          accepted: false,
+          title: title,
+        }),
+      }
+    )
+      .then((res) => {
+        if (res.status !== 201) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log("success");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   React.useEffect(() => {
+    console.log("usao");
+    console.log(props.profileRoute);
     fetch("http://localhost:5000/api/v1/ad/" + props.match.params.id, {
       method: "GET",
     })
@@ -99,9 +148,24 @@ function SignleAddDetail(props) {
                   </li>
                 </ul>
                 <div class="apply-btn2">
-                  <a href="#" class="btn">
-                    Prijavi se na oglas
-                  </a>
+                  {props.profileRoute.includes("/profile-page-musician") ? (
+                    <div style={{ textAlign: "center" }}>
+                      <Input
+                        type="text"
+                        name="price"
+                        placeholder="Unesite cenu"
+                        onChange={handleOnChange}
+                        style={{ marginBottom: "5px" }}
+                      ></Input>
+                      <a
+                        onClick={() => onSubmit(state.adName)}
+                        class="btn"
+                        style={{ color: "white" }}
+                      >
+                        Prijavi se na oglas
+                      </a>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>

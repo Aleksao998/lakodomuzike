@@ -1,6 +1,10 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 function AdsListing(props) {
+  const handleOnClick = (route) => {
+    props.history.push(route);
+  };
+
   return (
     <div class="col-xl-9 col-lg-9 col-md-8">
       <section class="featured-job-area">
@@ -31,7 +35,9 @@ function AdsListing(props) {
                   </div>
                 </div>
                 <div class="items-link f-right">
-                  <a href={item.link}>Pogledaj ceo oglas</a>
+                  <a onClick={() => handleOnClick(item.link)}>
+                    Pogledaj ceo oglas
+                  </a>
                 </div>
               </div>
             );
@@ -42,4 +48,4 @@ function AdsListing(props) {
   );
 }
 
-export default AdsListing;
+export default withRouter(AdsListing);

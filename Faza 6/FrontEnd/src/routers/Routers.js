@@ -30,6 +30,7 @@ function AppRouters(props) {
   const [isAutenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState("");
   const [userId, setUserId] = useState("");
+  const [searchBar, setSearchBar] = useState(false);
   const [profileRoute, setProfileRoute] = useState("");
   const [finishLoading, setFinishLoading] = useState("");
   const logOut = () => {
@@ -88,18 +89,28 @@ function AppRouters(props) {
         <Route
           path="/lakodomuzike/"
           render={(props) => (
-            <LandingPage {...props} finishLoading={finishLoading} />
+            <LandingPage
+              {...props}
+              finishLoading={finishLoading}
+              setSearchBar={setSearchBar}
+              searchBar={searchBar}
+            />
           )}
         />
         <Route
           path="/ads"
           render={(props) => (
-            <AdsPage {...props} finishLoading={finishLoading} />
+            <AdsPage
+              {...props}
+              finishLoading={finishLoading}
+              searchBar={searchBar}
+              setSearchBar={setSearchBar}
+            />
           )}
         />
         <Route
-          path="/profile-page-musician"
-          render={(props) => <ProfilePageMusician {...props} />}
+          path="/profile-page-musician/:id"
+          render={(props) => <ProfilePageMusician {...props} userId={userId} />}
         />
         <Route
           path="/profile-page-employer/:id"
@@ -107,7 +118,14 @@ function AppRouters(props) {
         />
         <Route
           path="/single-add-detail/:id"
-          render={(props) => <SingleAddDetail {...props} />}
+          render={(props) => (
+            <SingleAddDetail
+              {...props}
+              token={token}
+              profileRoute={profileRoute}
+              userId={userId}
+            />
+          )}
         />
         <Route
           path="/register-page"
