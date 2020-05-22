@@ -12,10 +12,10 @@ const RegistredMusicianSchema = new mongoose.Schema({
     required: true,
   },
   accepted: {
-    type: Boolean,
+    type: String,
     required: true,
   },
-  title: {
+  adName: {
     type: String,
     required: true,
   },
@@ -23,6 +23,10 @@ const RegistredMusicianSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Please add a price"],
   },
+  musicianName: {
+    type: String,
+    required: [true, "Please add a musicianName"],
+  }
 });
 
 module.exports = mongoose.model("RegistredMusician", RegistredMusicianSchema);
