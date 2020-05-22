@@ -53,7 +53,11 @@ function LandingPage(props) {
   }, [props.finishLoading]);
   return (
     <>
-      <LandingPageHeader props={props} />
+      <LandingPageHeader
+        props={props}
+        setSearchBar={props.setSearchBar}
+        searchBar={props.searchBar}
+      />
 
       <div className="main">
         <FeatureJob lista={lista} />

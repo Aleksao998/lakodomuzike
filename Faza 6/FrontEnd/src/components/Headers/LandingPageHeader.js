@@ -20,7 +20,8 @@ function LandingPageHeader(props) {
   });
   const handleOnClick = () => {
     console.log(MusicTypeRef.current.value);
-    props.history.push("/ads");
+    props.setSearchBar(!props.searchBar);
+    props.history.push("/ads?type=" + MusicTypeRef.current.value);
   };
   return (
     <div

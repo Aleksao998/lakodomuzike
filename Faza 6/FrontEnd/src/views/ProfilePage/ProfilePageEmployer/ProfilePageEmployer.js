@@ -1,5 +1,7 @@
 import React from "react";
 import MaterialTable from "material-table";
+import Modal from "react-modal";
+import { withRouter } from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -38,6 +40,20 @@ import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    minheight: "450px",
+    width: "30%",
+    transform: "translate(-50%, -50%)",
+    zIndex: "2!important",
+  },
+};
+
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -62,7 +78,7 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
-function ProfilePageEmployer() {
+function ProfilePageEmployer(props) {
   const [state, setState] = React.useState({
     adName: "",
     description: "",
@@ -75,9 +91,11 @@ function ProfilePageEmployer() {
     city: "",
     selectedOption: "Rock",
   });
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState("1");
   const [name, setName] = React.useState("");
   const [adds, setAdds] = React.useState([]);
+  const [addsDetail, setAddsDetail] = React.useState([]);
   const [lastname, setLastname] = React.useState("");
   const [id, setId] = React.useState("");
   const toggle = (tab) => {
@@ -218,11 +236,129 @@ function ProfilePageEmployer() {
   const handleOptionChange = (changeEvent) => {
     setState({ ...state, ["selectedOption"]: changeEvent.target.value });
   };
+  function openModal(id) {
+    fetch("http://localhost:5000/api/v1/ad/" + id + "/registredmusician", {
+      method: "GET",
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        var array = [];
+        resData.data.forEach((element) => {
+          var price = element.price;
+          var Mid = element.musician;
+          var id = element._id;
+          var obj = {
+            price,
+            Mid,
+            id,
+          };
+          array.push(obj);
+        });
+        setAddsDetail(array);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  Modal.setAppElement(document.getElementById("root"));
   return (
     <>
       <ProfilePageHeader />
-      <div className="section profile-content">
+
+      <div className="section profile-content" style={{ zIndex: "0" }}>
         <Container>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <h2 style={{ textAlign: "center", marginBottom: "15px" }}>
+              Prijavljeni na oglas
+            </h2>
+            <MaterialTable
+              icons={tableIcons}
+              columns={[
+                { title: "Cena", field: "price" },
+                { title: "Muzicar", field: "Mid" },
+              ]}
+              data={addsDetail}
+              actions={[
+                {
+                  icon: "add",
+                  tooltip: "Prihvati ",
+                  onClick: (event, rowData) => {},
+                },
+                {
+                  icon: "delete",
+                  tooltip: "Obrisi ",
+                  onClick: (event, rowData) => {
+                    fetch(
+                      "http://localhost:5000/api/v1/registredmusician/" +
+                        rowData.id,
+                      {
+                        method: "DELETE",
+                        headers: {
+                          Authorization:
+                            "Bearer " + localStorage.getItem("token"),
+                        },
+                      }
+                    )
+                      .then((res) => {
+                        if (res.status !== 200) {
+                          throw new Error("Error creating User");
+                        }
+                        return res.json();
+                      })
+                      .then((resData) => {
+                        setAddsDetail(
+                          addsDetail.filter((item) => item.id !== rowData.id)
+                        );
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  },
+                },
+                {
+                  icon: "search",
+                  tooltip: "Pogledaj korisnika",
+                  onClick: (event, rowData) => {
+                    props.history.push("/profile-page-musician/" + rowData.Mid);
+                  },
+                },
+              ]}
+              options={{
+                pageSize: 5,
+                paging: true,
+              }}
+              localization={{
+                pagination: {
+                  labelRowsPerPage: "6",
+                },
+              }}
+              title="Prijavljeni"
+            />
+            <button
+              onClick={closeModal}
+              className="btn"
+              style={{ margin: "0 auto", marginTop: "10px" }}
+            >
+              close
+            </button>
+          </Modal>
           <div className="owner">
             <div className="avatar">
               <img
@@ -427,6 +563,13 @@ function ProfilePageEmployer() {
                       });
                   },
                 },
+                {
+                  icon: "search",
+                  tooltip: "View Add",
+                  onClick: (event, rowData) => {
+                    openModal(rowData.addId);
+                  },
+                },
               ]}
               options={{
                 pageSize: 5,
@@ -447,4 +590,4 @@ function ProfilePageEmployer() {
   );
 }
 
-export default ProfilePageEmployer;
+export default withRouter(ProfilePageEmployer);
