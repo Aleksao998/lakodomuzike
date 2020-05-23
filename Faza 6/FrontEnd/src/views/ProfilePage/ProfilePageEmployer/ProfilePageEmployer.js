@@ -343,6 +343,7 @@ function ProfilePageEmployer(props) {
               options={{
                 pageSize: 5,
                 paging: true,
+                search: true,
               }}
               localization={{
                 pagination: {

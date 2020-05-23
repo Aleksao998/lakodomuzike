@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Adsheader from "./AdsHeader/AdsHeader";
 import AdsCategory from "./AdsCategory/AdsCategory";
 import AdsListing from "./AdsListing/AdsListing";
-
+import Footer from "../../components/Footers/FooterBlack";
 import { connect } from "react-redux";
 function AdsPage(props) {
   const [lista, setList] = useState([]);
@@ -55,6 +55,7 @@ function AdsPage(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

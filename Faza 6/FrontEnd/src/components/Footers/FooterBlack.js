@@ -10,7 +10,6 @@ function FooterBlack() {
       style={{
         backgroundColor: "black",
         bottom: "0px",
-        position: "absolute",
         width: "100%",
       }}
     >

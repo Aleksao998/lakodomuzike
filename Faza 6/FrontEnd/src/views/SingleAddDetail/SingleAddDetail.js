@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Input } from "reactstrap";
 import Image1 from "../LandingPage/FeatureJobs/job-list1.png";
 import FooterBlack from "../../components/Footers/FooterBlack";
-function SignleAddDetail(props) {
+import { useAlert } from "react-alert";
+
+const SignleAddDetail = (props) => {
+  const alert = useAlert();
   const [state, setState] = useState({
     adName: "",
     cratedAt: "",
@@ -14,17 +17,18 @@ function SignleAddDetail(props) {
     typeOfMusic: "",
   });
   const [price, setPrice] = useState("");
-
+  const [error, setError] = useState("");
   const handleOnChange = (event) => {
     const { name, value } = event.target;
     setPrice(value);
   };
 
   const onSubmit = (title) => {
-    console.log(price);
-    console.log(props.match.params.id);
-    console.log(props.userId);
-
+    if (price < state.priceFrom || price > state.priceTo) {
+      setPrice("");
+      setError("Cena nije validna");
+      return;
+    }
     fetch(
       "http://localhost:5000/api/v1/musician/" +
         props.userId +
@@ -41,24 +45,32 @@ function SignleAddDetail(props) {
           musician: props.userId,
           ad: props.userId,
           price: price,
-          accepted: false,
+          accepted: "joined",
           title: title,
         }),
       }
     )
       .then((res) => {
+        if (res.status === 404) {
+          setPrice("");
+          setError("Vec ste prijavljeni na oglas");
+          return;
+        }
         if (res.status !== 201) {
           throw new Error("Error creating User");
         }
         return res.json();
       })
       .then((resData) => {
-        console.log("success");
+        alert.success("Uspesno ste se prijavili na oglas");
+        setPrice("");
       })
       .catch((err) => {
-        console.log(err);
+        alert.error("Doslo je do greske");
+        setPrice("");
       });
   };
+
   React.useEffect(() => {
     console.log("usao");
     console.log(props.profileRoute);
@@ -150,9 +162,11 @@ function SignleAddDetail(props) {
                 <div class="apply-btn2">
                   {props.profileRoute.includes("/profile-page-musician") ? (
                     <div style={{ textAlign: "center" }}>
+                      <p>{error}</p>
                       <Input
                         type="text"
                         name="price"
+                        value={price}
                         placeholder="Unesite cenu"
                         onChange={handleOnChange}
                         style={{ marginBottom: "5px" }}
@@ -175,6 +189,6 @@ function SignleAddDetail(props) {
       <FooterBlack />
     </div>
   );
-}
+};
 
 export default SignleAddDetail;
