@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-function RegisterPageMusician(props) {
+import { useAlert } from "react-alert";
+
+const RegisterPageMusician = (props) => {
+  const alert = useAlert();
   const [state, setState] = useState({
     username: "",
     email: "",
@@ -93,11 +96,13 @@ function RegisterPageMusician(props) {
               resData.data._id,
               "/profile-page-musician/" + resData.data._id
             );
+            alert.success("Uspesno ste se registrovali");
+
             props.history.push("/profile-page-musician/" + resData.data._id);
           });
       })
       .catch((err) => {
-        console.log(err);
+        alert.error("Doslo je do greske");
       });
   };
   const handleOnChange = (event) => {
@@ -257,6 +262,6 @@ function RegisterPageMusician(props) {
       </div>
     </>
   );
-}
+};
 
 export default RegisterPageMusician;

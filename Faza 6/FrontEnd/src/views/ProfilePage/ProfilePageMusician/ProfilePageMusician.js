@@ -1,58 +1,20 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { withRouter } from "react-router-dom";
-
-//Table
-import { forwardRef } from "react";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
-
+import { useAlert } from "react-alert";
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
 // core components
-
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 
-const tableIcons = {
-  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-  Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} ref={ref} />
-  )),
-  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
-  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
-  FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
-  LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
-  NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-  PreviousPage: forwardRef((props, ref) => (
-    <ChevronLeft {...props} ref={ref} />
-  )),
-  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
-  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
-};
+//table
+import tableIcons from "../../../assets/table";
 
 function ProfilePageMusician(props) {
+  const alert = useAlert();
+
+  //state
   const [adds, setAdds] = React.useState([]);
   const [activeTab, setActiveTab] = React.useState("1");
   const [description, setDescription] = React.useState("");
@@ -67,8 +29,8 @@ function ProfilePageMusician(props) {
     }
   };
 
-  document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
+    document.documentElement.classList.remove("nav-open");
     fetch("http://localhost:5000/api/v1/musician/" + props.match.params.id, {
       method: "GET",
     })
@@ -108,16 +70,29 @@ function ProfilePageMusician(props) {
         var array = [];
         resData.data.forEach((element) => {
           var price = element.price;
-          var title = element.title;
+          var title = element.adName;
           var addId = element.ad;
           var id = element._id;
           var accepted = element.accepted;
+          var status;
+          switch (accepted) {
+            case "rejected":
+              status = "odbijen";
+              break;
+            case "accepted":
+              status = "prihvaceno";
+              break;
+            default:
+              status = "Ceka se";
+          }
+
           var obj = {
             price,
             title,
             addId,
             id,
             accepted,
+            status,
           };
           array.push(obj);
         });
@@ -132,6 +107,27 @@ function ProfilePageMusician(props) {
     };
   }, []);
 
+  const deleteSignedAdd = (rowData) => {
+    fetch("http://localhost:5000/api/v1/registredmusician/" + rowData.id, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        alert.success("Uspesno ste se odjavili sa oglasa");
+        setAdds(adds.filter((item) => item.id !== rowData.id));
+      })
+      .catch((err) => {
+        alert.error("Doslo je do greske");
+      });
+  };
   return (
     <>
       <ProfilePageHeader />
@@ -181,41 +177,32 @@ function ProfilePageMusician(props) {
                   icons={tableIcons}
                   data={adds}
                   columns={[
-                    { title: "Id oglasa", field: "addId" },
                     { title: "Naziv oglasa", field: "title" },
                     { title: "Price", field: "price" },
-                    { title: "id ", field: "id" },
+                    {
+                      title: "Status",
+                      field: "status",
+                      render: (rowData) => {
+                        return rowData.status == "odbijen" ? (
+                          <p style={{ color: "#FF0000", fontWeight: "bold" }}>
+                            {rowData.status}{" "}
+                          </p>
+                        ) : rowData.status == "prihvaceno" ? (
+                          <p style={{ color: "#4BB543", fontWeight: "bold" }}>
+                            {rowData.status}{" "}
+                          </p>
+                        ) : (
+                          <p style={{ fontWeight: "bold" }}>{rowData.status}</p>
+                        );
+                      },
+                    },
                   ]}
                   actions={[
                     {
                       icon: "delete",
                       tooltip: "Delete User",
                       onClick: (event, rowData) => {
-                        fetch(
-                          "http://localhost:5000/api/v1/registredmusician/" +
-                            rowData.id,
-                          {
-                            method: "DELETE",
-                            headers: {
-                              Authorization:
-                                "Bearer " + localStorage.getItem("token"),
-                            },
-                          }
-                        )
-                          .then((res) => {
-                            if (res.status !== 200) {
-                              throw new Error("Error creating User");
-                            }
-                            return res.json();
-                          })
-                          .then((resData) => {
-                            setAdds(
-                              adds.filter((item) => item.id !== rowData.id)
-                            );
-                          })
-                          .catch((err) => {
-                            console.log(err);
-                          });
+                        deleteSignedAdd(rowData);
                       },
                     },
                     {
