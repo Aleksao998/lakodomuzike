@@ -111,11 +111,13 @@ function ProfilePageMusician(props) {
           var title = element.title;
           var addId = element.ad;
           var id = element._id;
+          var accepted = element.accepted;
           var obj = {
             price,
             title,
             addId,
             id,
+            accepted,
           };
           array.push(obj);
         });
@@ -220,7 +222,9 @@ function ProfilePageMusician(props) {
                       icon: "search",
                       tooltip: "View Add",
                       onClick: (event, rowData) => {
-                        props.history.push("/single-add-detail/" + rowData.id);
+                        props.history.push(
+                          "/single-add-detail/" + rowData.addId
+                        );
                       },
                     },
                   ]}
