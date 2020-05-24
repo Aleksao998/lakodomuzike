@@ -2,6 +2,7 @@ const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middlewares/async');
 const Ad = require('../models/Ad');
 const Employer = require('../models/Employer');
+const RegistredMusician = require("../models/RegistredMusician");
 
 // @desc    Get all ads
 // @route   GET /api/v1/ad
@@ -115,4 +116,32 @@ exports.deleteAd = asyncHandler(async (req, res, next) => {
     await ad.remove();
 
     res.status(200).json({ success: true, data: ad });
+});
+
+// @desc    Find is ad with id closed
+// @route   GET /api/v1/ad/:id
+// @access  Public
+
+exports.closed = asyncHandler(async (req, res, next) => {
+
+    const ad = await Ad.findById(req.params.id);
+
+    if (!ad) {
+        return next(new ErrorResponse(`No ad with the id of ${req.params.id}`), 404);
+    }
+
+    const registredmusicians = await RegistredMusician.find({ ad: req.params.id });
+
+
+    if (registredmusicians.length < 1) {
+        res.status(200).json({ success: true, closed: false });
+    }
+    else {
+        element = registredmusicians[0];
+
+        if (element.accepted === "accepted" || element.accepted === "rejected") {
+            return res.status(200).json({ success: true, closed: true });
+        }
+        else return res.status(200).json({ success: true, closed: false });
+    }
 });
