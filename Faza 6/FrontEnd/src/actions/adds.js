@@ -9,7 +9,8 @@ export const addAddData = (
   location = "",
   number = "",
   city = "",
-  link = ""
+  link = "",
+  url = ""
 ) => {
   return {
     type: "ADD_ADD_DATA",
@@ -25,6 +26,7 @@ export const addAddData = (
       number: number,
       city: city,
       link: link,
+      url: url,
     },
   };
 };

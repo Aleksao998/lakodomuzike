@@ -16,7 +16,7 @@ function AdsListing(props) {
                 <div class="job-items">
                   <div class="company-img">
                     <a href="/single-add-detail">
-                      <img alt="" />
+                      <img src={item.url} alt="" />
                     </a>
                   </div>
                   <div class="job-tittle">
@@ -26,9 +26,11 @@ function AdsListing(props) {
                     <ul>
                       <li>{item.date}</li>
                       <li>
-                        <i class="fas fa-map-marker-alt"></i>Athens, Greece
+                        <i class="fa fa-map-marker"></i>
+                        {item.city}, {item.location} {item.number}
                       </li>
                       <li>
+                        <i class="fa fa-money"></i>
                         {item.priceFrom}rsd - {item.priceTo}rsd
                       </li>
                     </ul>

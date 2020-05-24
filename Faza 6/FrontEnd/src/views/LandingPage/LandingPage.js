@@ -1,30 +1,14 @@
 import React, { useState } from "react";
 //Redux
 import { connect } from "react-redux";
-// reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
 
 // core components
-
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
+import DemoFooter from "components/Footers/FooterBlack";
 import FeatureJob from "./FeatureJobs/FeatureJobs";
 import HowItWorks from "./HowItWorks/HowItWorks";
-function LandingPage(props) {
+
+const LandingPage = (props) => {
   const [lista, setList] = useState([]);
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -66,7 +50,7 @@ function LandingPage(props) {
       <DemoFooter />
     </>
   );
-}
+};
 const ConnectedProfilePage = connect((state) => {
   return {
     store: state,

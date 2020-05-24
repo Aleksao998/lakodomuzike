@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-// reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
+
 import { withRouter } from "react-router-dom";
 function LoginPage(props) {
   const [state, setState] = useState({
     email: "",
     password: "",
   });
-
+  const [error, setError] = useState("");
   document.documentElement.classList.remove("nav-open");
 
   React.useEffect(() => {
@@ -40,8 +39,13 @@ function LoginPage(props) {
       })
       .then((resData) => {
         console.log(resData);
+        if (resData.role === "admin") {
+          setError("Korisnik ne postoji");
+          return;
+        }
         localStorage.setItem("token", resData.token);
         localStorage.setItem("id", resData.data);
+
         if (resData.role === "Employer") {
           props.authenticateUser(
             resData.token,
@@ -59,7 +63,7 @@ function LoginPage(props) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        setError("Doslo je do greske");
       });
   };
   return (
@@ -75,7 +79,7 @@ function LoginPage(props) {
             >
               <span class="login100-form-title-1">Sign In</span>
             </div>
-
+            <p>{error}</p>
             <form class="login100-form validate-form">
               <div
                 class="wrap-input100 validate-input m-b-26"

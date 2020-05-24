@@ -12,9 +12,9 @@ import { connect } from "react-redux";
 import { addAddData } from "../actions/adds";
 import NavBar from "components/Navbars/NavBar";
 // pages
-import Index from "views/Index.js";
+import AdminLogin from "../views/AdminPanel/AdminLogin/AdminLogin";
+import Dashboard from "../views/AdminPanel/AdminDashBoard/AdminDashboard";
 import LandingPage from "views/LandingPage/LandingPage";
-import ProfilePage from "views/ProfilePage/ProfilePage";
 import RegisterPage from "views/RegistrationPage/RegisterPage";
 import RegisterPageMusician from "views/RegistrationPage/RegistrationMusician/RegistrationMusicianPage";
 import RegisterPageEmployer from "views/RegistrationPage/RegistrationEmployer/RegistrationEmployerPage";
@@ -65,7 +65,8 @@ function AppRouters(props) {
 
               element.location.number,
               element.location.city,
-              "/single-add-detail/" + element._id
+              "/single-add-detail/" + element._id,
+              element.url
             )
           );
         });
@@ -87,7 +88,8 @@ function AppRouters(props) {
       />
       <Switch>
         <Route
-          path="/lakodomuzike/"
+          exact
+          path="/"
           render={(props) => (
             <LandingPage
               {...props}
@@ -107,6 +109,16 @@ function AppRouters(props) {
               setSearchBar={setSearchBar}
             />
           )}
+        />
+        <Route
+          path="/admin-login"
+          render={(props) => (
+            <AdminLogin {...props} authenticateUser={authenticateUser} />
+          )}
+        />
+        <Route
+          path="/dashboard/:id"
+          render={(props) => <Dashboard {...props} />}
         />
         <Route
           path="/profile-page-musician/:id"
@@ -156,14 +168,13 @@ function AppRouters(props) {
             <LoginPage {...props} authenticateUser={authenticateUser} />
           )}
         />
-        <Route
-          path="/404ErrorPage"
-          render={(props) => <ErrorPage404 {...props} />}
-        />
+
         <Route
           path="/500ErrorPage"
           render={(props) => <ErrorPage500 {...props} />}
         />
+
+        <Route render={(props) => <ErrorPage404 {...props} />} />
       </Switch>
     </div>
   );

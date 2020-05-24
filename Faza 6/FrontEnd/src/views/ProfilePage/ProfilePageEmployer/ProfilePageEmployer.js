@@ -9,7 +9,7 @@ import { Button, Label, Input, Container } from "reactstrap";
 // core components
 
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
+import DemoFooter from "components/Footers/FooterBlack";
 
 //table
 import tableIcons from "../../../assets/table";
@@ -124,6 +124,18 @@ const ProfilePageEmployer = (props) => {
     setState({ ...state, [name]: value });
   };
   const postAdd = (event) => {
+    var url;
+    switch (state.selectedOption) {
+      case "Rock":
+        url = "/img/TypeOfMusicImg/Rock.jpg";
+        break;
+      case "Narodna":
+        url = "/img/TypeOfMusicImg/narodna.jpg";
+        break;
+      case "Dj":
+        url = "/img/TypeOfMusicImg/dj.jpg";
+        break;
+    }
     event.preventDefault();
     fetch("http://localhost:5000/api/v1/employer/" + id + "/ad", {
       method: "POST",
@@ -146,6 +158,7 @@ const ProfilePageEmployer = (props) => {
           number: state.number,
           city: state.city,
         },
+        url: url,
         description: state.description,
       }),
     })
