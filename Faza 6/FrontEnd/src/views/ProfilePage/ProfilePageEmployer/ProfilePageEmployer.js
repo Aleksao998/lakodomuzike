@@ -2,43 +2,17 @@ import React from "react";
 import MaterialTable from "material-table";
 import Modal from "react-modal";
 import { withRouter } from "react-router-dom";
+import { useAlert } from "react-alert";
 // reactstrap components
-import {
-  Button,
-  Label,
-  FormGroup,
-  Input,
-  NavItem,
-  NavLink,
-  Nav,
-  TabContent,
-  TabPane,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Label, Input, Container } from "reactstrap";
 
 // core components
 
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-import { forwardRef } from "react";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
+//table
+import tableIcons from "../../../assets/table";
 
 const customStyles = {
   content: {
@@ -54,31 +28,8 @@ const customStyles = {
   },
 };
 
-const tableIcons = {
-  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
-  Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
-  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
-  DetailPanel: forwardRef((props, ref) => (
-    <ChevronRight {...props} ref={ref} />
-  )),
-  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
-  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
-  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
-  FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
-  LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
-  NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
-  PreviousPage: forwardRef((props, ref) => (
-    <ChevronLeft {...props} ref={ref} />
-  )),
-  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
-  Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
-  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
-  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
-  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
-};
-
-function ProfilePageEmployer(props) {
+const ProfilePageEmployer = (props) => {
+  const alert = useAlert();
   const [state, setState] = React.useState({
     adName: "",
     description: "",
@@ -104,8 +55,8 @@ function ProfilePageEmployer(props) {
     }
   };
 
-  document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
+    document.documentElement.classList.remove("nav-open");
     fetch(
       "http://localhost:5000/api/v1/employer/" + localStorage.getItem("id"),
       {
@@ -149,7 +100,6 @@ function ProfilePageEmployer(props) {
           var addDescription = element.description;
           var addEndDate = element.maintenanceDate.date.slice(0, 10);
           var addId = element._id;
-          var expiration;
           var obj = {
             addName,
             addDescription,
@@ -228,9 +178,10 @@ function ProfilePageEmployer(props) {
           number: "",
           city: "",
         });
+        alert.success("Uspesno ste postavili oglas");
       })
       .catch((err) => {
-        console.log(err);
+        alert.error("Doslo je do greske");
       });
   };
   const handleOptionChange = (changeEvent) => {
@@ -250,13 +201,20 @@ function ProfilePageEmployer(props) {
         console.log(resData);
         var array = [];
         resData.data.forEach((element) => {
+          var ad = element.ad;
           var price = element.price;
           var Mid = element.musician;
+          var musicianName = element.musicianName;
           var id = element._id;
+          var accepted = element.accepted;
+
           var obj = {
             price,
             Mid,
             id,
+            musicianName,
+            accepted,
+            ad,
           };
           array.push(obj);
         });
@@ -265,7 +223,6 @@ function ProfilePageEmployer(props) {
       .catch((err) => {
         console.log(err);
       });
-    setIsOpen(true);
   }
 
   function closeModal() {
@@ -292,43 +249,93 @@ function ProfilePageEmployer(props) {
               icons={tableIcons}
               columns={[
                 { title: "Cena", field: "price" },
-                { title: "Muzicar", field: "Mid" },
+                {
+                  title: "Muzicar",
+                  field: "musicianName",
+                  render: (rowData) => {
+                    return rowData.accepted == "rejected" ? (
+                      <p style={{ color: "#FF0000", fontWeight: "bold" }}>
+                        {rowData.musicianName}{" "}
+                      </p>
+                    ) : rowData.accepted == "accepted" ? (
+                      <p style={{ color: "#4BB543", fontWeight: "bold" }}>
+                        {rowData.musicianName}{" "}
+                      </p>
+                    ) : (
+                      <p style={{ fontWeight: "bold" }}>
+                        {rowData.musicianName}
+                      </p>
+                    );
+                  },
+                },
               ]}
               data={addsDetail}
               actions={[
                 {
                   icon: "add",
                   tooltip: "Prihvati ",
-                  onClick: (event, rowData) => {},
-                },
-                {
-                  icon: "delete",
-                  tooltip: "Obrisi ",
                   onClick: (event, rowData) => {
                     fetch(
                       "http://localhost:5000/api/v1/registredmusician/" +
                         rowData.id,
                       {
-                        method: "DELETE",
+                        method: "PUT",
                         headers: {
                           Authorization:
                             "Bearer " + localStorage.getItem("token"),
+                          "Content-Type": "application/json",
                         },
+                        body: JSON.stringify({
+                          accepted: "accepted",
+                        }),
                       }
                     )
                       .then((res) => {
                         if (res.status !== 200) {
-                          throw new Error("Error creating User");
+                          throw new Error("");
                         }
                         return res.json();
                       })
                       .then((resData) => {
-                        setAddsDetail(
-                          addsDetail.filter((item) => item.id !== rowData.id)
-                        );
+                        alert.success("Korisnik uspesno prihvacen");
+                        openModal(rowData.ad);
                       })
                       .catch((err) => {
-                        console.log(err);
+                        alert.error("Doslo je do greske");
+                      });
+                  },
+                },
+                {
+                  icon: "delete",
+                  tooltip: "Odbi",
+                  onClick: (event, rowData) => {
+                    fetch(
+                      "http://localhost:5000/api/v1/registredmusician/" +
+                        rowData.id,
+                      {
+                        method: "PUT",
+                        headers: {
+                          Authorization:
+                            "Bearer " + localStorage.getItem("token"),
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          accepted: "rejected",
+                        }),
+                      }
+                    )
+                      .then((res) => {
+                        if (res.status !== 200) {
+                          throw new Error("");
+                        }
+                        return res.json();
+                      })
+                      .then((resData) => {
+                        alert.success("Uspesno ste obrisali oglas");
+                        openModal(rowData.ad);
+                      })
+                      .catch((err) => {
+                        alert.error("Doslo je do greske");
                       });
                   },
                 },
@@ -343,14 +350,14 @@ function ProfilePageEmployer(props) {
               options={{
                 pageSize: 5,
                 paging: true,
-                search: true,
+                search: false,
               }}
               localization={{
                 pagination: {
                   labelRowsPerPage: "6",
                 },
               }}
-              title="Prijavljeni"
+              title=""
             />
             <button
               onClick={closeModal}
@@ -530,7 +537,6 @@ function ProfilePageEmployer(props) {
             <MaterialTable
               icons={tableIcons}
               columns={[
-                { title: "Id", field: "addId" },
                 { title: "Naziv oglasa", field: "addName" },
                 { title: "Opis", field: "addDescription" },
                 { title: "Datum isteka", field: "addEndDate" },
@@ -555,12 +561,13 @@ function ProfilePageEmployer(props) {
                         return res.json();
                       })
                       .then((resData) => {
+                        alert.success("Uspesno ste obrisali oglas");
                         setAdds(
                           adds.filter((item) => item.addId !== rowData.addId)
                         );
                       })
                       .catch((err) => {
-                        console.log(err);
+                        alert.error("Doslo je do greske");
                       });
                   },
                 },
@@ -569,6 +576,7 @@ function ProfilePageEmployer(props) {
                   tooltip: "View Add",
                   onClick: (event, rowData) => {
                     openModal(rowData.addId);
+                    setIsOpen(true);
                   },
                 },
               ]}
@@ -589,6 +597,6 @@ function ProfilePageEmployer(props) {
       <DemoFooter />
     </>
   );
-}
+};
 
 export default withRouter(ProfilePageEmployer);

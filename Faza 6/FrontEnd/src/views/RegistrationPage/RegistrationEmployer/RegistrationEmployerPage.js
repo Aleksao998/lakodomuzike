@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router-dom";
+import { useAlert } from "react-alert";
 function RegisterPageEmployer(props) {
+  const alert = useAlert();
   const [state, setState] = useState({
     username: "",
     email: "",
@@ -80,11 +81,12 @@ function RegisterPageEmployer(props) {
               resData.data._id,
               "/profile-page-employer/" + resData.data._id
             );
+            alert.success("Uspesno ste se registrovali");
             props.history.push("/profile-page-employer/" + resData.data._id);
           });
       })
       .catch((err) => {
-        console.log(err);
+        alert.error("Doslo je do greske");
       });
   };
 
@@ -93,6 +95,7 @@ function RegisterPageEmployer(props) {
     setState({ ...state, [name]: value });
   };
   document.documentElement.classList.remove("nav-open");
+
   React.useEffect(() => {
     document.body.classList.add("register-page");
     return function cleanup() {
