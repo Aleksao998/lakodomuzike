@@ -12,7 +12,8 @@ import { connect } from "react-redux";
 import { addAddData } from "../actions/adds";
 import NavBar from "components/Navbars/NavBar";
 // pages
-
+import AdminLogin from "../views/AdminPanel/AdminLogin/AdminLogin";
+import Dashboard from "../views/AdminPanel/AdminDashBoard/AdminDashboard";
 import LandingPage from "views/LandingPage/LandingPage";
 import RegisterPage from "views/RegistrationPage/RegisterPage";
 import RegisterPageMusician from "views/RegistrationPage/RegistrationMusician/RegistrationMusicianPage";
@@ -110,6 +111,16 @@ function AppRouters(props) {
           )}
         />
         <Route
+          path="/admin-login"
+          render={(props) => (
+            <AdminLogin {...props} authenticateUser={authenticateUser} />
+          )}
+        />
+        <Route
+          path="/dashboard/:id"
+          render={(props) => <Dashboard {...props} />}
+        />
+        <Route
           path="/profile-page-musician/:id"
           render={(props) => <ProfilePageMusician {...props} userId={userId} />}
         />
@@ -157,14 +168,13 @@ function AppRouters(props) {
             <LoginPage {...props} authenticateUser={authenticateUser} />
           )}
         />
-        <Route
-          path="/404ErrorPage"
-          render={(props) => <ErrorPage404 {...props} />}
-        />
+
         <Route
           path="/500ErrorPage"
           render={(props) => <ErrorPage500 {...props} />}
         />
+
+        <Route render={(props) => <ErrorPage404 {...props} />} />
       </Switch>
     </div>
   );

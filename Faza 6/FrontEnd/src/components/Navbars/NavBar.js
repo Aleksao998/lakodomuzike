@@ -99,7 +99,7 @@ function NavbarMenu(props) {
               </NavItem>
             ) : (
               <NavItem onClick={logOut}>
-                <NavLink to="/lakodomuzike/" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   Izloguj se
                 </NavLink>
               </NavItem>
