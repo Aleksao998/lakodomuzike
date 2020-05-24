@@ -4,7 +4,8 @@ const {
     getAd,
     createAd,
     updateAd,
-    deleteAd
+    deleteAd,
+    closed
 } = require("../controllers/ad-controller");
 
 const Ad = require('../models/Ad');
@@ -30,4 +31,7 @@ router.route('/').get(advancedResults(Ad, {
     .post(protect, authorize('Employer', 'admin'), createAd);
 
 router.route('/:id').get(getAd).put(protect, authorize('Employer', 'admin'), updateAd).delete(protect, authorize('Employer', 'admin'), deleteAd);
+
+router.route('/closed/:id').get(closed);
+
 module.exports = router;

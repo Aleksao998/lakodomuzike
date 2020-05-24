@@ -29,6 +29,7 @@ Ad:
     GET:    URL/api/v1/ad/:id                   type GET
     UPDATE: URL/api/v1/ad/:id                   type PUT
     DELETE: URL/api/v1/ad/:id                   type DELETE 
+    GET:    URL/api/v1/ad/closed/:id             type GET
 
 RegistredMusician:
     URL+/api/v1
