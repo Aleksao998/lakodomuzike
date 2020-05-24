@@ -84,7 +84,7 @@ function AdsCategory(props) {
                 <option value="">Izaberi Tip</option>
                 <option value="Rock">Rock</option>
                 <option value="Narodna">Narodna</option>
-                <option value="Ex You">Ex You</option>
+                <option value="Dj">Ex You</option>
               </Input>
             </div>
           </div>

@@ -12,9 +12,8 @@ import { connect } from "react-redux";
 import { addAddData } from "../actions/adds";
 import NavBar from "components/Navbars/NavBar";
 // pages
-import Index from "views/Index.js";
+
 import LandingPage from "views/LandingPage/LandingPage";
-import ProfilePage from "views/ProfilePage/ProfilePage";
 import RegisterPage from "views/RegistrationPage/RegisterPage";
 import RegisterPageMusician from "views/RegistrationPage/RegistrationMusician/RegistrationMusicianPage";
 import RegisterPageEmployer from "views/RegistrationPage/RegistrationEmployer/RegistrationEmployerPage";
@@ -65,7 +64,8 @@ function AppRouters(props) {
 
               element.location.number,
               element.location.city,
-              "/single-add-detail/" + element._id
+              "/single-add-detail/" + element._id,
+              element.url
             )
           );
         });
@@ -87,7 +87,8 @@ function AppRouters(props) {
       />
       <Switch>
         <Route
-          path="/lakodomuzike/"
+          exact
+          path="/"
           render={(props) => (
             <LandingPage
               {...props}

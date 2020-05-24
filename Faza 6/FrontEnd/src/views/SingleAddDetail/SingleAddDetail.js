@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "reactstrap";
-import Image1 from "../LandingPage/FeatureJobs/job-list1.png";
+
 import FooterBlack from "../../components/Footers/FooterBlack";
 import { useAlert } from "react-alert";
 
@@ -98,7 +98,7 @@ const SignleAddDetail = (props) => {
                 <div class="job-items">
                   <div class="company-img company-img-details">
                     <a href="#">
-                      <img src={Image1} alt="" />
+                      <img alt="" />
                     </a>
                   </div>
                   <div class="job-tittle">

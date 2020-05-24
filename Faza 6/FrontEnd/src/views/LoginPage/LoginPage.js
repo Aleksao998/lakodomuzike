@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
+
 import { withRouter } from "react-router-dom";
 function LoginPage(props) {
   const [state, setState] = useState({

@@ -41,12 +41,12 @@ function NavbarMenu(props) {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            to="/index"
+            to="/"
             target="_blank"
-            title="Coded by Creative Tim"
+            title="Lako Do Muzike"
             tag={Link}
           >
-            Lako do Muike
+            Lako do Muzike
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -67,7 +67,7 @@ function NavbarMenu(props) {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink to="/lakodomuzike/" tag={Link}>
+              <NavLink to="/" tag={Link}>
                 Pocetna
               </NavLink>
             </NavItem>
