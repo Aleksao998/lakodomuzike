@@ -111,7 +111,7 @@ function ProfilePageMusician(props) {
     fetch("http://localhost:5000/api/v1/registredmusician/" + rowData.id, {
       method: "DELETE",
       headers: {
-        Authorization: "Bearer " + localStorage.getItem("token"),
+        authorization: "Bearer " + localStorage.getItem("token"),
       },
     })
       .then((res) => {
