@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const colors = require("colors");
 const errorHandler = require("./middlewares/error");
-
+var cors = require("cors");
 const connectDB = require("./config/db");
 const cookieParser = require("cookie-parser");
 
@@ -23,6 +23,7 @@ const auth = require("./routes/auth-routes");
 const user = require("./routes/users-routes");
 
 const app = express();
+app.use(cors());
 
 // Body parser
 
@@ -36,17 +37,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-//Allow
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-type, Authorization");
-
-  next();
-});
 // Mount routers
 app.use("/api/v1/employer", employers);
 app.use("/api/v1/musician", musicians);
