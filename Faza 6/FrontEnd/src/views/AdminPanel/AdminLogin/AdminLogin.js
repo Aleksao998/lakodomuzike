@@ -28,7 +28,6 @@ const AdminLogin = (props) => {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         if (resData.role === "admin") {
           localStorage.setItem("token", resData.token);
           localStorage.setItem("id", resData.data);
@@ -37,6 +36,7 @@ const AdminLogin = (props) => {
             resData.data,
             "/dashboard/" + resData.data
           );
+
           props.history.push("/dashboard/" + resData.data);
           return;
         } else {

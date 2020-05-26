@@ -118,7 +118,7 @@ function AppRouters(props) {
         />
         <Route
           path="/dashboard/:id"
-          render={(props) => <Dashboard {...props} />}
+          render={(props) => <Dashboard {...props} token={token} />}
         />
         <Route
           path="/profile-page-musician/:id"
