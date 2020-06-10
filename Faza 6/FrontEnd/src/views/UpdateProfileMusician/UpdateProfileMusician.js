@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { useAlert } from "react-alert";
 
-const RegisterPageMusician = (props) => {
+const UpdatePageMusician = (props) => {
   const alert = useAlert();
   const [state, setState] = useState({
     username: "",
-    email: "",
     name: "",
     lastName: "",
-    pass: "",
-    repass: "",
     instagram: "",
     facebook: "",
     youtube: "",
@@ -20,87 +17,33 @@ const RegisterPageMusician = (props) => {
 
   const registracija = (event) => {
     event.preventDefault();
-    if (
-      state.username === "" ||
-      state.email === "" ||
-      state.name === "" ||
-      state.lastname === "" ||
-      state.pass === "" ||
-      state.repass === "" ||
-      state.instagram === "" ||
-      state.facebook === "" ||
-      state.youtube === "" ||
-      state.description === ""
-    ) {
-      setError("Sva polja moraju biti popunjena!");
-      return;
-    }
-
-    if (state.pass !== state.repass) {
-      setError("Šifra se ne podudara!");
-      return;
-    }
-
-    //api poziv
-    var token;
-    var id;
-    fetch("http://localhost:5000/api/v1/auth/register ", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: state.email,
-        password: state.pass,
-        role: "Musician",
-      }),
-    })
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Error creating User");
-        }
-        return res.json();
-      })
-      .then((resData) => {
-        console.log("userCreated");
-        token = resData.token;
-        id = resData.data;
-        fetch("http://localhost:5000/api/v1/musician ", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
+    fetch(
+      "http://localhost:5000/api/v1/musician/" + localStorage.getItem("id"),
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+          name: state.name,
+          surname: state.lastName,
+          username: state.username,
+          socialMedia: {
+            Instagram: state.instagram,
+            Facebook: state.facebook,
+            YouTube: state.youtube,
           },
-          body: JSON.stringify({
-            name: state.name,
-            surname: state.lastName,
-            username: state.username,
-            socialMedia: {
-              Instagram: state.instagram,
-              Facebook: state.facebook,
-              YouTube: state.youtube,
-            },
-            description: state.description,
-            user: id,
-          }),
-        })
-          .then((res) => {
-            if (res.status !== 201) {
-              throw new Error("Error creating Employer");
-            }
-            return res.json();
-          })
-          .then((resData) => {
-            localStorage.setItem("token", token);
-            localStorage.setItem("id", resData.data._id);
-            props.authenticateUser(
-              token,
-              resData.data._id,
-              "/profile-page-musician/" + resData.data._id
-            );
-            alert.success("Uspesno ste se registrovali");
-
-            props.history.push("/profile-page-musician/" + resData.data._id);
-          });
+          description: state.description,
+        }),
+      }
+    )
+      .then((res) => {
+        props.history.push(
+          "/profile-page-musician/" + localStorage.getItem("id")
+        );
       })
+
       .catch((err) => {
         alert.error("Doslo je do greske");
       });
@@ -109,6 +52,34 @@ const RegisterPageMusician = (props) => {
     const { name, value } = event.target;
     setState({ ...state, [name]: value });
   };
+  React.useEffect(() => {
+    fetch(
+      "http://localhost:5000/api/v1/musician/" + localStorage.getItem("id"),
+      {
+        method: "GET",
+      }
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Error creating User");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        setState({
+          username: resData.data.username,
+          name: resData.data.name,
+          lastName: resData.data.surname,
+          instagram: resData.data.socialMedia.Instagram,
+          facebook: resData.data.socialMedia.Facebook,
+          youtube: "",
+          description: resData.data.description,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <div class="limiter">
@@ -128,24 +99,13 @@ const RegisterPageMusician = (props) => {
             <p>{error}</p>
             <form class="login100-form validate-form">
               <div class="wrap-input100 validate-input m-b-26">
-                <span class="label-input100">Email</span>
-                <input
-                  onChange={handleOnChange}
-                  class="input100"
-                  type="text"
-                  name="email"
-                  placeholder="email"
-                ></input>
-                <span class="focus-input100"></span>
-              </div>
-
-              <div class="wrap-input100 validate-input m-b-26">
                 <span class="label-input100">Username</span>
                 <input
                   onChange={handleOnChange}
                   class="input100"
                   type="text"
                   name="username"
+                  value={state.username}
                   placeholder="username"
                 ></input>
                 <span class="focus-input100"></span>
@@ -158,6 +118,7 @@ const RegisterPageMusician = (props) => {
                   class="input100"
                   type="text"
                   name="name"
+                  value={state.name}
                   placeholder="Ime"
                 ></input>
                 <span class="focus-input100"></span>
@@ -170,31 +131,8 @@ const RegisterPageMusician = (props) => {
                   class="input100"
                   type="text"
                   name="lastName"
+                  value={state.lastName}
                   placeholder="prezime"
-                ></input>
-                <span class="focus-input100"></span>
-              </div>
-
-              <div class="wrap-input100 validate-input m-b-26">
-                <span class="label-input100">Šifra</span>
-                <input
-                  onChange={handleOnChange}
-                  class="input100"
-                  type="password"
-                  name="pass"
-                  placeholder="šifra"
-                ></input>
-                <span class="focus-input100"></span>
-              </div>
-
-              <div class="wrap-input100 validate-input m-b-26">
-                <span class="label-input100">Šifra</span>
-                <input
-                  onChange={handleOnChange}
-                  class="input100"
-                  type="password"
-                  name="repass"
-                  placeholder="Ponovljena sifra"
                 ></input>
                 <span class="focus-input100"></span>
               </div>
@@ -206,6 +144,7 @@ const RegisterPageMusician = (props) => {
                   class="input100"
                   type="text"
                   name="instagram"
+                  value={state.instagram}
                   placeholder="Instagram link"
                 ></input>
                 <span class="focus-input100"></span>
@@ -218,6 +157,7 @@ const RegisterPageMusician = (props) => {
                   class="input100"
                   type="text"
                   name="facebook"
+                  value={state.facebook}
                   placeholder="Facebook link"
                 ></input>
                 <span class="focus-input100"></span>
@@ -230,6 +170,7 @@ const RegisterPageMusician = (props) => {
                   class="input100"
                   type="text"
                   name="youtube"
+                  value={state.youtube}
                   placeholder="Youtube link"
                 ></input>
                 <span class="focus-input100"></span>
@@ -241,6 +182,7 @@ const RegisterPageMusician = (props) => {
                   onChange={handleOnChange}
                   class="input100"
                   type="text"
+                  value={state.description}
                   name="description"
                   placeholder="Opis"
                 ></input>
@@ -254,7 +196,17 @@ const RegisterPageMusician = (props) => {
                 }}
               >
                 <button class="login100-form-btn" onClick={registracija}>
-                  Registruj se
+                  Updatuj
+                </button>
+                <button
+                  class="login100-form-btn"
+                  onClick={() => {
+                    props.history.push(
+                      "/profile-page-musician/" + localStorage.getItem("id")
+                    );
+                  }}
+                >
+                  Nazad
                 </button>
               </div>
             </form>
@@ -265,4 +217,4 @@ const RegisterPageMusician = (props) => {
   );
 };
 
-export default RegisterPageMusician;
+export default withRouter(UpdatePageMusician);

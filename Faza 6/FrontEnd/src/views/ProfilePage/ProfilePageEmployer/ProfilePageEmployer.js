@@ -392,6 +392,15 @@ const ProfilePageEmployer = (props) => {
               <h4 className="title">
                 {name} {lastname} <br />
               </h4>
+              <button
+                onClick={() => {
+                  props.history.push("/update-employer");
+                }}
+                className="btn"
+                style={{ margin: "0 auto", marginTop: "10px" }}
+              >
+                Izmeni Profil
+              </button>
             </div>
           </div>
           <row>

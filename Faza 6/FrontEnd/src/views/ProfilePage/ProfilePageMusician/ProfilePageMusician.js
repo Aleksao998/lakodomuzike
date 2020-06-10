@@ -145,11 +145,15 @@ function ProfilePageMusician(props) {
               <h4 className="title">
                 {name}, {lastName} <br />
               </h4>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+              <button
+                onClick={() => {
+                  props.history.push("/update-musician");
+                }}
+                className="btn"
+                style={{ margin: "0 auto", marginTop: "10px" }}
+              >
+                Izmeni Profil
+              </button>
               <h6 className="description">Vrsta muzike: Pop, Rock</h6>
             </div>
           </div>
