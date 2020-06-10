@@ -98,7 +98,7 @@ const SignleAddDetail = (props) => {
                 <div class="job-items">
                   <div class="company-img company-img-details">
                     <a href="#">
-                      <img alt="" />
+                      <img alt="" src={state.url} />
                     </a>
                   </div>
                   <div class="job-tittle">

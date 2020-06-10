@@ -1,7 +1,7 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
 const User = require("../models/User");
-
+const bcrypt = require("bcryptjs");
 // @desc    Get all users
 // @route   GET /api/v1/user
 // @access  Admin
@@ -50,6 +50,11 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 // @access  Admin
 
 exports.updateUser = asyncHandler(async (req, res, next) => {
+  if (req.body.password != "***************") {
+    console.log("usao");
+    const salt = await bcrypt.genSalt(10);
+    req.body.password = await bcrypt.hash(req.body.password, salt);
+  }
   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,

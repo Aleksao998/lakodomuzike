@@ -37,9 +37,7 @@ function AdsListing(props) {
                   </div>
                 </div>
                 <div class="items-link f-right">
-                  <a onClick={() => handleOnClick(item.link)}>
-                    Pogledaj ceo oglas
-                  </a>
+                  <a onClick={() => handleOnClick(item.link)}>Detailji</a>
                 </div>
               </div>
             );

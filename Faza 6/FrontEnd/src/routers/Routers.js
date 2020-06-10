@@ -26,6 +26,8 @@ import ProfilePageMusician from "views/ProfilePage/ProfilePageMusician/ProfilePa
 import ProfilePageEmployer from "views/ProfilePage/ProfilePageEmployer/ProfilePageEmployer";
 import AdsPage from "views/AdsPage/Ads";
 import SingleAddDetail from "views/SingleAddDetail/SingleAddDetail";
+import UpdateProfileEmploler from "views/UpdateProfileEmployer/UpdateProfileEmployer";
+import UpdateProfileMusician from "views/UpdateProfileMusician/UpdateProfileMusician";
 function AppRouters(props) {
   const [isAutenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState("");
@@ -116,6 +118,15 @@ function AppRouters(props) {
             <AdminLogin {...props} authenticateUser={authenticateUser} />
           )}
         />
+        <Route
+          path="/update-employer"
+          render={(props) => <UpdateProfileEmploler {...props} />}
+        />
+        <Route
+          path="/update-musician"
+          render={(props) => <UpdateProfileMusician {...props} />}
+        />
+
         <Route
           path="/dashboard/:id"
           render={(props) => <Dashboard {...props} token={token} />}

@@ -484,7 +484,7 @@ li {
 
 .single-job-items .job-tittle ul li {
   display: inline-block;
-  margin-right: 48px;
+  margin-right: 10px !important;
   font-size: 15px;
   color: grey;
   line-height: 1.8;
@@ -536,7 +536,7 @@ li {
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .items-link {
-    padding-top: 35px;
+    padding-top: 50px;
     text-align: center;
   }
 }
@@ -556,6 +556,7 @@ li {
   padding: 4px 33px;
   text-align: center;
   margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
